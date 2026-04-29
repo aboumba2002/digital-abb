@@ -2,7 +2,7 @@ export default function App() {
   return (
     <div className="bg-gray-50 min-h-screen text-gray-800">
       <main className="max-w-6xl mx-auto px-6 py-12 space-y-12">
-        <section className="bg-white rounded-3xl shadow-lg p-10">
+        <section className="max-w-5xl mx-auto px-6 py-16 bg-white rounded-2xl shadow-md">
           <div className="flex flex-col gap-8 lg:flex-row lg:items-center">
             <img
               src="/logo.png"
@@ -29,7 +29,7 @@ export default function App() {
           <div className="grid gap-6 md:grid-cols-2">
             <div className="bg-white p-6 rounded-3xl shadow">
               <h2 className="text-2xl font-semibold mb-3">Services</h2>
-              <ul className="space-y-3 text-gray-700">
+              <ul className="space-y-3 text-gray-800">
                 <li>✔ Rack Cleaning</li>
                 <li>✔ Cable Dust Removal</li>
                 <li>✔ IT Room Floor & Ceiling Cleaning</li>
@@ -38,7 +38,7 @@ export default function App() {
             </div>
             <div className="bg-white p-6 rounded-3xl shadow">
               <h2 className="text-2xl font-semibold mb-3">Why Choose Us</h2>
-              <ul className="space-y-3 text-gray-700">
+              <ul className="space-y-3 text-gray-800">
                 <li>✔ No system disruption</li>
                 <li>✔ ESD-safe process</li>
                 <li>✔ No cable disconnect</li>
@@ -58,7 +58,7 @@ export default function App() {
             </div>
             <div className="bg-white p-6 rounded-3xl shadow">
               <h3 className="text-2xl font-semibold mb-3">Who We Help</h3>
-              <ul className="space-y-3 text-gray-700">
+              <ul className="space-y-3 text-gray-800">
                 <li>✔ IT teams with in-house cleaning</li>
                 <li>✔ Offices with server rooms</li>
                 <li>✔ MSP / managed service providers</li>
@@ -68,7 +68,7 @@ export default function App() {
 
           <div className="bg-white p-6 rounded-3xl shadow">
             <h3 className="text-2xl font-semibold mb-6">Pricing</h3>
-            <div className="space-y-3 text-gray-700">
+            <div className="space-y-3 text-gray-800">
               <p>1 Rack: $250 – $400 (single visit)</p>
               <p>2–5 Racks: $200 – $300 each</p>
               <p>6+ Racks: Custom quote based on size</p>
@@ -78,10 +78,10 @@ export default function App() {
           <div className="grid gap-6 md:grid-cols-2">
             <div className="bg-white p-6 rounded-3xl shadow">
               <h3 className="text-2xl font-semibold mb-3">Contact</h3>
-              <p className="font-semibold text-gray-800">
+              <p className="font-medium text-gray-900">
                 Email: <a href="mailto:info@digital-abb.com" className="text-blue-600 underline">info@digital-abb.com</a>
               </p>
-              <p className="text-gray-700">Location: Pflugerville, TX</p>
+              <p className="text-gray-800">Location: Pflugerville, TX</p>
               <p className="text-sm text-gray-600 mt-2">
                 Serving Austin / Pflugerville area • Supporting IT teams in live environments
               </p>
@@ -93,7 +93,7 @@ export default function App() {
                   href="https://mail.google.com/mail/?view=cm&fs=1&to=info@digital-abb.com&su=Pilot%20Cleaning%20Request&body=Company%20Name:%0D%0ALocation:%0D%0ANumber%20of%20Racks:%0D%0ADescription:"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block rounded-full bg-white px-6 py-3 text-blue-600 font-semibold hover:bg-slate-100"
+                  className="bg-white text-blue-600 px-6 py-3 rounded-full font-semibold shadow hover:bg-gray-100"
                 >
                   Request Your Free Pilot Cleaning
                 </a>
