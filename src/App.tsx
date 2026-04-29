@@ -4,6 +4,16 @@ export default function App() {
       
       {/* Hero */}
       <div className="max-w-5xl mx-auto px-6 py-16">
+      
+      {/* Logo + Title */}
+      <div className="flex items-center gap-4 mb-6">
+        <img 
+          src="/logo.png" 
+          alt="Digital-abb logo" 
+          className="w-16 h-16 rounded-lg shadow"
+        />
+      </div>
+
         <h1 className="text-5xl font-bold text-blue-600 mb-4">
           Digital-abb
         </h1>
@@ -92,9 +102,13 @@ export default function App() {
           <p className="text-sm text-gray-600 mb-3">
            Limited pilot slots available this month
           </p>
-          <a href="mailto:info@digital-abb.com?subject=Pilot Cleaning Request&body=Company Name:%0D%0ALocation:%0D%0ANumber of Racks:%0D%0ADescription:%0D%0A">
-            <button className="bg-blue-600 text-white px-6 py-3 rounded shadow hover:bg-blue-500">
-               Request Your Free Pilot Cleaning
+          <a
+            href="https://mail.google.com/mail/?view=cm&fs=1&to=info@digital-abb.com&su=Pilot%20Cleaning%20Request&body=Company%20Name:%0D%0ALocation:%0D%0ANumber%20of%20Racks:%0D%0ADescription:"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <button className="bg-blue-600 text-white px-6 py-3 rounded shadow hover:bg-blue-500 text-lg font-semibold">
+              Request Your Free Pilot Cleaning
             </button>
           </a>
        </div>
