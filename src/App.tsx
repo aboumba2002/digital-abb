@@ -92,12 +92,12 @@ export default function App() {
           <p className="text-sm text-gray-600 mb-3">
            Limited pilot slots available this month
           </p>
-         <a href="mailto:info@digital-abb.com?subject=Pilot Cleaning Request">
-           <button className="bg-blue-600 text-white px-6 py-3 rounded shadow hover:bg-blue-500 mt-6">
-            Request Free Pilot Cleaning
-           </button>
-         </a>
-      </div>
+          <a href="mailto:info@digital-abb.com?subject=Pilot Cleaning Request&body=Company Name:%0D%0ALocation:%0D%0ANumber of Racks:%0D%0ADescription:%0D%0A">
+            <button className="bg-blue-600 text-white px-6 py-3 rounded shadow hover:bg-blue-500">
+               Request Your Free Pilot Cleaning
+            </button>
+          </a>
+       </div>
     </div>
   );
 }
