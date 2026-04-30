@@ -14,16 +14,18 @@ export default function App() {
               <h2 className="text-2xl font-semibold text-gray-900 mb-4">
                 Infrastructure Hygiene & Physical Layer Protection
               </h2>
-              <p className="text-gray-700 max-w-3xl">
-                Digital-ABB protects live IT environments through ESD-aware rack, cable,
-                and equipment-adjacent dust control. We focus on airflow, fiber-area
-                cleanliness, and physical-layer reliability — not janitorial cleaning.
+              <p className="text-gray-600 max-w-3xl">
+                Digital-ABB protects live IT environments through ESD-aware rack, cable, and equipment-adjacent dust control.
+                We focus on airflow, fiber-area cleanliness, and physical-layer reliability—purpose-built for technical environments, not general-purpose cleaning.
               </p>
               <p className="text-gray-700 text-sm mt-4">
                 ✔ No downtime • ✔ No cable disconnect • ✔ No system access • ✔ Physical-layer focused
               </p>
               <p className="text-gray-800 font-medium mt-4">
                 Built for environments where downtime, airflow restriction, and contamination carry real operational risk.
+              </p>
+              <p className="text-gray-800 font-medium mt-4">
+                Designed for infrastructure where contamination impacts performance—not just appearance.
               </p>
             </div>
           </div>
