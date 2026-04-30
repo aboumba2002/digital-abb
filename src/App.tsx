@@ -22,6 +22,9 @@ export default function App() {
               <p className="text-gray-700 text-sm mt-4">
                 ✔ No downtime • ✔ No cable disconnect • ✔ No system access • ✔ Physical-layer focused
               </p>
+              <p className="text-gray-800 font-medium mt-4">
+                Built for environments where downtime, airflow restriction, and contamination carry real operational risk.
+              </p>
             </div>
           </div>
         </section>
@@ -56,6 +59,18 @@ export default function App() {
                 We do not disconnect cables.
               </p>
             </div>
+          </div>
+        </div>
+
+        {/* Problem */}
+        <div className="max-w-5xl mx-auto px-6 py-10">
+          <div className="bg-white p-8 rounded-2xl shadow">
+            <h3 className="text-2xl font-bold mb-4">The Risk</h3>
+            <p className="text-gray-800">
+              Dust buildup in racks and cable pathways can restrict airflow, increase thermal load,
+              and impact fiber reliability. Most environments rely on inconsistent cleaning practices
+              that do not address these risks.
+            </p>
           </div>
         </div>
 
