@@ -100,7 +100,7 @@ export default function App() {
             <div className="bg-white p-6 rounded-3xl shadow">
               <h3 className="text-2xl font-semibold mb-3">Experience</h3>
               <p className="text-gray-600">
-                10+ years working in data center environments including rack
+                15+ years working in data center environments including rack
                 installation, testing, and support. We understand how to safely
                 work inside live systems without disruption.
               </p>
