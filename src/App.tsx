@@ -11,19 +11,53 @@ export default function App() {
             />
             <div className="space-y-4">
               <h1 className="text-5xl font-bold text-blue-600">Digital-abb</h1>
-              <p className="text-xl font-semibold text-slate-700">
-                Non-Disruptive Rack & IT Room Cleaning for Live Environments
+              <h2 className="text-2xl font-semibold text-gray-900 mb-4">
+                Infrastructure Hygiene & Physical Layer Protection
+              </h2>
+              <p className="text-gray-700 max-w-3xl">
+                Digital-ABB protects live IT environments through ESD-aware rack, cable,
+                and equipment-adjacent dust control. We focus on airflow, fiber-area
+                cleanliness, and physical-layer reliability — not janitorial cleaning.
               </p>
-              <p className="max-w-3xl text-gray-600">
-                Non-disruptive cleaning for live IT environments. We clean racks,
-                cables, and IT rooms safely using ESD-controlled methods.
-              </p>
-              <p className="text-sm text-gray-500">
-                ✔ No downtime • ✔ No cable disconnect • ✔ ESD-controlled process
+              <p className="text-gray-700 text-sm mt-4">
+                ✔ No downtime • ✔ No cable disconnect • ✔ No system access • ✔ Physical-layer focused
               </p>
             </div>
           </div>
         </section>
+
+        {/* About */}
+        <div className="max-w-5xl mx-auto px-6 py-10">
+          <div className="bg-white p-8 rounded-2xl shadow">
+            <h3 className="text-2xl font-bold mb-4">
+              Physical Layer Protection for Mission-Critical Networks
+            </h3>
+
+            <p className="text-gray-800 mb-4">
+              Digital-ABB was built from real infrastructure experience across enterprise
+              environments including AT&amp;T, Ford Motor, and Flex.
+            </p>
+
+            <p className="text-gray-800 mb-4">
+              With hands-on background in rack builds, Cisco gear validation, live data
+              center work, and hardened facility protocols, we understand that "clean"
+              is not cosmetic — it is operational.
+            </p>
+
+            <p className="text-gray-800 mb-4">
+              Our focus is Infrastructure Hygiene &amp; Physical Layer Protection:
+              rack hygiene, cable dust control, airflow protection, fiber-area
+              cleanliness, and visual condition reporting.
+            </p>
+
+            <div className="bg-blue-50 border border-blue-100 p-4 rounded-xl mt-6">
+              <p className="font-semibold text-gray-900">
+                We do not perform janitorial cleaning. We do not access systems.
+                We do not disconnect cables.
+              </p>
+            </div>
+          </div>
+        </div>
 
         <section className="grid gap-10">
           <div className="grid gap-6 md:grid-cols-2">
