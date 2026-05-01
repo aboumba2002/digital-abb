@@ -4,7 +4,7 @@ export default function ContactForm({ onClose }: { onClose: () => void }) {
       <h2 className="text-3xl font-bold mb-2 text-gray-900">Request Your Free Pilot Cleaning</h2>
       <p className="text-gray-600 mb-6">Limited pilot slots available this month. Fill out the form below and we'll be in touch within 24 hours.</p>
 
-      <form action="https://formspree.io/f/xlgzdjzr" method="POST" className="space-y-4">
+      <form action="https://formspree.io/f/xlgzdjzr" method="POST" onSubmit={() => onClose()} className="space-y-4">
         <input type="hidden" name="_redirect" value="https://digital-abb.vercel.app/thank-you" />
 
         <div>
