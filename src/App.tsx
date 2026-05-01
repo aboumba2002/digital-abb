@@ -1,4 +1,8 @@
+import { useState } from 'react';
+import ContactForm from './ContactForm';
+
 export default function App() {
+  const [showForm, setShowForm] = useState(false);
   return (
     <div className="bg-gray-50 min-h-screen text-gray-800">
       <main className="max-w-6xl mx-auto px-6 py-12 space-y-12">
@@ -17,6 +21,10 @@ export default function App() {
           <p className="text-gray-700 max-w-3xl">
             Digital-ABB protects live IT environments through ESD-aware rack, cable, and equipment-adjacent dust control.
             We focus on airflow, fiber-area cleanliness, and physical-layer reliability—purpose-built for technical environments, not general-purpose cleaning.
+          </p>
+
+          <p className="text-gray-900 font-semibold max-w-3xl mt-4">
+            Most environments appear clean—but are not operationally clean.
           </p>
 
           <div className="mt-4 flex flex-wrap gap-4 text-gray-800">
@@ -72,6 +80,76 @@ export default function App() {
               Dust buildup in racks and cable pathways can restrict airflow, increase thermal load,
               and impact fiber reliability. Most environments rely on inconsistent cleaning practices
               that do not address these risks.
+            </p>
+          </div>
+        </div>
+
+        {/* Operational Blind Spot */}
+        <div className="max-w-5xl mx-auto px-6 py-10">
+          <div className="bg-white p-8 rounded-2xl shadow">
+            <h3 className="text-2xl font-bold mb-4">Operational Blind Spot</h3>
+            <p className="text-gray-800 mb-4">
+              In many environments, infrastructure hygiene is not treated as a technical function.
+              Rack and equipment cleaning is often assigned to general in-house or janitorial teams
+              whose scope focuses on visible surfaces — not airflow pathways, cable contamination,
+              or equipment-adjacent dust accumulation.
+            </p>
+            <p className="text-gray-800 mb-4">
+              As a result, critical risk factors remain unaddressed:
+            </p>
+            <ul className="space-y-2 text-gray-800">
+              <li>• Dust buildup inside airflow paths and cooling zones</li>
+              <li>• Contamination around fiber and cable infrastructure</li>
+              <li>• Restricted intake/exhaust airflow at rack level</li>
+              <li>• Gradual thermal stress that is not immediately visible</li>
+            </ul>
+            <p className="text-gray-800 mt-4">
+              Because these conditions develop slowly, they are often not identified until
+              performance degradation or failure occurs.
+            </p>
+          </div>
+        </div>
+
+        {/* Why Standard Cleaning Falls Short */}
+        <div className="max-w-5xl mx-auto px-6 py-10">
+          <div className="bg-white p-8 rounded-2xl shadow">
+            <h3 className="text-2xl font-bold mb-4">Why Standard Cleaning Falls Short</h3>
+            <p className="text-gray-800 mb-4">
+              General cleaning practices are not designed for live IT environments.
+            </p>
+            <p className="text-gray-800 mb-4">
+              Typical limitations include:
+            </p>
+            <ul className="space-y-2 text-gray-800">
+              <li>• No ESD awareness or grounding procedures</li>
+              <li>• No access to rack airflow zones or equipment-adjacent areas</li>
+              <li>• No understanding of thermal load or airflow behavior</li>
+              <li>• No documentation or validation of environmental conditions</li>
+            </ul>
+            <p className="text-gray-800 mt-4">
+              As a result, cleaning may improve appearance — but not operational reliability.
+            </p>
+          </div>
+        </div>
+
+        {/* Why This Becomes a Priority */}
+        <div className="max-w-5xl mx-auto px-6 py-10">
+          <div className="bg-white p-8 rounded-2xl shadow">
+            <h3 className="text-2xl font-bold mb-4">Why This Becomes a Priority</h3>
+            <p className="text-gray-800 mb-4">
+              Infrastructure hygiene directly impacts system performance, cooling efficiency, and operational risk.
+            </p>
+            <p className="text-gray-800 mb-4">
+              Unchecked contamination can contribute to:
+            </p>
+            <ul className="space-y-2 text-gray-800">
+              <li>• Increased thermal load and cooling inefficiency</li>
+              <li>• Reduced equipment lifespan</li>
+              <li>• Higher probability of failure under load</li>
+              <li>• Potential warranty review issues tied to environmental conditions</li>
+            </ul>
+            <p className="text-gray-800 mt-4">
+              Addressing these factors proactively shifts hygiene from a maintenance task to a risk management function.
             </p>
           </div>
         </div>
@@ -232,39 +310,97 @@ export default function App() {
                 hygiene issues for IT managers.
               </p>
 
-              <a
-                href="/Digital-ABB-Sample-Audit.pdf"
-                download
-                className="inline-block bg-blue-600 text-white px-6 py-3 rounded-full font-semibold shadow hover:bg-blue-500"
+              <p className="text-sm text-gray-600 mb-4">
+                Used by IT teams to review airflow, contamination, and physical-layer risk before it becomes downtime.
+              </p>
+
+              <button
+                onClick={() => setShowForm(true)}
+                className="inline-block bg-blue-600 text-white px-6 py-3 rounded-full font-semibold shadow hover:bg-blue-500 cursor-pointer"
               >
                 Download Sample Audit PDF
-              </a>
+              </button>
             </div>
           </div>
 
-          <div className="max-w-5xl mx-auto px-6 py-10 grid md:grid-cols-2 gap-6">
+          <div className="max-w-5xl mx-auto px-6 py-10">
+            <ContactForm />
+          </div>
 
-            <div className="bg-white p-6 rounded shadow">
-              <h3 className="text-xl font-bold mb-2">Contact</h3>
+          <div className="max-w-5xl mx-auto px-6 py-10">
+            <div className="bg-white p-6 rounded-2xl shadow text-center">
+              <h3 className="text-xl font-bold mb-2">Or Contact Us Directly</h3>
               <p>Email: <a href="mailto:info@digital-abb.com" className="text-blue-600 font-medium">info@digital-abb.com</a></p>
               <p>Location: Pflugerville, TX</p>
               <p className="text-blue-600 mt-2">
                 Serving Austin / Pflugerville • Supporting IT teams in live environments
               </p>
             </div>
-
-            <div className="bg-blue-600 text-white p-6 rounded-2xl text-center shadow-lg">
-              <p className="mb-4">Limited pilot slots available this month</p>
-
-              <a href="mailto:info@digital-abb.com">
-                <button className="bg-white text-blue-600 px-6 py-3 rounded font-semibold">
-                  Request Your Free Pilot Cleaning
-                </button>
-              </a>
-            </div>
-
           </div>
         </section>
+
+        {showForm && (
+          <div className="fixed inset-0 bg-black/50 flex items-center justify-center p-4 z-50">
+            <div className="bg-white rounded-2xl shadow-xl p-8 max-w-md w-full">
+              <h3 className="text-2xl font-bold mb-3">
+                Download Sample Audit
+              </h3>
+
+              <p className="text-gray-700 mb-6">
+                Enter your details to receive the Digital-ABB sample audit report.
+              </p>
+
+              <form
+                action="https://formspree.io/f/mzdozewz"
+                method="POST"
+                onSubmit={() => {
+                  setTimeout(() => {
+                    window.open("/Digital-ABB-Sample-Audit.pdf", "_blank");
+                    setShowForm(false);
+                  }, 500);
+                }}
+                className="space-y-4"
+              >
+                <input
+                  type="text"
+                  name="name"
+                  required
+                  placeholder="Your name"
+                  className="w-full border border-gray-300 rounded-lg px-4 py-3"
+                />
+
+                <input
+                  type="email"
+                  name="email"
+                  required
+                  placeholder="Work email"
+                  className="w-full border border-gray-300 rounded-lg px-4 py-3"
+                />
+
+                <input
+                  type="text"
+                  name="company"
+                  placeholder="Company"
+                  className="w-full border border-gray-300 rounded-lg px-4 py-3"
+                />
+
+                <button
+                  type="submit"
+                  className="w-full bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-500"
+                >
+                  Submit & Download
+                </button>
+              </form>
+
+              <button
+                onClick={() => setShowForm(false)}
+                className="mt-4 text-sm text-gray-600 underline"
+              >
+                Cancel
+              </button>
+            </div>
+          </div>
+        )}
       </main>
     </div>
   )
