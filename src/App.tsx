@@ -166,17 +166,24 @@ export default function App() {
                 Built from experience within enterprise environments including AT&T, Ford Motor Company, and Flex.
                 Work includes rack integration, testing environments, and infrastructure-level operations where cleanliness directly impacts performance and uptime.
               </p>
+              <p className="text-sm text-gray-600 mt-2">
+                Experience supporting enterprise environments including AT&T, Ford Motor Company, and Flex
+              </p>
             </div>
           </div>
 
           <div className="grid gap-6 md:grid-cols-2">
-            <div className="bg-white p-6 rounded-3xl shadow">
-              <h3 className="text-2xl font-semibold mb-3">Who We Help</h3>
-              <ul className="space-y-3 text-gray-800">
-                <li>✔ IT teams with in-house cleaning</li>
-                <li>✔ Offices with server rooms</li>
+            <div className="bg-white p-6 rounded-xl shadow">
+              <h3 className="text-xl font-bold mb-4">Who We Help</h3>
+              <ul className="space-y-2 text-gray-800">
+                <li>✔ IT teams with in-house cleaning limitations</li>
+                <li>✔ Offices with server rooms and edge infrastructure</li>
                 <li>✔ MSP / managed service providers</li>
+                <li>✔ Data centers (select engagements & audit-based work)</li>
               </ul>
+              <p className="mt-4 text-gray-700">
+                Digital-ABB engages in higher-control environments through audit-driven and risk-sensitive scopes — not commodity cleaning contracts.
+              </p>
             </div>
           </div>
 
@@ -190,6 +197,9 @@ export default function App() {
                 <p>2–5 Racks: $200 – $300 each</p>
                 <p>6+ Racks: Custom quote based on size</p>
               </div>
+              <p className="text-gray-600 mt-3">
+                Enterprise and data center engagements are scoped individually based on risk level, compliance requirements, and operational constraints.
+              </p>
             </div>
           </div>
 
