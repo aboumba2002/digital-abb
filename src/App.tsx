@@ -216,6 +216,32 @@ export default function App() {
             </div>
           </div>
 
+          {/* Sample Audit */}
+          <div className="max-w-5xl mx-auto px-6 py-10">
+            <div className="bg-white p-8 rounded-2xl shadow">
+              <h3 className="text-2xl font-bold mb-4">See What We Find</h3>
+
+              <p className="text-gray-800 mb-4">
+                Our visual rack health report documents airflow restrictions, dust buildup,
+                cable-area contamination, and physical-layer risks without accessing systems
+                or disrupting operations.
+              </p>
+
+              <p className="text-gray-800 mb-6">
+                Download a sample report to see how Digital-ABB documents infrastructure
+                hygiene issues for IT managers.
+              </p>
+
+              <a
+                href="/Digital-ABB-Sample-Audit.pdf"
+                download
+                className="inline-block bg-blue-600 text-white px-6 py-3 rounded-full font-semibold shadow hover:bg-blue-500"
+              >
+                Download Sample Audit PDF
+              </a>
+            </div>
+          </div>
+
           <div className="max-w-5xl mx-auto px-6 py-10 grid md:grid-cols-2 gap-6">
 
             <div className="bg-white p-6 rounded shadow">
