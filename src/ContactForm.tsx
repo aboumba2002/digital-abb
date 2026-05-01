@@ -6,6 +6,20 @@ export default function ContactForm({ onClose }: { onClose: () => void }) {
 
       <form action="https://formspree.io/f/xlgzdjzr" method="POST" onSubmit={() => onClose()} className="space-y-4">
         <input type="hidden" name="_redirect" value="https://digital-abb.vercel.app/thank-you" />
+       
+       <div>
+          <label htmlFor="name" className="block text-sm font-semibold text-gray-700 mb-1">
+            Full Name (IT Contact) *
+          </label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            required
+            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
+            placeholder="John Doe"
+          />
+        </div>
 
         <div>
           <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-1">
