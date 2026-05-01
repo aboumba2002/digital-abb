@@ -1,8 +1,14 @@
 import { useState } from 'react';
 import ContactForm from './ContactForm';
+import ThankYou from './ThankYou';
 
 export default function App() {
   const [showForm, setShowForm] = useState(false);
+  const [showPilotForm, setShowPilotForm] = useState(false);
+
+  if (typeof window !== 'undefined' && window.location.pathname === '/thank-you') {
+    return <ThankYou />;
+  }
   return (
     <div className="bg-gray-50 min-h-screen text-gray-800">
       <main className="max-w-6xl mx-auto px-6 py-12 space-y-12">
@@ -37,6 +43,13 @@ export default function App() {
           <p className="mt-4 font-medium text-gray-900">
             Built for environments where downtime, airflow restriction, and contamination carry real operational risk.
           </p>
+        </section>
+
+        {/* Request Pilot Cleaning Button */}
+        <section className="max-w-5xl mx-auto px-6 py-10 text-center">
+          <button onClick={() => setShowPilotForm(true)} className="bg-blue-600 text-white px-6 py-3 rounded-full font-semibold shadow hover:bg-blue-500">
+            Request Free Pilot Cleaning
+          </button>
         </section>
 
         {/* About */}
@@ -324,10 +337,6 @@ export default function App() {
           </div>
 
           <div className="max-w-5xl mx-auto px-6 py-10">
-            <ContactForm />
-          </div>
-
-          <div className="max-w-5xl mx-auto px-6 py-10">
             <div className="bg-white p-6 rounded-2xl shadow text-center">
               <h3 className="text-xl font-bold mb-2">Or Contact Us Directly</h3>
               <p>Email: <a href="mailto:info@digital-abb.com" className="text-blue-600 font-medium">info@digital-abb.com</a></p>
@@ -338,6 +347,14 @@ export default function App() {
             </div>
           </div>
         </section>
+
+        {showPilotForm && (
+          <div className="fixed inset-0 bg-black/50 flex items-center justify-center p-4 z-50">
+            <div className="bg-white rounded-2xl shadow-xl p-8 max-w-md w-full">
+              <ContactForm onClose={() => setShowPilotForm(false)} />
+            </div>
+          </div>
+        )}
 
         {showForm && (
           <div className="fixed inset-0 bg-black/50 flex items-center justify-center p-4 z-50">
