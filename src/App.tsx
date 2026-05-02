@@ -1,10 +1,15 @@
 import { useState } from 'react';
 import ContactForm from './ContactForm';
 import ThankYou from './ThankYou';
+import {useEffect } from "react";
 
 export default function App() {
   const [showForm, setShowForm] = useState(false);
   const [showPilotForm, setShowPilotForm] = useState(false);
+
+  useEffect(() => {
+    setShowPilotForm(false);
+  }, []);  
 
   if (typeof window !== 'undefined' && window.location.pathname === '/thank-you') {
     return <ThankYou />;
