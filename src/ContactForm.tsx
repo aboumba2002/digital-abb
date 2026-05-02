@@ -6,7 +6,8 @@ export default function ContactForm({ onClose }: { onClose: () => void }) {
 
       <form action="https://formspree.io/f/xlgzdjzr" method="POST" className="space-y-4">
         <input type="hidden" name="_redirect" value="https://digital-abb.vercel.app/thank-you" />
-       
+        <input type="hidden" name="lead_type" value="Pilot Cleaning Request" />
+
        <div>
           <label htmlFor="name" className="block text-sm font-semibold text-gray-700 mb-1">
             Full Name (IT Contact) *

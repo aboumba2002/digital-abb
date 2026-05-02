@@ -382,7 +382,8 @@ export default function App() {
                   }, 500);
                 }}
                 className="space-y-4"
-              >
+              > 
+                <input type="hidden" name="lead_type" value="Sample Audit Download" />
                 <input
                   type="text"
                   name="name"
