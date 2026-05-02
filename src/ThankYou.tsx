@@ -10,12 +10,20 @@ export default function ThankYou() {
           Your request has been submitted. We will contact you within 24 hours.
         </p>
 
-        <a
-          href="https://digital-abb.vercel.app"
-          className="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-500"
-        >
-          Back to Website
-        </a>
+
+      <div className="mt-4 flex justify-between">
+       <a href="/" className="text-sm text-gray-600 underline">
+           Back to Website
+       </a>
+
+       <button
+          type="button"
+          onClick={() => window.location.href = "/"}
+          className="text-sm text-gray-600 underline"
+       >
+            Cancel
+        </button>
+       </div>
       </div>
     </div>
   );
