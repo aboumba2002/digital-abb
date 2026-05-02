@@ -62,9 +62,9 @@ export default function ContactForm({ onClose }: { onClose: () => void }) {
         </p>
       </form>
 
-      <button onClick={onClose} className="mt-4 text-sm text-gray-600 underline">
-        Cancel
-      </button>
+      <a href="/" className="mt-4 inline-block text-sm text-gray-600 underline">
+        Back to Website
+      </a>
     </div>
   );
 }
