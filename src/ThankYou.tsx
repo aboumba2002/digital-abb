@@ -11,7 +11,7 @@ export default function ThankYou() {
         </p>
 
         <a
-          href="/"
+          href="https://digital-abb.vercel.app"
           className="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-500"
         >
           Back to Website
