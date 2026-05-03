@@ -52,12 +52,12 @@ export default function App() {
 
         {/* Request Pilot Cleaning Button */}
         <section className="max-w-5xl mx-auto px-6 py-10 text-center">
-          <a
-            href="/contact"
-            className="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold shadow hover:bg-blue-500 transition-colors"
+          <button
+            onClick={() => setShowPilotForm(true)}
+            className="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold shadow hover:bg-blue-500 transition-colors"
           >
-              Request Free Pilot Cleaning
-          </a>
+            Request Free Pilot Cleaning
+          </button>
         </section>
 
         {/* About */}
@@ -424,6 +424,22 @@ export default function App() {
               >
                 Cancel
               </button>
+               {showPilotForm && (
+                  <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
+                    <div className="relative bg-white rounded-xl p-4 max-w-2xl w-full">
+      
+                      <button
+                       onClick={() => setShowPilotForm(false)}
+                       className="absolute top-2 right-3 text-gray-600 text-xl"
+                     >
+                       ×
+                     </button>
+
+                     <ContactForm />
+
+                    </div>
+                  </div>
+              )}
             </div>
           </div>
         )}
