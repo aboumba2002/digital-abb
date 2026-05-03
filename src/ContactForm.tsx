@@ -5,7 +5,7 @@ export default function ContactForm() {
       <p className="text-gray-600 mb-6">Limited pilot slots available this month. Fill out the form below and we'll be in touch within 24 hours.</p>
 
       <form action="https://formspree.io/f/xlgzdjzr" method="POST" className="space-y-4">
-        <input type="hidden" name="_redirect" value="https://digital-abb.vercel.app/thank-you" />
+        <input type="hidden" name="_redirect" value="https://digital-abb.netlify.app/thank-you" />
         <input type="hidden" name="lead_type" value="Pilot Cleaning Request" />
 
        <div>

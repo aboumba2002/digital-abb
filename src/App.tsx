@@ -52,9 +52,12 @@ export default function App() {
 
         {/* Request Pilot Cleaning Button */}
         <section className="max-w-5xl mx-auto px-6 py-10 text-center">
-          <button onClick={() => setShowPilotForm(true)} className="bg-blue-600 text-white px-6 py-3 rounded-full font-semibold shadow hover:bg-blue-500">
-            Request Free Pilot Cleaning
-          </button>
+          <a
+            href="/contact"
+            className="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold shadow hover:bg-blue-500 transition-colors"
+          >
+              Request Free Pilot Cleaning
+          </a>
         </section>
 
         {/* About */}
