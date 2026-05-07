@@ -1,7 +1,6 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import ContactForm from './ContactForm';
 import ThankYou from './ThankYou';
-import {useEffect } from "react";
 
 export default function App() {
   const [showForm, setShowForm] = useState(false);
@@ -9,18 +8,22 @@ export default function App() {
 
   useEffect(() => {
     setShowPilotForm(false);
-  }, []);  
+  }, []);
 
   if (typeof window !== 'undefined' && window.location.pathname === '/thank-you') {
     return <ThankYou />;
   }
+
   return (
     <div className="bg-gray-50 min-h-screen text-gray-800">
       <main className="max-w-6xl mx-auto px-6 py-12 space-y-12">
         <section className="max-w-5xl mx-auto px-6 py-16 bg-white rounded-2xl shadow">
           <div className="flex items-center gap-6 mb-6">
-            <img src="/logo.png" alt="Digital-ABB logo" className="w-20 h-20 rounded-xl shadow" />
-
+            <img
+              src="/logo.png"
+              alt="Digital-ABB logo"
+              className="w-20 h-20 rounded-xl shadow"
+            />
             <div>
               <h1 className="text-5xl font-bold text-blue-600">Digital-ABB</h1>
               <h2 className="text-xl font-semibold">
@@ -359,7 +362,7 @@ export default function App() {
         {showPilotForm && (
           <div className="fixed inset-0 bg-black/50 flex items-center justify-center p-4 z-50">
             <div className="bg-white rounded-2xl shadow-xl p-8 max-w-md w-full">
-              <ContactForm />
+              <ContactForm onClose={() => setShowPilotForm(false)} />
             </div>
           </div>
         )}
@@ -418,33 +421,16 @@ export default function App() {
                 </button>
               </form>
 
-              <button
-                onClick={() => setShowForm(false)}
-                className="mt-4 text-sm text-gray-600 underline"
-              >
-                Cancel
-              </button>
-               {showPilotForm && (
-                  <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
-                    <div className="relative bg-white rounded-xl p-4 max-w-2xl w-full">
-      
-                      <button
-                       onClick={() => setShowPilotForm(false)}
-                       className="absolute top-2 right-3 text-gray-600 text-xl"
-                     >
-                       ×
-                     </button>
-
-                     <ContactForm />
-
-                    </div>
-                  </div>
-              )}
+                <button
+                  onClick={() => setShowForm(false)}
+                  className="mt-4 text-sm text-gray-600 underline"
+                >
+                   Cancel
+                </button>
             </div>
           </div>
-        )}
+          )}
       </main>
     </div>
   )
 }
-
