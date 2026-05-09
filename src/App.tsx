@@ -567,6 +567,12 @@ export default function App() {
           </button>
         </section>
 
+        <div className="text-sm text-gray-500 mt-6">
+          Digital-ABB provides responsive IT support, hybrid infrastructure assistance,
+          airflow-awareness, and physical-layer operational reliability services
+          throughout Austin, Pflugerville, Round Rock, and surrounding Texas areas.
+        </div>
+
         {/* Pilot Form Modal */}
         {showPilotForm && (
           <div className="fixed inset-0 bg-black/50 flex items-center justify-center p-4 z-50">
