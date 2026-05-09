@@ -182,6 +182,106 @@ export default function App() {
           </div>
         </section>
 
+        {/* Maintenance Intervals */}
+        <section className="bg-white rounded-2xl shadow p-8">
+          <h3 className="text-3xl font-bold mb-4">Recommended Maintenance Intervals</h3>
+
+          <p className="text-gray-800 mb-6">
+            Infrastructure hygiene should be scheduled based on risk level, equipment density,
+            airflow sensitivity, and environmental conditions — not treated as general cleaning.
+          </p>
+
+          <div className="grid md:grid-cols-2 gap-4">
+            <div className="border rounded-xl p-5">
+              <h4 className="font-bold text-lg mb-2">Small Server Rooms</h4>
+              <p>Quarterly inspection / semiannual hygiene service</p>
+            </div>
+
+            <div className="border rounded-xl p-5">
+              <h4 className="font-bold text-lg mb-2">MSP Client Environments</h4>
+              <p>Quarterly rack and airflow pathway review</p>
+            </div>
+
+            <div className="border rounded-xl p-5">
+              <h4 className="font-bold text-lg mb-2">AI / GPU Racks</h4>
+              <p>Monthly thermal review / quarterly airflow maintenance</p>
+            </div>
+
+            <div className="border rounded-xl p-5">
+              <h4 className="font-bold text-lg mb-2">Deep Fan & Heatsink Cleaning</h4>
+              <p>Annual or bi-annual service during approved shutdown windows</p>
+            </div>
+          </div>
+        </section>
+
+        {/* Why In-House Cleaning Is Not Enough */}
+        <section className="bg-white rounded-2xl shadow p-8">
+          <h3 className="text-3xl font-bold mb-4">Why In-House Cleaning Is Not Enough</h3>
+
+          <p className="text-gray-800 mb-6">
+            Most in-house or janitorial cleaning focuses on visible surfaces. Infrastructure
+            hygiene requires a different approach because dust affects airflow paths, cooling
+            efficiency, cable areas, and equipment-adjacent components.
+          </p>
+
+          <div className="grid md:grid-cols-2 gap-6">
+            <div>
+              <h4 className="text-xl font-bold mb-3">General Cleaning Limitations</h4>
+              <ul className="space-y-2 text-gray-800">
+                <li>• No ESD-safe handling process</li>
+                <li>• No rack airflow assessment</li>
+                <li>• No fiber or cable-area contamination review</li>
+                <li>• No thermal-risk documentation</li>
+                <li>• No maintenance window planning</li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 className="text-xl font-bold mb-3">Digital-ABB Approach</h4>
+              <ul className="space-y-2 text-gray-800">
+                <li>✔ ESD-aware procedures</li>
+                <li>✔ No cable disconnect</li>
+                <li>✔ No system access</li>
+                <li>✔ Airflow and thermal-risk focus</li>
+                <li>✔ Visual reporting for IT managers</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        {/* Compliance & Standards Awareness */}
+        <section className="bg-white rounded-2xl shadow p-8">
+          <h3 className="text-3xl font-bold mb-4">Compliance & Standards Awareness</h3>
+
+          <p className="text-gray-800 mb-6">
+            Digital-ABB does not provide formal compliance certification. We provide
+            infrastructure hygiene services and documentation aligned with enterprise
+            environmental best practices and audit readiness expectations.
+          </p>
+
+          <div className="grid md:grid-cols-2 gap-4 text-gray-800">
+            <div className="border rounded-xl p-5">
+              <h4 className="font-bold mb-2">NFPA 75 Awareness</h4>
+              <p>Fire protection considerations for IT equipment environments.</p>
+            </div>
+
+            <div className="border rounded-xl p-5">
+              <h4 className="font-bold mb-2">ISO 14644-1 Reference</h4>
+              <p>Environmental particulate awareness for controlled spaces.</p>
+            </div>
+
+            <div className="border rounded-xl p-5">
+              <h4 className="font-bold mb-2">ESD-Safe Procedures</h4>
+              <p>Grounding-aware methods for live infrastructure areas.</p>
+            </div>
+
+            <div className="border rounded-xl p-5">
+              <h4 className="font-bold mb-2">OEM Airflow Expectations</h4>
+              <p>Supports conditions expected for reliable equipment operation.</p>
+            </div>
+          </div>
+        </section>
+
         {/* Pricing */}
         <section className="bg-white rounded-2xl shadow p-8">
           <h3 className="text-3xl font-bold text-center mb-6">Service On-Demand Pricing</h3>
@@ -321,4 +421,5 @@ export default function App() {
     </div>
   );
 }
+
 
