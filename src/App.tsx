@@ -6,6 +6,10 @@ export default function App() {
   const [showAuditForm, setShowAuditForm] = useState(false);
   const [showPilotForm, setShowPilotForm] = useState(false);
 
+  const sectionClass = "bg-white rounded-2xl shadow p-8";
+  const imageClass = "w-full max-w-4xl mx-auto rounded-2xl shadow-lg border mb-6 object-cover";
+  const smallImageClass = "w-full h-64 object-cover rounded-2xl shadow-lg border";
+
   if (typeof window !== 'undefined' && window.location.pathname === '/thank-you') {
     return <ThankYou />;
   }
@@ -95,7 +99,7 @@ export default function App() {
           <img
             src="/thermal-inspection.png"
             alt="Digital-ABB thermal inspection of AI infrastructure"
-            className="w-full rounded-2xl shadow-lg mb-6"
+            className={imageClass}
           />
 
           <p className="text-gray-800 mb-4">
@@ -200,6 +204,42 @@ export default function App() {
           </div>
         </section>
 
+        {/* Airflow Preservation & Thermal Path Management */}
+        <section className={sectionClass}>
+          <h3 className="text-3xl font-bold mb-4">
+            Airflow Preservation & Thermal Path Management
+          </h3>
+
+          <p className="text-gray-800 mb-6">
+            Dust contamination becomes a risk when it interferes with the airflow paths
+            your infrastructure was designed to rely on. Digital-ABB focuses on preserving
+            cold intake, warm exhaust, and cable-path airflow integrity.
+          </p>
+
+          <img
+            src="/sovereign-airflow.png"
+            alt="Digital-ABB airflow management diagram"
+            className={imageClass}
+          />
+
+          <div className="grid md:grid-cols-3 gap-4 text-gray-800">
+            <div className="border rounded-xl p-4">
+              <h4 className="font-bold mb-2">Cool Intake</h4>
+              <p>Maintain clear front-side airflow paths.</p>
+            </div>
+
+            <div className="border rounded-xl p-4">
+              <h4 className="font-bold mb-2">Thermal Transfer</h4>
+              <p>Reduce particulate buildup near heatsinks and fans.</p>
+            </div>
+
+            <div className="border rounded-xl p-4">
+              <h4 className="font-bold mb-2">Warm Exhaust</h4>
+              <p>Protect rear exhaust flow and prevent recirculation.</p>
+            </div>
+          </div>
+        </section>
+
         {/* Maintenance Intervals */}
         <section className="bg-white rounded-2xl shadow p-8">
           <h3 className="text-3xl font-bold mb-4">Recommended Maintenance Intervals</h3>
@@ -296,6 +336,56 @@ export default function App() {
             <div className="border rounded-xl p-5">
               <h4 className="font-bold mb-2">OEM Airflow Expectations</h4>
               <p>Supports conditions expected for reliable equipment operation.</p>
+            </div>
+          </div>
+        </section>
+
+        {/* Operational Infrastructure Work */}
+        <section className={sectionClass}>
+          <h3 className="text-3xl font-bold mb-4">
+            Operational Infrastructure Work
+          </h3>
+
+          <p className="text-gray-800 mb-6">
+            Digital-ABB works around live infrastructure with an ESD-aware, no-disconnect
+            approach focused on airflow, thermal reliability, and physical-layer protection.
+          </p>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            <div>
+              <img
+                src="/thermal-inspection.png"
+                alt="Thermal inspection of rack infrastructure"
+                className={smallImageClass}
+              />
+              <h4 className="font-bold mt-3">Thermal Inspection</h4>
+              <p className="text-gray-700 text-sm">
+                Identify hotspots and airflow restrictions before they become failures.
+              </p>
+            </div>
+
+            <div>
+              <img
+                src="/sovereign-airflow.png"
+                alt="Airflow management diagram"
+                className={smallImageClass}
+              />
+              <h4 className="font-bold mt-3">Airflow Management</h4>
+              <p className="text-gray-700 text-sm">
+                Preserve intake, exhaust, and cable-path airflow integrity.
+              </p>
+            </div>
+
+            <div>
+              <img
+                src="/logo.png"
+                alt="Digital-ABB audit documentation"
+                className={smallImageClass}
+              />
+              <h4 className="font-bold mt-3">Audit Documentation</h4>
+              <p className="text-gray-700 text-sm">
+                Provide visual reporting for risk review and maintenance planning.
+              </p>
             </div>
           </div>
         </section>
