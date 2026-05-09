@@ -68,26 +68,58 @@ export default function App() {
         </section>
 
         {/* Invisible Threat */}
-        <section className="bg-white rounded-2xl shadow p-8">
-          <h3 className="text-3xl font-bold mb-4">Why Dust Becomes an Operational Risk</h3>
-          <p className="text-gray-800 mb-4">
-            Most IT environments appear clean long before contamination becomes operationally dangerous.
-            Cooling systems pull airborne particulate into racks, heatsinks, fan assemblies,
-            and cable pathways.
+        <section className={sectionClass}>
+          <h3 className="text-3xl font-bold mb-4">
+            The Invisible Infrastructure Threat Most IT Rooms Ignore
+          </h3>
+
+          <h4 className="text-2xl font-semibold text-blue-600 mb-4">
+            Your Cooling System May Be Working Against You
+          </h4>
+
+          <p className="text-gray-800 mb-6">
+            Modern cooling systems continuously pull airborne particulate into racks,
+            heatsinks, fan assemblies, cable pathways, and exhaust channels.
+            Over time, contamination accumulates inside the exact airflow paths
+            critical to maintaining thermal stability and hardware reliability.
           </p>
 
-          <div className="grid md:grid-cols-2 gap-3 text-gray-800">
-            <p>✔ Restricted airflow paths</p>
-            <p>✔ Heatsink clogging</p>
-            <p>✔ Increased fan RPM and energy usage</p>
-            <p>✔ Thermal hotspots</p>
-            <p>✔ Premature hardware wear</p>
-            <p>✔ ESD exposure risk</p>
+          <p className="text-gray-800 mb-6">
+            Most environments appear visually clean long before airflow degradation
+            and thermal stress begin affecting infrastructure performance.
+          </p>
+
+          <div className="grid md:grid-cols-2 gap-4 text-gray-800">
+            <div className="border rounded-xl p-4">
+              ✔ Restricted airflow paths
+            </div>
+
+            <div className="border rounded-xl p-4">
+              ✔ Heatsink contamination buildup
+            </div>
+
+            <div className="border rounded-xl p-4">
+              ✔ Increased fan RPM and power usage
+            </div>
+
+            <div className="border rounded-xl p-4">
+              ✔ Thermal hotspots and heat retention
+            </div>
+
+            <div className="border rounded-xl p-4">
+              ✔ Accelerated hardware wear
+            </div>
+
+            <div className="border rounded-xl p-4">
+              ✔ Cooling inefficiency under AI workloads
+            </div>
           </div>
 
-          <p className="mt-6 font-semibold text-gray-900">
-            Dust becomes a thermal and operational problem long before it becomes visually obvious.
-          </p>
+          <div className="mt-8 border-l-4 border-blue-600 pl-6">
+            <p className="text-xl font-semibold italic text-gray-900">
+              “Dust becomes a thermal and operational problem long before it becomes visually obvious.”
+            </p>
+          </div>
         </section>
 
         {/* AI Infrastructure */}
