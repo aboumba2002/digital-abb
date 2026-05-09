@@ -91,20 +91,48 @@ export default function App() {
         </section>
 
         {/* AI Infrastructure */}
-        <section className="bg-white rounded-2xl shadow p-8">
+        <section className={sectionClass}>
           <h3 className="text-3xl font-bold mb-4">
-            AI Infrastructure Requires Higher Thermal Discipline
+            Operational Infrastructure Work
           </h3>
+
+          <p className="text-gray-800 mb-6">
+            Digital-ABB works around live infrastructure with an ESD-aware,
+            no-disconnect methodology focused on airflow preservation,
+            thermal reliability, and physical-layer risk reduction.
+          </p>
 
           <img
             src="/thermal-inspection.png"
-            alt="Digital-ABB thermal inspection of AI infrastructure"
-            className={imageClass}
+            alt="Digital-ABB thermal inspection of enterprise infrastructure"
+            className="w-full max-w-5xl mx-auto rounded-2xl shadow-lg mb-6"
           />
 
-          <p className="text-gray-800 mb-4">
-            AI and GPU workloads sustain elevated thermal loads...
-          </p>
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="border rounded-xl p-5">
+              <h4 className="font-bold mb-2">Thermal Inspection</h4>
+              <p>
+                Identify airflow restrictions and abnormal thermal buildup
+                before infrastructure degradation occurs.
+              </p>
+            </div>
+
+            <div className="border rounded-xl p-5">
+              <h4 className="font-bold mb-2">Airflow Protection</h4>
+              <p>
+                Preserve cold intake and warm exhaust pathways to maintain
+                stable operating temperatures.
+              </p>
+            </div>
+
+            <div className="border rounded-xl p-5">
+              <h4 className="font-bold mb-2">Infrastructure Hygiene</h4>
+              <p>
+                Reduce particulate contamination affecting heatsinks,
+                fans, cable paths, and cooling efficiency.
+              </p>
+            </div>
+          </div>
         </section>
 
         <section className="bg-white rounded-2xl shadow p-8">
