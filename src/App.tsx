@@ -135,7 +135,7 @@ export default function App() {
           </p>
 
           <img
-            src="/thermal-inspection.png"
+            src="/thermal-inspection-ai-server.png"
             alt="Digital-ABB thermal inspection of enterprise infrastructure"
             className="w-full max-w-5xl mx-auto rounded-2xl shadow-lg mb-6"
           />
@@ -173,7 +173,7 @@ export default function App() {
           </h3>
 
           <img
-            src="/sovereign-airflow.png"
+            src="/server-rack-airflow-management.png"
             alt="Digital-ABB Sovereign AI Airflow Management"
             className="w-full rounded-2xl shadow-lg mb-6"
           />
@@ -277,7 +277,7 @@ export default function App() {
           </p>
 
           <img
-            src="/sovereign-airflow.png"
+            src="/server-rack-airflow-management.png"
             alt="Digital-ABB airflow management diagram"
             className={imageClass}
           />
@@ -414,7 +414,7 @@ export default function App() {
           <div className="grid md:grid-cols-3 gap-6">
             <div>
               <img
-                src="/thermal-inspection.png"
+                src="/thermal-inspection-ai-server.png"
                 alt="Thermal inspection of rack infrastructure"
                 className={smallImageClass}
               />
@@ -426,7 +426,7 @@ export default function App() {
 
             <div>
               <img
-                src="/sovereign-airflow.png"
+                src="/server-rack-airflow-management.png"
                 alt="Airflow management diagram"
                 className={smallImageClass}
               />
