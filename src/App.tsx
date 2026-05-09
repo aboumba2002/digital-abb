@@ -458,6 +458,62 @@ export default function App() {
           </ul>
         </section>
 
+        {/* MSP Partnership Section */}
+        <section className={sectionClass}>
+          <h3 className="text-3xl font-bold mb-4">
+            MSP Infrastructure Partnership
+          </h3>
+
+          <p className="text-gray-800 text-lg mb-6">
+            We reduce physical-layer risks your remote monitoring tools cannot see.
+          </p>
+
+          <p className="text-gray-800 mb-6">
+            Most MSP platforms monitor CPU, memory, storage, and network performance —
+            but they cannot detect airflow obstruction, heatsink contamination,
+            particulate accumulation, thermal hotspots, or environmental degradation
+            inside client infrastructure environments.
+          </p>
+
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="border rounded-xl p-6">
+              <h4 className="text-xl font-bold mb-3">
+                What Digital-ABB Provides
+              </h4>
+
+              <ul className="space-y-2 text-gray-800">
+                <li>✔ Thermal-risk assessments</li>
+                <li>✔ Airflow inspections</li>
+                <li>✔ Rack contamination reviews</li>
+                <li>✔ Cable airflow analysis</li>
+                <li>✔ Preventive infrastructure hygiene</li>
+                <li>✔ Visual audit documentation</li>
+              </ul>
+            </div>
+
+            <div className="border rounded-xl p-6 bg-blue-50">
+              <h4 className="text-xl font-bold mb-3">
+                MSP Partnership Benefits
+              </h4>
+
+              <ul className="space-y-2 text-gray-800">
+                <li>✔ Reduced emergency hardware events</li>
+                <li>✔ Improved client infrastructure reliability</li>
+                <li>✔ Increased service differentiation</li>
+                <li>✔ Additional recurring service opportunities</li>
+                <li>✔ No added engineering workload</li>
+                <li>✔ White-label partnership options</li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="mt-8 border-l-4 border-blue-600 pl-6">
+            <p className="text-xl font-semibold text-gray-900 italic">
+              “Digital-ABB helps MSPs deliver infrastructure reliability beyond software monitoring.”
+            </p>
+          </div>
+        </section>
+
         {/* Contact */}
         <section className="border-t pt-10 flex flex-col md:flex-row justify-between gap-6 items-start md:items-center">
           <div>
@@ -557,6 +613,5 @@ export default function App() {
     </div>
   );
 }
-
 
 
