@@ -88,21 +88,39 @@ export default function App() {
 
         {/* AI Infrastructure */}
         <section className="bg-white rounded-2xl shadow p-8">
-          <h3 className="text-3xl font-bold mb-4">AI Infrastructure Requires Higher Thermal Discipline</h3>
-          <p className="text-gray-800 mb-4">
-            AI and GPU workloads sustain elevated thermal loads for longer durations than traditional
-            infrastructure. High-density compute environments operate with tighter cooling tolerances,
-            making airflow obstruction and particulate accumulation significantly more dangerous.
-          </p>
+          <h3 className="text-3xl font-bold mb-4">
+            AI Infrastructure Requires Higher Thermal Discipline
+          </h3>
 
-          <ul className="space-y-2 text-gray-800">
-            <li>✔ Restrict heatsink airflow</li>
-            <li>✔ Reduce heat dissipation</li>
-            <li>✔ Increase cooling costs</li>
-            <li>✔ Create localized hotspots</li>
-            <li>✔ Trigger thermal throttling</li>
-            <li>✔ Reduce infrastructure lifespan</li>
-          </ul>
+          <img
+            src="/thermal-inspection.png"
+            alt="Digital-ABB thermal inspection of AI infrastructure"
+            className="w-full rounded-2xl shadow-lg mb-6"
+          />
+
+          <p className="text-gray-800 mb-4">
+            AI and GPU workloads sustain elevated thermal loads...
+          </p>
+        </section>
+
+        <section className="bg-white rounded-2xl shadow p-8">
+          <h3 className="text-3xl font-bold mb-4">
+            Sovereign AI Airflow Engineering
+          </h3>
+
+          <img
+            src="/sovereign-airflow.png"
+            alt="Digital-ABB Sovereign AI Airflow Management"
+            className="w-full rounded-2xl shadow-lg mb-6"
+          />
+
+          <p className="text-gray-800 text-lg leading-relaxed">
+            Digital-ABB designs and maintains airflow-aware edge infrastructure
+            environments optimized for AI nodes, thermal stability, and predictive
+            reliability. Our approach combines environmental hygiene, directed airflow
+            management, particulate reduction, and thermal-risk monitoring to preserve
+            long-term infrastructure performance.
+          </p>
         </section>
 
         {/* Services */}
@@ -421,5 +439,6 @@ export default function App() {
     </div>
   );
 }
+
 
 
