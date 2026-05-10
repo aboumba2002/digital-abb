@@ -1,1 +1,6 @@
 @import "tailwindcss";
+
+/* Audit Section Styles */
+section#audit {
+  scroll-margin-top: 80px;
+}

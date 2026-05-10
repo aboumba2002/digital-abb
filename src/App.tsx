@@ -16,10 +16,21 @@ export default function App() {
 
   return (
     <div className="bg-gray-50 min-h-screen text-gray-900">
+      <nav className="sticky top-0 z-50 bg-white/90 backdrop-blur border-b shadow-sm">
+        <div className="max-w-6xl mx-auto px-6 py-4 flex flex-wrap gap-4 justify-center text-sm font-semibold text-gray-700">
+          <a href="#home" className="hover:text-blue-600">Home</a>
+          <a href="#services" className="hover:text-blue-600">Services</a>
+          <a href="#airflow" className="hover:text-blue-600">Airflow & Thermal</a>
+          <a href="#environmental" className="hover:text-blue-600">Environmental Monitoring</a>
+          <a href="#msp" className="hover:text-blue-600">MSP Partners</a>
+          <a href="#audit" className="hover:text-blue-600">Audit Report</a>
+          <a href="#contact" className="hover:text-blue-600">Contact</a>
+        </div>
+      </nav>
       <main className="max-w-6xl mx-auto px-6 py-12 space-y-12">
 
         {/* Hero */}
-        <section className="bg-white rounded-2xl shadow p-8 md:p-12">
+        <section id="home" className="bg-white rounded-2xl shadow p-8 md:p-12">
           <div className="flex flex-col md:flex-row items-start md:items-center gap-6 mb-6">
             <img src="/logo.png" alt="Digital-ABB logo" className="w-24 h-24 rounded-xl shadow" />
 
@@ -188,13 +199,16 @@ export default function App() {
         </section>
 
         {/* Services */}
-        <section className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          <div className="bg-white rounded-2xl shadow p-6 border-t-4 border-blue-600">
-            <h3 className="text-xl font-bold mb-3">Infrastructure Hygiene</h3>
-            <p className="text-gray-800">
-              Condition-based particulate decontamination using ESD-safe tools and airflow-preserving procedures.
-            </p>
-          </div>
+        <section id="services" className={sectionClass}>
+          <h3 className="text-3xl font-bold mb-6">Services</h3>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="bg-white rounded-2xl shadow p-6 border-t-4 border-blue-600">
+              <h3 className="text-xl font-bold mb-3">Infrastructure Hygiene</h3>
+              <p className="text-gray-800">
+                Condition-based particulate decontamination using ESD-safe tools and airflow-preserving procedures.
+              </p>
+            </div>
 
           <div className="bg-white rounded-2xl shadow p-6 border-t-4 border-blue-600">
             <h3 className="text-xl font-bold mb-3">Thermal & Airflow Preservation</h3>
@@ -215,6 +229,7 @@ export default function App() {
             <p className="text-gray-800">
               PM2.5 / PM10 observation, thermal trend review, and maintenance interval recommendations.
             </p>
+          </div>
           </div>
         </section>
 
@@ -265,7 +280,7 @@ export default function App() {
         </section>
 
         {/* Airflow Preservation & Thermal Path Management */}
-        <section className={sectionClass}>
+        <section id="airflow" className={sectionClass}>
           <h3 className="text-3xl font-bold mb-4">
             Airflow Preservation & Thermal Path Management
           </h3>
@@ -298,6 +313,31 @@ export default function App() {
               <p>Protect rear exhaust flow and prevent recirculation.</p>
             </div>
           </div>
+        </section>
+
+        {/* Environmental Risk Monitoring */}
+        <section id="environmental" className={sectionClass}>
+          <h2 className="text-3xl font-bold mb-4">
+            Environmental Risk Monitoring
+          </h2>
+
+          <img
+            src="/environmental-risk-monitoring.png"
+            alt="Digital-ABB environmental risk monitoring and infrastructure protection"
+            className="w-full max-w-4xl h-[420px] mx-auto rounded-2xl shadow-lg border mb-8 object-cover"
+          />
+
+          <p className="text-gray-700 leading-8 mb-4">
+            Digital-ABB supports environmental risk awareness for hybrid infrastructure environments through monitoring approaches focused on water intrusion, airflow obstruction, thermal imbalance, humidity variation, and physical-layer operating conditions.
+          </p>
+
+          <p className="text-gray-700 leading-8">
+            Our objective is to help organizations identify environmental risks early — before they contribute to downtime, hardware damage, or operational disruption.
+          </p>
+
+          <p className="text-sm text-gray-500 mt-4 italic">
+            Detecting environmental risk before downtime happens.
+          </p>
         </section>
 
         {/* Maintenance Intervals */}
@@ -451,7 +491,7 @@ export default function App() {
         </section>
 
         {/* Pricing */}
-        <section className="bg-white rounded-2xl shadow p-8">
+        <section id="audit" className={sectionClass}>
           <h3 className="text-3xl font-bold text-center mb-6">Service On-Demand Pricing</h3>
 
           <div className="grid md:grid-cols-3 gap-6 text-center">
@@ -491,7 +531,7 @@ export default function App() {
         </section>
 
         {/* MSP Partnership Section */}
-        <section className={sectionClass}>
+        <section id="msp" className={sectionClass}>
           <h3 className="text-3xl font-bold mb-4">
             MSP Infrastructure Partnership
           </h3>
@@ -547,7 +587,7 @@ export default function App() {
         </section>
 
         {/* Contact */}
-        <section className="border-t pt-10 flex flex-col md:flex-row justify-between gap-6 items-start md:items-center">
+        <section id="contact" className={sectionClass}>
           <div>
             <h3 className="text-2xl font-bold">Digital-ABB</h3>
             <p>Pflugerville, TX | Serving the Austin Tech Corridor</p>
