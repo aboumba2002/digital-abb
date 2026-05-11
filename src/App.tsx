@@ -329,6 +329,8 @@ export default function App() {
 
           <p className="text-gray-700 leading-8 mb-4">
             Digital-ABB supports environmental risk awareness for hybrid infrastructure environments through monitoring approaches focused on water intrusion, airflow obstruction, thermal imbalance, humidity variation, and physical-layer operating conditions.
+            Our objective is to help organizations identify environmental risks early — before they contribute to downtime, hardware damage, or operational disruptio
+            Detecting environmental risk before downtime happens.
           </p>
 
           <p className="text-gray-700 leading-8">
