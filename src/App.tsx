@@ -78,6 +78,26 @@ export default function App() {
             </button>
           </div>
         </section>
+        <section className="bg-gradient-to-r from-blue-600 to-blue-800 text-white rounded-2xl shadow-xl p-8 md:p-12">
+          <h3 className="text-3xl font-bold mb-4">
+            Hyperscale-Inspired Infrastructure Logic
+          </h3>
+
+          <p className="text-xl leading-relaxed max-w-4xl">
+            Data is permanent. Compute is replaceable.
+          </p>
+
+          <p className="mt-6 text-lg leading-8 max-w-5xl text-blue-100">
+            Digital-ABB applies hyperscale-inspired thinking to physical-layer infrastructure reliability.
+            Modern environments depend on stable airflow, thermal consistency, environmental awareness,
+            and operational continuity to protect storage, compute, and network infrastructure from
+            preventable failure conditions.
+          </p>
+
+          <p className="mt-4 text-blue-200 italic">
+            Protecting stable physical operations within hybrid infrastructure environments.
+          </p>
+        </section>
 
         {/* Invisible Threat */}
         <section className={sectionClass}>
