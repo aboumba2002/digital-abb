@@ -40,6 +40,7 @@ export default function App() {
               </h1>
               <h2 className="text-2xl font-semibold mt-2">
                 Physical Layer Protection for Mission-Critical IT Environments
+                Preventing catastrophic downtime from small physical failures.
               </h2>
             </div>
           </div>
@@ -47,6 +48,7 @@ export default function App() {
           <p className="text-lg text-gray-800 max-w-4xl">
             Digital-ABB protects server rooms, racks, and AI infrastructure from airflow degradation,
             particulate contamination, water intrusion risk, and thermal reliability failures before downtime occurs.
+            AI-powered infrastructure assurance through infrastructure intelligence, predictive maintenance, and smart operational response.
           </p>
 
           <p className="text-gray-800 max-w-4xl mt-4">
