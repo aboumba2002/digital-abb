@@ -38,31 +38,30 @@ export default function App() {
               <h1 className="text-5xl md:text-6xl font-extrabold text-blue-600 leading-tight">
                 Digital-ABB
               </h1>
-              <h2 className="text-2xl font-semibold mt-2">
-                Physical Layer Protection for Mission-Critical IT Environments
+              <h2 className="text-2xl md:text-3xl font-semibold mt-3 max-w-4xl leading-relaxed">
                 Preventing catastrophic downtime from small physical failures.
               </h2>
             </div>
           </div>
 
-          <p className="text-lg text-gray-800 max-w-4xl">
-            Digital-ABB protects server rooms, racks, and AI infrastructure from airflow degradation,
-            particulate contamination, water intrusion risk, and thermal reliability failures before downtime occurs.
-
-            AI-powered infrastructure assurance through infrastructure intelligence, predictive maintenance, and smart operational response.
+          <p className="text-xl text-gray-700 mt-5 max-w-4xl leading-8">
+            Digital-ABB delivers AI-powered infrastructure assurance for server rooms,
+            AI systems, and mission-critical business environments through predictive
+            infrastructure intelligence, thermal risk detection, and operational continuity services.
           </p>
 
-          <p className="text-gray-800 max-w-4xl mt-4">
-            We help organizations maintain stable physical operations by improving airflow integrity,
-            thermal visibility, infrastructure hygiene, and environmental risk awareness.
+          <p className="text-gray-800 max-w-4xl mt-6 leading-8">
+            We identify thermal drift, airflow degradation, contamination buildup,
+            environmental instability, and infrastructure risks before they escalate into
+            outages, operational downtime, or expensive hardware failures.
           </p>
 
           <div className="mt-6 flex flex-wrap gap-4 font-semibold">
-            <span>✔ No Downtime</span>
-            <span>✔ ESD-Safe Procedures</span>
-            <span>✔ Airflow Integrity</span>
-            <span>✔ Thermal Risk Mitigation</span>
-            <span>✔ Environmental Risk Awareness</span>
+            <span>✔ Operational Continuity</span>
+            <span>✔ Infrastructure Intelligence</span>
+            <span>✔ Predictive Risk Detection</span>
+            <span>✔ Thermal Stability Protection</span>
+            <span>✔ AI Infrastructure Assurance</span>
           </div>
 
           <div className="mt-8 flex flex-col sm:flex-row gap-4">
@@ -100,6 +99,51 @@ export default function App() {
           <p className="mt-4 text-blue-200 italic">
             Protecting stable physical operations within hybrid infrastructure environments.
           </p>
+        </section>
+
+        <section className="bg-red-50 border border-red-200 rounded-3xl shadow-xl p-8 md:p-12">
+          <h3 className="text-4xl font-bold mb-6 text-red-700">
+            One Infrastructure Failure Can Erase Months of Revenue
+          </h3>
+
+          <p className="text-lg text-gray-800 leading-8 max-w-5xl mb-8">
+            Most business outages do not begin with cyberattacks or software bugs.
+            They begin with small physical failures:
+            heat buildup, airflow obstruction, cooling degradation, contamination,
+            water intrusion, or unnoticed hardware stress.
+          </p>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="bg-white rounded-2xl p-6 shadow">
+              <h4 className="font-bold text-xl mb-3">Dental Clinic</h4>
+              <p className="text-4xl font-black text-red-600 mb-2">$8,000</p>
+              <p className="text-gray-700">
+                Estimated loss from a 4-hour infrastructure outage.
+              </p>
+            </div>
+
+            <div className="bg-white rounded-2xl p-6 shadow">
+              <h4 className="font-bold text-xl mb-3">Law Firm</h4>
+              <p className="text-4xl font-black text-red-600 mb-2">$15,000+</p>
+              <p className="text-gray-700">
+                Potential billable-hour impact from one morning offline.
+              </p>
+            </div>
+
+            <div className="bg-white rounded-2xl p-6 shadow">
+              <h4 className="font-bold text-xl mb-3">AI Infrastructure</h4>
+              <p className="text-4xl font-black text-red-600 mb-2">$50,000+</p>
+              <p className="text-gray-700">
+                GPU and AI hardware risk caused by thermal instability.
+              </p>
+            </div>
+          </div>
+
+          <div className="mt-10 border-l-4 border-red-600 pl-6">
+            <p className="text-2xl font-bold italic text-gray-900">
+              "We do not sell IT support. We sell operational continuity."
+            </p>
+          </div>
         </section>
 
         {/* Invisible Threat */}
@@ -140,7 +184,7 @@ export default function App() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             <div className="bg-white rounded-2xl shadow p-6 border-t-4 border-blue-600">
-              <h3 className="text-xl font-bold mb-3">Infrastructure Hygiene</h3>
+              <h3 className="text-xl font-bold mb-3">Predictive Infrastructure Maintenance</h3>
               <p className="text-gray-800">
                 Condition-based particulate decontamination using ESD-safe tools and airflow-preserving procedures.
               </p>
@@ -238,7 +282,7 @@ export default function App() {
             </div>
 
             <div className="border rounded-xl p-5">
-              <h4 className="font-bold mb-2">Infrastructure Hygiene</h4>
+              <h4 className="font-bold mb-2">Predictive Infrastructure Maintenance</h4>
               <p>Reduce particulate contamination affecting heatsinks, fans, cable paths, and cooling efficiency.</p>
             </div>
           </div>
@@ -334,7 +378,7 @@ export default function App() {
             </div>
 
             <div className="border-l-4 border-blue-600 pl-6">
-              <h4 className="text-xl font-bold mb-2 text-gray-900 italic">Infrastructure Hygiene</h4>
+              <h4 className="text-xl font-bold mb-2 text-gray-900 italic">Predictive Infrastructure Maintenance</h4>
               <p className="text-gray-600">
                 Particulate management supports mission-critical reliability, airflow efficiency, and audit readiness.
               </p>
@@ -376,7 +420,7 @@ export default function App() {
 
         {/* In-house cleaning */}
         <section className={sectionClass}>
-          <h3 className="text-3xl font-bold mb-4">Why In-House Cleaning Is Not Enough</h3>
+          <h3 className="text-3xl font-bold mb-4">Why Traditional Facility Maintenance Cannot Protect Modern Infrastructure</h3>
 
           <p className="text-gray-800 mb-6">
             Most in-house or janitorial cleaning focuses on visible surfaces. Infrastructure hygiene
@@ -508,29 +552,69 @@ export default function App() {
 
         {/* Pricing */}
         <section className={sectionClass}>
-          <h3 className="text-3xl font-bold text-center mb-6">Service On-Demand Pricing</h3>
+          <h3 className="text-4xl font-bold text-center mb-4">
+            Infrastructure Assurance Plans
+          </h3>
 
-          <div className="grid md:grid-cols-3 gap-6 text-center">
-            <div className="border rounded-xl p-6">
-              <h4 className="text-xl font-bold">1 Rack</h4>
-              <p className="text-2xl font-bold text-blue-600">$250 – $400</p>
-              <p className="text-gray-600">Per service call</p>
+          <p className="text-center text-lg text-gray-700 max-w-4xl mx-auto mb-10">
+            Predictable monthly protection against catastrophic downtime,
+            thermal instability, and physical infrastructure failure.
+          </p>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="border rounded-2xl p-8 shadow">
+              <h4 className="text-2xl font-bold mb-3">Essential Protection</h4>
+
+              <p className="text-5xl font-black text-blue-600 mb-4">
+                $249
+                <span className="text-lg font-medium text-gray-500">/mo</span>
+              </p>
+
+              <ul className="space-y-3 text-gray-700">
+                <li>&#10004; Infrastructure intelligence audit</li>
+                <li>&#10004; Thermal drift monitoring</li>
+                <li>&#10004; Environmental risk review</li>
+                <li>&#10004; Airflow integrity analysis</li>
+                <li>&#10004; Monthly reporting</li>
+              </ul>
             </div>
 
-            <div className="border rounded-xl p-6">
-              <h4 className="text-xl font-bold">2–5 Racks</h4>
-              <p className="text-2xl font-bold text-blue-600">$200 – $300</p>
-              <p className="text-gray-600">Per rack / visit</p>
+            <div className="border-2 border-blue-600 rounded-2xl p-8 shadow-xl bg-blue-50">
+              <h4 className="text-2xl font-bold mb-3">
+                Operational Continuity
+              </h4>
+
+              <p className="text-5xl font-black text-blue-600 mb-4">
+                $450
+                <span className="text-lg font-medium text-gray-500">/mo</span>
+              </p>
+
+              <ul className="space-y-3 text-gray-700">
+                <li>&#10004; Predictive infrastructure intelligence</li>
+                <li>&#10004; Priority infrastructure response</li>
+                <li>&#10004; Stateless rapid swap support</li>
+                <li>&#10004; Physical Integrity Reports</li>
+                <li>&#10004; Quarterly continuity review</li>
+              </ul>
             </div>
 
-            <div className="border rounded-xl p-6 bg-blue-50">
-              <h4 className="text-xl font-bold">Managed Monitoring</h4>
-              <p className="text-2xl font-bold text-blue-600">Custom Quote</p>
-              <p className="text-gray-600">Environmental and infrastructure monitoring</p>
+            <div className="border rounded-2xl p-8 shadow">
+              <h4 className="text-2xl font-bold mb-3">Enterprise Assurance</h4>
+
+              <p className="text-4xl font-black text-blue-600 mb-4">
+                Custom
+              </p>
+
+              <ul className="space-y-3 text-gray-700">
+                <li>&#10004; AI infrastructure protection</li>
+                <li>&#10004; Environmental intelligence</li>
+                <li>&#10004; Managed subcontracting</li>
+                <li>&#10004; Insurance-ready reporting</li>
+                <li>&#10004; Multi-site operational protection</li>
+              </ul>
             </div>
           </div>
         </section>
-
         {/* Contact */}
         <section id="contact" className={sectionClass}>
           <div className="flex flex-col md:flex-row justify-between items-start gap-8">
@@ -567,9 +651,9 @@ export default function App() {
         </section>
 
         <div className="text-sm text-gray-500 mt-6">
-          Digital-ABB provides responsive IT support, hybrid infrastructure assistance,
-          airflow-awareness, environmental risk monitoring, and physical-layer operational reliability
-          services throughout Austin, Pflugerville, Round Rock, and surrounding Texas areas.
+          Digital-ABB provides AI-powered infrastructure assurance,
+          operational continuity protection, environmental intelligence,
+          and predictive physical-layer risk management for modern business infrastructure.
         </div>
       </main>
 
