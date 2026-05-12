@@ -48,6 +48,7 @@ export default function App() {
           <p className="text-lg text-gray-800 max-w-4xl">
             Digital-ABB protects server rooms, racks, and AI infrastructure from airflow degradation,
             particulate contamination, water intrusion risk, and thermal reliability failures before downtime occurs.
+
             AI-powered infrastructure assurance through infrastructure intelligence, predictive maintenance, and smart operational response.
           </p>
 
