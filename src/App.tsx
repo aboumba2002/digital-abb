@@ -640,7 +640,7 @@ export default function App() {
         </section>
         {/* Contact */}
         <section id="contact" className={sectionClass}>
-          <div className="flex flex-col md:flex-row justify-between items-start gap-8">
+          <div className="grid md:grid-cols-[1fr_420px] gap-8 items-start">
             <div>
               <h3 className="text-2xl font-bold text-blue-600">Digital-ABB</h3>
               <p>Pflugerville, TX | Serving the Austin Tech Corridor</p>
@@ -653,23 +653,54 @@ export default function App() {
               <p className="mt-3 text-gray-600">
                 Protecting stable physical operations within hybrid infrastructure environments.
               </p>
+
+              <div className="mt-6 flex flex-col sm:flex-row gap-4">
+                <button
+                  onClick={() => setShowAuditForm(true)}
+                  className="bg-gray-900 text-white px-6 py-3 rounded-full font-semibold hover:bg-gray-800 transition"
+                >
+                  Download Sample Audit Report
+                </button>
+
+                <button
+                  onClick={() => setShowPilotForm(true)}
+                  className="bg-blue-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-blue-500 transition"
+                >
+                  Book Audit
+                </button>
+              </div>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4">
-              <button
-                onClick={() => setShowAuditForm(true)}
-                className="bg-gray-900 text-white px-6 py-3 rounded-full font-semibold hover:bg-gray-800 transition"
-              >
-                Download Sample Audit Report
-              </button>
+            <form
+              name="contact"
+              method="POST"
+              data-netlify="true"
+              className="w-full space-y-4 rounded-2xl border border-gray-200 bg-gray-50 p-6"
+            >
+              <input type="hidden" name="form-name" value="contact" />
+
+              <input
+                type="email"
+                name="email"
+                placeholder="Your email"
+                required
+                className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-600"
+              />
+
+              <textarea
+                name="message"
+                placeholder="Message"
+                rows={5}
+                className="w-full resize-none border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-600"
+              ></textarea>
 
               <button
-                onClick={() => setShowPilotForm(true)}
-                className="bg-blue-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-blue-500 transition"
+                type="submit"
+                className="w-full bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold shadow hover:bg-blue-500 transition"
               >
-                Book Audit
+                Send
               </button>
-            </div>
+            </form>
           </div>
         </section>
 
