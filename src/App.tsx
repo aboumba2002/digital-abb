@@ -604,69 +604,38 @@ export default function App() {
           </div>
         </section>
 
-        {/* Pricing */}
-        <section className={sectionClass}>
-          <h3 className="text-4xl font-bold text-center mb-4">
-            Infrastructure Assurance Plans
-          </h3>
+        {/* Project Scope */}
+        <section className="bg-white rounded-3xl p-12 border border-gray-200">
+          <div className="max-w-3xl mx-auto text-center">
+            <h3 className="text-3xl font-black mb-4">
+              Infrastructure-Specific Estimations
+            </h3>
+            <p className="text-gray-600 mb-10">
+              Every environment is unique. We provide tailored remediation plans based on your hardware density,
+              ownership model (Owned vs. Leased), and particulate exposure levels.
+            </p>
 
-          <p className="text-center text-lg text-gray-700 max-w-4xl mx-auto mb-10">
-            Predictable monthly protection against catastrophic downtime,
-            thermal instability, and physical infrastructure failure.
-          </p>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="border rounded-2xl p-8 shadow">
-              <h4 className="text-2xl font-bold mb-3">Essential Protection</h4>
-
-              <p className="text-5xl font-black text-blue-600 mb-4">
-                $249
-                <span className="text-lg font-medium text-gray-500">/mo</span>
-              </p>
-
-              <ul className="space-y-3 text-gray-700">
-                <li>&#10004; Infrastructure intelligence audit</li>
-                <li>&#10004; Thermal drift monitoring</li>
-                <li>&#10004; Environmental risk review</li>
-                <li>&#10004; Airflow integrity analysis</li>
-                <li>&#10004; Monthly reporting</li>
-              </ul>
+            <div className="grid md:grid-cols-2 gap-4 text-left mb-10">
+              <div className="p-4 bg-gray-50 rounded-xl border">
+                <span className="font-bold block">1. Site Assessment</span>
+                <span className="text-sm text-gray-500">
+                  Visual & Thermal baseline of existing racks.
+                </span>
+              </div>
+              <div className="p-4 bg-gray-50 rounded-xl border">
+                <span className="font-bold block">2. Asset Inventory</span>
+                <span className="text-sm text-gray-500">
+                  Classification of owned gear ($2,500+) vs. leased nodes.
+                </span>
+              </div>
             </div>
 
-            <div className="border-2 border-blue-600 rounded-2xl p-8 shadow-xl bg-blue-50">
-              <h4 className="text-2xl font-bold mb-3">
-                Operational Continuity
-              </h4>
-
-              <p className="text-5xl font-black text-blue-600 mb-4">
-                $450
-                <span className="text-lg font-medium text-gray-500">/mo</span>
-              </p>
-
-              <ul className="space-y-3 text-gray-700">
-                <li>&#10004; Predictive infrastructure intelligence</li>
-                <li>&#10004; Priority infrastructure response</li>
-                <li>&#10004; Stateless rapid swap support</li>
-                <li>&#10004; Physical Integrity Reports</li>
-                <li>&#10004; Quarterly continuity review</li>
-              </ul>
-            </div>
-
-            <div className="border rounded-2xl p-8 shadow">
-              <h4 className="text-2xl font-bold mb-3">Enterprise Assurance</h4>
-
-              <p className="text-4xl font-black text-blue-600 mb-4">
-                Custom
-              </p>
-
-              <ul className="space-y-3 text-gray-700">
-                <li>&#10004; AI infrastructure protection</li>
-                <li>&#10004; Environmental intelligence</li>
-                <li>&#10004; Managed subcontracting</li>
-                <li>&#10004; Insurance-ready reporting</li>
-                <li>&#10004; Multi-site operational protection</li>
-              </ul>
-            </div>
+            <button
+              onClick={() => setShowAuditForm(true)}
+              className="bg-blue-600 text-white px-10 py-5 rounded-2xl font-bold text-xl hover:bg-blue-700 transition shadow-xl"
+            >
+              Request a Technical Estimate
+            </button>
           </div>
         </section>
         {/* Contact */}
