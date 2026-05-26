@@ -45,7 +45,7 @@ export default function App() {
           </div>
 
           <p className="text-xl text-gray-700 mt-5 max-w-4xl leading-8">
-            Digital-ABB delivers AI-powered physical risk intelligence for server rooms,
+            Digital-ABB delivers AI-enhanced Physical Risk Intelligence for server rooms,
             AI systems, and mission-critical business environments through predictive
             infrastructure intelligence, thermal risk detection, and operational continuity services.
           </p>
@@ -782,7 +782,7 @@ export default function App() {
         </section>
 
         <div className="text-sm text-gray-500 mt-6">
-          Digital-ABB provides AI-powered physical risk intelligence,
+          Digital-ABB provides AI-enhanced Physical Risk Intelligence,
           operational continuity protection, environmental intelligence,
           and predictive physical-layer risk management for modern business infrastructure.
         </div>
