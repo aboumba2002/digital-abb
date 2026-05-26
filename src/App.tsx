@@ -307,6 +307,37 @@ export default function App() {
           </div>
         </section>
 
+        {/* Example Assessment Finding */}
+        <section className={sectionClass}>
+          <h3 className="text-3xl font-bold mb-6">Example Assessment Finding</h3>
+
+          <div className="space-y-5 text-gray-800">
+            <p className="text-xl font-semibold text-gray-900">
+              Finding: Restricted airflow behind network rack due to cable congestion.
+            </p>
+
+            <p>
+              <span className="font-bold">Risk Level:</span> Medium-High
+            </p>
+
+            <p>
+              <span className="font-bold">Observation:</span> Excess cable density is restricting hot-air exhaust and reducing cooling efficiency around critical infrastructure.
+            </p>
+
+            <p>
+              <span className="font-bold">Potential Impact:</span> Increased thermal exposure, higher cooling demand, accelerated equipment wear, and elevated operational risk during peak workloads.
+            </p>
+
+            <p>
+              <span className="font-bold">Recommendation:</span> Improve cable routing, remove airflow obstructions, and verify thermal performance following remediation.
+            </p>
+
+            <p>
+              <span className="font-bold">Status:</span> Remediation recommended within 30-90 days.
+            </p>
+          </div>
+        </section>
+
         {/* Workflow */}
         <section className={sectionClass}>
           <h3 className="text-3xl font-bold mb-8 text-center">
@@ -679,6 +710,46 @@ export default function App() {
               “Digital-ABB helps MSPs deliver infrastructure reliability beyond software monitoring.”
             </p>
           </div>
+        </section>
+
+        {/* AI Infrastructure Visibility */}
+        <section className={sectionClass}>
+          <h3 className="text-3xl font-bold mb-6">
+            AI Infrastructure Requires Better Physical Visibility
+          </h3>
+
+          <p className="text-gray-800 leading-8 mb-4">
+            The rapid adoption of AI workloads is increasing rack density, power consumption, and heat generation across datacenters, server rooms, and edge facilities.
+          </p>
+
+          <p className="text-gray-800 leading-8 mb-6">
+            As GPU-based infrastructure becomes more common, traditional monitoring alone may not provide visibility into environmental conditions that influence cooling performance and operational stability.
+          </p>
+
+          <p className="text-gray-800 font-semibold mb-4">
+            Digital-ABB helps organizations identify:
+          </p>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 text-gray-800 mb-6">
+            <div className="border rounded-xl p-4 bg-gray-50">Thermal hotspots</div>
+            <div className="border rounded-xl p-4 bg-gray-50">Airflow restrictions</div>
+            <div className="border rounded-xl p-4 bg-gray-50">Cooling inefficiencies</div>
+            <div className="border rounded-xl p-4 bg-gray-50">Water leak exposure</div>
+            <div className="border rounded-xl p-4 bg-gray-50">Dust contamination</div>
+            <div className="border rounded-xl p-4 bg-gray-50">Cable-related airflow risks</div>
+          </div>
+
+          <p className="text-gray-800 leading-8 mb-4">
+            before they become costly operational problems.
+          </p>
+
+          <p className="text-gray-800 leading-8 mb-4">
+            Traditional monitoring tells you when equipment is unhealthy. Physical Risk Intelligence helps identify environmental conditions that may increase operational risk before systems are affected.
+          </p>
+
+          <p className="text-xl font-semibold text-gray-900">
+            Physical Risk Intelligence helps protect the environment that AI infrastructure depends on.
+          </p>
         </section>
 
         {/* Project Scope */}
