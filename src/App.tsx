@@ -45,7 +45,7 @@ export default function App() {
           </div>
 
           <p className="text-xl text-gray-700 mt-5 max-w-4xl leading-8">
-            Digital-ABB delivers AI-powered infrastructure assurance for server rooms,
+            Digital-ABB delivers AI-powered physical risk intelligence for server rooms,
             AI systems, and mission-critical business environments through predictive
             infrastructure intelligence, thermal risk detection, and operational continuity services.
           </p>
@@ -61,7 +61,7 @@ export default function App() {
             <span>✔ Infrastructure Intelligence</span>
             <span>✔ Predictive Risk Detection</span>
             <span>✔ Thermal Stability Protection</span>
-            <span>✔ AI Infrastructure Assurance</span>
+            <span>✔ AI Physical Risk Intelligence</span>
           </div>
 
           <div className="mt-8 flex flex-col sm:flex-row gap-4">
@@ -252,6 +252,22 @@ export default function App() {
             </div>
 
             <div className="bg-white rounded-2xl shadow p-6 border-t-4 border-blue-600">
+              <h3 className="text-xl font-bold mb-3">Airflow Risk Intelligence</h3>
+              <p className="text-gray-800">
+                Airflow path review, obstruction identification, and cooling-flow risk documentation
+                for racks, closets, and high-density infrastructure spaces.
+              </p>
+            </div>
+
+            <div className="bg-white rounded-2xl shadow p-6 border-t-4 border-blue-600">
+              <h3 className="text-xl font-bold mb-3">Thermal Risk Intelligence</h3>
+              <p className="text-gray-800">
+                Thermal-pattern review, hotspot awareness, and risk documentation for environments where
+                temperature instability can threaten uptime and hardware reliability.
+              </p>
+            </div>
+
+            <div className="bg-white rounded-2xl shadow p-6 border-t-4 border-blue-600">
               <h3 className="text-xl font-bold mb-3">Cable & Physical Layer Integrity</h3>
               <p className="text-gray-800">
                 Cable pathway inspection, airflow obstruction review, and fiber-area contamination control.
@@ -259,9 +275,70 @@ export default function App() {
             </div>
 
             <div className="bg-white rounded-2xl shadow p-6 border-t-4 border-blue-600">
+              <h3 className="text-xl font-bold mb-3">Cable Infrastructure Risk Intelligence</h3>
+              <p className="text-gray-800">
+                Cable-path risk review for airflow blockage, strain, contamination exposure,
+                pathway congestion, and physical-layer continuity concerns.
+              </p>
+            </div>
+
+            <div className="bg-white rounded-2xl shadow p-6 border-t-4 border-blue-600">
               <h3 className="text-xl font-bold mb-3">Environmental Monitoring</h3>
               <p className="text-gray-800">
                 Water intrusion awareness, humidity observation, thermal trend review, and maintenance recommendations.
+              </p>
+            </div>
+
+            <div className="bg-white rounded-2xl shadow p-6 border-t-4 border-blue-600">
+              <h3 className="text-xl font-bold mb-3">Environmental Risk Intelligence</h3>
+              <p className="text-gray-800">
+                Environmental condition review for humidity variation, leak exposure, particulate risk,
+                cooling-system concerns, and physical operating hazards.
+              </p>
+            </div>
+
+            <div className="bg-white rounded-2xl shadow p-6 border-t-4 border-blue-600">
+              <h3 className="text-xl font-bold mb-3">Physical Risk Assessment</h3>
+              <p className="text-gray-800">
+                On-site review of physical-layer risks including airflow obstruction, thermal exposure,
+                environmental hazards, contamination, and continuity threats.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Workflow */}
+        <section className={sectionClass}>
+          <h3 className="text-3xl font-bold mb-8 text-center">
+            Observe → Analyze → Assess → Optimize
+          </h3>
+
+          <div className="grid md:grid-cols-4 gap-6">
+            <div className="border rounded-xl p-5 bg-gray-50">
+              <h4 className="text-xl font-bold mb-2 text-blue-600">Observe</h4>
+              <p className="text-gray-700">
+                Inspect physical conditions, airflow paths, thermal behavior, contamination, and environmental exposure.
+              </p>
+            </div>
+
+            <div className="border rounded-xl p-5 bg-gray-50">
+              <h4 className="text-xl font-bold mb-2 text-blue-600">Analyze</h4>
+              <p className="text-gray-700">
+                Review patterns, obstructions, risk indicators, and operating conditions affecting infrastructure stability.
+              </p>
+            </div>
+
+            <div className="border rounded-xl p-5 bg-gray-50">
+              <h4 className="text-xl font-bold mb-2 text-blue-600">Assess</h4>
+              <p className="text-gray-700">
+                Document physical-layer risks and prioritize findings based on uptime, hardware, and continuity impact.
+              </p>
+            </div>
+
+            <div className="border rounded-xl p-5 bg-gray-50">
+              <h4 className="text-xl font-bold mb-2 text-blue-600">Optimize</h4>
+              <p className="text-gray-700">
+                Recommend practical improvements to reduce exposure, preserve airflow, and improve operational resilience.
               </p>
             </div>
           </div>
@@ -705,7 +782,7 @@ export default function App() {
         </section>
 
         <div className="text-sm text-gray-500 mt-6">
-          Digital-ABB provides AI-powered infrastructure assurance,
+          Digital-ABB provides AI-powered physical risk intelligence,
           operational continuity protection, environmental intelligence,
           and predictive physical-layer risk management for modern business infrastructure.
         </div>
@@ -794,7 +871,7 @@ export default function App() {
               onClick={() => setShowAuditForm(false)}
               className="mt-4 text-sm text-gray-600 underline"
             >
-              Cancel
+              q              Cancel
             </button>
           </div>
         </div>
@@ -802,3 +879,5 @@ export default function App() {
     </div>
   );
 }
+
+
