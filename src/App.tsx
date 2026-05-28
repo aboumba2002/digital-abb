@@ -813,7 +813,7 @@ export default function App() {
                 </span>
               </div>
               <div className="p-4 bg-gray-50 rounded-xl border">
-                <span className="font-bold block">2. Asset Inventory</span>
+                <span className="font-bold block">2. High-value infrastructure visibility & operational documentation</span>
                 <span className="text-sm text-gray-500">
                   Classification of owned gear ($2,500+) vs. leased nodes.
                 </span>
