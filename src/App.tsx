@@ -803,14 +803,6 @@ export default function App() {
             </p>
           </div>
 
-          <p className="text-gray-800 leading-8 mb-4">
-            before they become costly operational problems.
-          </p>
-
-          <p className="text-gray-800 leading-8 mb-4">
-            Traditional monitoring tells you when equipment is unhealthy. Physical Risk Intelligence helps identify environmental conditions that may increase operational risk before systems are affected.
-          </p>
-
           <h3 className="mt-12 text-3xl font-bold text-slate-900 leading-tight">
             Protecting the physical operating conditions modern AI
             infrastructure depends on.
