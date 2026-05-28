@@ -811,8 +811,7 @@ export default function App() {
             <div className="w-24 h-1 bg-blue-600 rounded-full mb-6"></div>
 
             <h3 className="text-3xl md:text-4xl font-bold leading-tight tracking-tight text-slate-900">
-              Protecting the physical operating conditions
-              modern AI infrastructure depends on.
+              Ensuring the physical stability modern AI infrastructure requires.
             </h3>
           </div>
         </section>
