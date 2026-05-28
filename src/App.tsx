@@ -230,130 +230,44 @@ export default function App() {
 
         {/* Services */}
         <section id="services" className={sectionClass}>
-          <h3 className="text-3xl font-bold mb-6">Services</h3>
+          <h3 className="text-3xl font-bold mb-6">
+            Infrastructure Thermal Baseline & Asset Reliability
+          </h3>
 
-          <div className="mt-12">
-            <h3 className="text-3xl font-bold mb-8 text-center">
-              Infrastructure Lifecycle Services
-            </h3>
+          <div className="space-y-5 text-gray-800 leading-8">
+            <p>
+              Digital-ABB helps organizations establish operational visibility for high-value
+              infrastructure assets through airflow observations, thermal condition reviews,
+              environmental awareness, and physical-layer reliability assessments.
+            </p>
 
-            <div className="grid md:grid-cols-2 gap-8">
-              {/* Owned Assets */}
-              <div className="bg-white border-2 border-blue-600 rounded-3xl p-8 shadow-lg">
-                <h4 className="text-2xl font-bold text-blue-600 mb-2">
-                  Owned Asset Registry
-                </h4>
+            <p>
+              Rather than simply tracking inventory, our approach focuses on identifying
+              conditions that may contribute to thermal stress, cooling inefficiency,
+              accelerated hardware wear, and operational instability within modern AI and
+              hybrid infrastructure environments.
+            </p>
 
-                <p className="text-sm font-bold text-gray-500 mb-6 uppercase tracking-wide">
-                  Enterprise-Owned Infrastructure
-                </p>
-
-                <ul className="space-y-3 text-gray-700">
-                  <li>✔ Manufacturer lifecycle awareness</li>
-                  <li>✔ BIOS / firmware compliance tracking</li>
-                  <li>✔ Thermal and operational history logging</li>
-                  <li>✔ Longitudinal infrastructure visibility</li>
-                  <li>✔ ESD-safe physical-layer hygiene</li>
-                </ul>
-
-                <p className="mt-6 text-sm text-gray-500 italic">
-                  Designed for organizations managing long-term infrastructure ownership and operational continuity.
-                </p>
-              </div>
-
-              {/* Leased Infrastructure */}
-              <div className="bg-gray-50 border-2 border-gray-200 rounded-3xl p-8 shadow-lg">
-                <h4 className="text-2xl font-bold text-gray-900 mb-2">
-                  Continuity Maintenance
-                </h4>
-
-                <p className="text-sm font-bold text-gray-500 mb-6 uppercase tracking-wide">
-                  Leased & Managed Infrastructure
-                </p>
-
-                <ul className="space-y-3 text-gray-700">
-                  <li>✔ Advanced airflow path preservation</li>
-                  <li>✔ Industrial particulate removal</li>
-                  <li>✔ ESD-safe intake and exhaust maintenance</li>
-                  <li>✔ Environmental operating condition review</li>
-                  <li>✔ Physical-layer continuity support</li>
-                </ul>
-
-                <p className="mt-6 text-sm text-orange-600 italic">
-                  No firmware modification or manufacturer intervention performed on leased systems.
-                </p>
-              </div>
-            </div>
+            <p className="font-semibold text-gray-900">Services may include:</p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="bg-white rounded-2xl shadow p-6 border-t-4 border-blue-600">
-              <h3 className="text-xl font-bold mb-3">Predictive Infrastructure Maintenance</h3>
-              <p className="text-gray-800">
-                Condition-based particulate decontamination using ESD-safe tools and airflow-preserving procedures.
-              </p>
-            </div>
+          <div className="mt-6 grid md:grid-cols-2 gap-4 text-gray-800">
+            <div className="border rounded-xl p-4">✔ Thermal baseline observations</div>
+            <div className="border rounded-xl p-4">✔ Cooling-system health assessments</div>
+            <div className="border rounded-xl p-4">✔ Airflow pathway verification</div>
+            <div className="border rounded-xl p-4">✔ Environmental operating condition reviews</div>
+            <div className="border rounded-xl p-4">✔ High-value asset visibility and documentation</div>
+            <div className="border rounded-xl p-4">✔ Infrastructure hygiene assessments</div>
+            <div className="border rounded-xl p-4">✔ Maintenance documentation and reporting</div>
+          </div>
 
-            <div className="bg-white rounded-2xl shadow p-6 border-t-4 border-blue-600">
-              <h3 className="text-xl font-bold mb-3">Thermal & Airflow Preservation</h3>
-              <p className="text-gray-800">
-                Airflow-focused maintenance designed to preserve cooling efficiency and reduce thermal stress.
-              </p>
-            </div>
-
-            <div className="bg-white rounded-2xl shadow p-6 border-t-4 border-blue-600">
-              <h3 className="text-xl font-bold mb-3">Airflow Risk Intelligence</h3>
-              <p className="text-gray-800">
-                Airflow path review, obstruction identification, and cooling-flow risk documentation
-                for racks, closets, and high-density infrastructure spaces.
-              </p>
-            </div>
-
-            <div className="bg-white rounded-2xl shadow p-6 border-t-4 border-blue-600">
-              <h3 className="text-xl font-bold mb-3">Thermal Risk Intelligence</h3>
-              <p className="text-gray-800">
-                Thermal-pattern review, hotspot awareness, and risk documentation for environments where
-                temperature instability can threaten uptime and hardware reliability.
-              </p>
-            </div>
-
-            <div className="bg-white rounded-2xl shadow p-6 border-t-4 border-blue-600">
-              <h3 className="text-xl font-bold mb-3">Cable & Physical Layer Integrity</h3>
-              <p className="text-gray-800">
-                Cable pathway inspection, airflow obstruction review, and fiber-area contamination control.
-              </p>
-            </div>
-
-            <div className="bg-white rounded-2xl shadow p-6 border-t-4 border-blue-600">
-              <h3 className="text-xl font-bold mb-3">Cable Infrastructure Risk Intelligence</h3>
-              <p className="text-gray-800">
-                Cable-path risk review for airflow blockage, strain, contamination exposure,
-                pathway congestion, and physical-layer continuity concerns.
-              </p>
-            </div>
-
-            <div className="bg-white rounded-2xl shadow p-6 border-t-4 border-blue-600">
-              <h3 className="text-xl font-bold mb-3">Environmental Monitoring</h3>
-              <p className="text-gray-800">
-                Water intrusion awareness, humidity observation, thermal trend review, and maintenance recommendations.
-              </p>
-            </div>
-
-            <div className="bg-white rounded-2xl shadow p-6 border-t-4 border-blue-600">
-              <h3 className="text-xl font-bold mb-3">Environmental Risk Intelligence</h3>
-              <p className="text-gray-800">
-                Environmental condition review for humidity variation, leak exposure, particulate risk,
-                cooling-system concerns, and physical operating hazards.
-              </p>
-            </div>
-
-            <div className="bg-white rounded-2xl shadow p-6 border-t-4 border-blue-600">
-              <h3 className="text-xl font-bold mb-3">Physical Risk Assessment</h3>
-              <p className="text-gray-800">
-                On-site review of physical-layer risks including airflow obstruction, thermal exposure,
-                environmental hazards, contamination, and continuity threats.
-              </p>
-            </div>
+          <div className="mt-8 border-l-4 border-blue-600 pl-6">
+            <p className="text-xl font-semibold italic text-gray-900 leading-8">
+              Modern accelerated computing environments operate under significantly tighter
+              thermal and environmental tolerances than traditional enterprise systems. Stable
+              physical operating conditions are increasingly important for long-term
+              infrastructure reliability and operational continuity.
+            </p>
           </div>
         </section>
 
