@@ -80,6 +80,56 @@ export default function App() {
             </button>
           </div>
         </section>
+        <section className={sectionClass}>
+          <h3 className="text-3xl font-bold mb-4">
+            The New Reality of AI Infrastructure
+          </h3>
+
+          <h4 className="text-2xl font-semibold text-blue-600 mb-6">
+            Yesterday's infrastructure assumptions no longer match today's computing environments.
+          </h4>
+
+          <div className="space-y-5 text-gray-800 leading-8">
+            <p>
+              Traditional enterprise systems were generally more tolerant of airflow disruption,
+              environmental inconsistency, and thermal fluctuation.
+            </p>
+
+            <p className="text-xl font-semibold text-gray-900">
+              Modern AI infrastructure is different.
+            </p>
+
+            <p>
+              Today's GPU platforms, accelerated compute systems, and high-density environments
+              operate under significantly higher thermal and electrical stress. Many modern AI
+              accelerators now consume over 1,000 watts per device, generating extreme thermal
+              loads that require stable airflow, cooling consistency, and environmental awareness
+              to maintain reliable operation.
+            </p>
+
+            <p>
+              As computing density increases, physical-layer conditions that once appeared minor
+              including airflow obstruction, cable congestion, particulate contamination, cooling
+              degradation, and environmental instability can now contribute to hardware stress,
+              operational inefficiencies, reduced performance, and unplanned downtime.
+            </p>
+
+            <p>
+              In large-scale AI environments, physical hardware failures are no longer rare
+              operational events. Thermal fatigue, cooling instability, interconnect degradation,
+              and environmental conditions are becoming increasingly important infrastructure
+              reliability concerns.
+            </p>
+          </div>
+
+          <div className="mt-8 border-l-4 border-blue-600 pl-6">
+            <p className="text-xl font-semibold italic text-gray-900 leading-8">
+              If modern infrastructure is maintained using outdated operational assumptions,
+              organizations may unknowingly increase thermal stress, cooling inefficiencies,
+              and long-term reliability risks.
+            </p>
+          </div>
+        </section>
         <section className="bg-gradient-to-r from-blue-600 to-blue-800 text-white rounded-2xl shadow-xl p-8 md:p-12">
           <h3 className="text-3xl font-bold mb-4">
             Hyperscale-Inspired Infrastructure Logic
