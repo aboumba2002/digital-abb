@@ -53,6 +53,10 @@ export default function App() {
           </p>
 
           <p className="text-gray-800 max-w-4xl mt-6 leading-8">
+            Modern AI infrastructure increasingly depends on stable physical operating environments.
+          </p>
+
+          <p className="text-gray-800 max-w-4xl mt-4 leading-8">
             Protecting stable physical operations within modern infrastructure environments.
           </p>
 
@@ -597,6 +601,11 @@ export default function App() {
             </p>
 
             <p>
+              As computing density increases, modern AI infrastructure increasingly depends on
+              stable physical operating environments.
+            </p>
+
+            <p>
               Industry research and infrastructure operators continue to highlight the growing
               operational impact of physical-layer conditions:
             </p>
@@ -716,6 +725,11 @@ export default function App() {
 
           <p className="text-gray-800 text-lg mb-6">
             We reduce physical-layer risks your remote monitoring tools cannot see.
+          </p>
+
+          <p className="text-gray-800 mb-6">
+            Digital-ABB complements traditional MSP operations by focusing on the physical
+            operating environments modern infrastructure increasingly depends on.
           </p>
 
           <p className="text-gray-800 mb-6">
@@ -917,9 +931,7 @@ export default function App() {
         </section>
 
         <div className="text-sm text-gray-500 mt-6">
-          Digital-ABB provides AI-enhanced Physical Risk Intelligence,
-          operational continuity protection, environmental intelligence,
-          and predictive physical-layer risk management for modern business infrastructure.
+          Stable Physical Operations™ for modern AI and hybrid infrastructure environments.
         </div>
       </main>
 
