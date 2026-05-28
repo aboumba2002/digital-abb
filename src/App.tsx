@@ -803,10 +803,18 @@ export default function App() {
             </p>
           </div>
 
-          <h3 className="mt-14 text-3xl md:text-4xl font-bold leading-tight text-slate-900 max-w-5xl">
-            Protecting the physical operating conditions
-            modern AI infrastructure depends on.
-          </h3>
+          <div className="mt-12 max-w-3xl bg-white/70 backdrop-blur-sm rounded-3xl p-8 border border-slate-100 shadow-sm">
+            <p className="text-sm uppercase tracking-[0.2em] text-slate-500 mb-4">
+              Physical Risk Intelligence
+            </p>
+
+            <div className="w-24 h-1 bg-blue-600 rounded-full mb-6"></div>
+
+            <h3 className="text-3xl md:text-4xl font-bold leading-tight tracking-tight text-slate-900">
+              Protecting the physical operating conditions
+              modern AI infrastructure depends on.
+            </h3>
+          </div>
         </section>
 
         {/* Project Scope */}
