@@ -39,21 +39,21 @@ export default function App() {
                 Digital-ABB
               </h1>
               <h2 className="text-2xl md:text-3xl font-semibold mt-3 max-w-4xl leading-relaxed">
-                Preventing catastrophic downtime from small physical failures.
+                Operational Reliability for the AI Infrastructure Era
               </h2>
             </div>
           </div>
 
           <p className="text-xl text-gray-700 mt-5 max-w-4xl leading-8">
-            Digital-ABB delivers AI-enhanced Physical Risk Intelligence for server rooms,
-            AI systems, and mission-critical business environments through predictive
-            infrastructure intelligence, thermal risk detection, and operational continuity services.
+            Today's GPU platforms, accelerated computing systems, and hybrid infrastructure
+            environments require greater thermal stability, airflow consistency, and
+            environmental visibility than legacy IT environments. Digital-ABB helps
+            organizations identify physical-layer risks before they contribute to cooling
+            inefficiencies, hardware instability, or operational downtime.
           </p>
 
           <p className="text-gray-800 max-w-4xl mt-6 leading-8">
-            We identify thermal drift, airflow degradation, contamination buildup,
-            environmental instability, and infrastructure risks before they escalate into
-            outages, operational downtime, or expensive hardware failures.
+            Protecting stable physical operations within modern infrastructure environments.
           </p>
 
           <div className="mt-6 flex flex-wrap gap-4 font-semibold">
