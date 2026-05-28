@@ -21,7 +21,7 @@ export default function App() {
           <a href="#home" className="hover:text-blue-600 transition">Home</a>
           <a href="#services" className="hover:text-blue-600 transition">Services</a>
           <a href="#airflow" className="hover:text-blue-600 transition">Airflow & Thermal</a>
-          <a href="#environmental" className="hover:text-blue-600 transition">Environmental Monitoring</a>
+          <a href="#environmental-monitoring" className="hover:text-blue-600 transition">Environmental Monitoring</a>
           <a href="#msp" className="hover:text-blue-600 transition">MSP Partners</a>
           <a href="#audit-report" className="hover:text-blue-600 transition">Audit Report</a>
           <a href="#contact" className="hover:text-blue-600 transition">Contact</a>
@@ -451,7 +451,10 @@ export default function App() {
         </section>
 
         {/* Environmental Risk Monitoring */}
-        <section id="environmental" className={sectionClass}>
+        <section
+          id="environmental-monitoring"
+          className="bg-gradient-to-br from-blue-50 via-white to-slate-50 py-24 px-6"
+        >
           <h2 className="text-3xl font-bold mb-6">Environmental Risk Monitoring</h2>
 
           <img
@@ -772,13 +775,32 @@ export default function App() {
             Digital-ABB helps organizations identify:
           </p>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 text-gray-800 mb-6">
-            <div className="border rounded-xl p-4 bg-gray-50">Thermal hotspots</div>
-            <div className="border rounded-xl p-4 bg-gray-50">Airflow restrictions</div>
-            <div className="border rounded-xl p-4 bg-gray-50">Cooling inefficiencies</div>
-            <div className="border rounded-xl p-4 bg-gray-50">Water leak exposure</div>
-            <div className="border rounded-xl p-4 bg-gray-50">Dust contamination</div>
-            <div className="border rounded-xl p-4 bg-gray-50">Cable-related airflow risks</div>
+          <div className="grid md:grid-cols-3 gap-6 mt-10">
+            {[
+              "🔥 Thermal hotspots",
+              "🌬️ Airflow restrictions",
+              "❄️ Cooling inefficiencies",
+              "💧 Water leak exposure",
+              "⚠️ Dust contamination",
+              "🔌 Cable-related airflow risks",
+            ].map((item) => (
+              <div
+                key={item}
+                className="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+              >
+                <p className="text-lg font-semibold text-gray-800">
+                  {item}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-12 border-l-4 border-blue-600 pl-6 py-2">
+            <p className="text-xl italic text-gray-700 leading-relaxed">
+              Traditional monitoring tells you when equipment is unhealthy.
+              Physical Risk Intelligence helps identify environmental
+              conditions before systems are affected.
+            </p>
           </div>
 
           <p className="text-gray-800 leading-8 mb-4">
@@ -789,9 +811,10 @@ export default function App() {
             Traditional monitoring tells you when equipment is unhealthy. Physical Risk Intelligence helps identify environmental conditions that may increase operational risk before systems are affected.
           </p>
 
-          <p className="text-xl font-semibold text-gray-900">
-            Physical Risk Intelligence helps protect the environment that AI infrastructure depends on.
-          </p>
+          <h3 className="mt-12 text-3xl font-bold text-slate-900 leading-tight">
+            Protecting the physical operating conditions modern AI
+            infrastructure depends on.
+          </h3>
         </section>
 
         {/* Project Scope */}
