@@ -803,9 +803,9 @@ export default function App() {
             </p>
           </div>
 
-          <h3 className="mt-12 text-3xl font-bold text-slate-900 leading-tight">
-            Protecting the physical operating conditions modern AI
-            infrastructure depends on.
+          <h3 className="mt-14 text-3xl md:text-4xl font-bold leading-tight text-slate-900 max-w-5xl">
+            Protecting the physical operating conditions
+            modern AI infrastructure depends on.
           </h3>
         </section>
 
