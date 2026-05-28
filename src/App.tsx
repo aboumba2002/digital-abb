@@ -665,6 +665,84 @@ export default function App() {
           </div>
         </section>
 
+        <section className={sectionClass}>
+          <h3 className="text-3xl font-bold mb-6">
+            Financial Protection Through Infrastructure Reliability
+          </h3>
+
+          <div className="space-y-5 text-gray-800 leading-8">
+            <p>
+              Modern AI and high-density infrastructure environments operate under significantly
+              higher thermal and environmental stress than traditional enterprise systems. As
+              organizations increase investment in GPU platforms, accelerated computing, and
+              hybrid infrastructure, physical operating conditions are becoming increasingly
+              important to reliability, energy efficiency, and operational continuity.
+            </p>
+
+            <p>
+              Industry research and infrastructure operators continue to highlight the growing
+              operational impact of physical-layer conditions:
+            </p>
+          </div>
+
+          <div className="mt-8 grid gap-5">
+            <div className="rounded-xl border border-gray-200 bg-gray-50 p-5">
+              <p className="font-semibold text-gray-900">
+                ✔ Modern AI accelerators can exceed 1,000 watts of power consumption per device,
+                generating significantly higher thermal density than traditional server infrastructure.
+              </p>
+              <p className="mt-2 text-sm font-semibold text-blue-600">
+                Reference: NVIDIA AI Infrastructure & GPU Platform Specifications
+              </p>
+            </div>
+
+            <div className="rounded-xl border border-gray-200 bg-gray-50 p-5">
+              <p className="font-semibold text-gray-900">
+                ✔ Industry analysts estimate that unplanned data center downtime can cost
+                thousands of dollars per hour depending on workload sensitivity and operational scale.
+              </p>
+              <p className="mt-2 text-sm font-semibold text-blue-600">
+                Reference: Uptime Institute Annual Outage Analysis
+              </p>
+            </div>
+
+            <div className="rounded-xl border border-gray-200 bg-gray-50 p-5">
+              <p className="font-semibold text-gray-900">
+                ✔ Cooling inefficiencies, airflow obstruction, and particulate accumulation can
+                increase fan utilization, thermal stress, and overall energy consumption within
+                high-density environments.
+              </p>
+              <p className="mt-2 text-sm font-semibold text-blue-600">
+                Reference: Cisco Environmental & Hardware Maintenance Guidance
+              </p>
+            </div>
+
+            <div className="rounded-xl border border-gray-200 bg-gray-50 p-5">
+              <p className="font-semibold text-gray-900">
+                ✔ Large-scale AI environments increasingly depend on stable thermal performance,
+                cable integrity, and environmental consistency to maintain synchronized compute operations.
+              </p>
+              <p className="mt-2 text-sm font-semibold text-blue-600">
+                Reference: NVIDIA DCGM & Enterprise AI Infrastructure Guidance
+              </p>
+            </div>
+          </div>
+
+          <p className="mt-8 text-gray-800 leading-8">
+            Digital-ABB helps organizations improve airflow integrity, environmental awareness,
+            infrastructure hygiene, thermal visibility, and operational continuity to support
+            stable physical operations within modern infrastructure environments.
+          </p>
+
+          <div className="mt-8 border-l-4 border-blue-600 pl-6">
+            <p className="text-xl font-semibold italic text-gray-900 leading-8">
+              Physical-layer operational reliability is no longer simply a maintenance concern —
+              it is increasingly tied to infrastructure performance, operational stability, and
+              long-term investment protection.
+            </p>
+          </div>
+        </section>
+
         {/* Audit Report */}
         <section id="audit-report" className="bg-gray-900 rounded-3xl shadow-2xl p-8 md:p-12 text-white">
           <div className="grid md:grid-cols-2 gap-12 items-center">
