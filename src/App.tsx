@@ -57,7 +57,7 @@ export default function App() {
           </p>
 
           <p className="text-gray-800 max-w-4xl mt-4 leading-8">
-            Protecting stable physical operations within modern infrastructure environments.
+            Helping organizations improve operational reliability through greater visibility into the physical operating conditions that modern infrastructure depends on.
           </p>
 
           <div className="mt-6 flex flex-wrap gap-4 font-semibold">
