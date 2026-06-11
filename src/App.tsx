@@ -139,6 +139,29 @@ export default function App() {
           </div>
         </section>
         <section className={sectionClass}>
+          <h3 className="text-3xl font-bold mb-4">
+            Why Organizations Use It
+          </h3>
+
+          <div className="space-y-5 text-gray-800 leading-8 max-w-5xl">
+            <p>
+              Many organizations maintain visibility into their networks, applications,
+              and cybersecurity systems.
+            </p>
+
+            <p>
+              Far fewer maintain visibility into the physical operating environments
+              those systems depend on.
+            </p>
+
+            <p>
+              Digital-ABB provides documented visibility into infrastructure assets,
+              operating conditions, and environmental observations so organizations
+              can make informed operational decisions.
+            </p>
+          </div>
+        </section>
+        <section className={sectionClass}>
           <h3 className="text-3xl font-bold mb-6">
             What We Assess
           </h3>
@@ -162,29 +185,6 @@ export default function App() {
                 {item}
               </div>
             ))}
-          </div>
-        </section>
-        <section className={sectionClass}>
-          <h3 className="text-3xl font-bold mb-4">
-            Why Organizations Use It
-          </h3>
-
-          <div className="space-y-5 text-gray-800 leading-8 max-w-5xl">
-            <p>
-              Many organizations maintain visibility into their networks, applications,
-              and cybersecurity systems.
-            </p>
-
-            <p>
-              Far fewer maintain visibility into the physical operating environments
-              those systems depend on.
-            </p>
-
-            <p>
-              Digital-ABB provides documented visibility into infrastructure assets,
-              operating conditions, and environmental observations so organizations
-              can make informed operational decisions.
-            </p>
           </div>
         </section>
         <section className={sectionClass}>
