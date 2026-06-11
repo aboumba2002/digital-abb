@@ -86,6 +86,109 @@ export default function App() {
         </section>
         <section className={sectionClass}>
           <h3 className="text-3xl font-bold mb-4">
+            Infrastructure Alignment Assessment
+          </h3>
+
+          <p className="text-gray-800 leading-8 mb-8 max-w-4xl">
+            Digital-ABB helps organizations understand whether infrastructure assets are
+            operating within the environments those assets depend on.
+          </p>
+
+          <p className="text-xl font-semibold text-gray-900 mb-6">
+            The assessment provides visibility into:
+          </p>
+
+          <div className="grid md:grid-cols-2 gap-6 text-gray-800">
+            <div className="border rounded-xl p-5 bg-gray-50">
+              <h4 className="text-xl font-bold mb-3 text-blue-600">Infrastructure Assets</h4>
+              <ul className="space-y-2">
+                <li>Asset inventory</li>
+                <li>Asset condition observations</li>
+                <li>Infrastructure documentation</li>
+              </ul>
+            </div>
+
+            <div className="border rounded-xl p-5 bg-gray-50">
+              <h4 className="text-xl font-bold mb-3 text-blue-600">Operating Environment</h4>
+              <ul className="space-y-2">
+                <li>Airflow observations</li>
+                <li>Thermal observations</li>
+                <li>Environmental observations</li>
+              </ul>
+            </div>
+
+            <div className="border rounded-xl p-5 bg-gray-50">
+              <h4 className="text-xl font-bold mb-3 text-blue-600">Environment Alignment</h4>
+              <ul className="space-y-2">
+                <li>Review of observed conditions</li>
+                <li>Comparison against manufacturer-recommended operating practices</li>
+                <li>Documentation of findings</li>
+              </ul>
+            </div>
+
+            <div className="border rounded-xl p-5 bg-gray-50">
+              <h4 className="text-xl font-bold mb-3 text-blue-600">Deliverables</h4>
+              <ul className="space-y-2">
+                <li>Infrastructure Condition Record</li>
+                <li>Executive InfraSummary</li>
+                <li>Asset Inventory</li>
+                <li>Recommendations</li>
+                <li>Historical Assessment Records</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+        <section className={sectionClass}>
+          <h3 className="text-3xl font-bold mb-6">
+            What We Assess
+          </h3>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 text-gray-800">
+            {[
+              'Infrastructure Assets',
+              'Rack Conditions',
+              'Airflow Pathways',
+              'Thermal Conditions',
+              'Environmental Conditions',
+              'Cabling Visibility',
+              'Documentation Visibility',
+              'Infrastructure Changes Over Time',
+            ].map((item) => (
+              <div
+                key={item}
+                className="border rounded-xl p-4 bg-gray-50 font-semibold"
+              >
+                <span className="text-blue-600 mr-2">✓</span>
+                {item}
+              </div>
+            ))}
+          </div>
+        </section>
+        <section className={sectionClass}>
+          <h3 className="text-3xl font-bold mb-4">
+            Why Organizations Use It
+          </h3>
+
+          <div className="space-y-5 text-gray-800 leading-8 max-w-5xl">
+            <p>
+              Many organizations maintain visibility into their networks, applications,
+              and cybersecurity systems.
+            </p>
+
+            <p>
+              Far fewer maintain visibility into the physical operating environments
+              those systems depend on.
+            </p>
+
+            <p>
+              Digital-ABB provides documented visibility into infrastructure assets,
+              operating conditions, and environmental observations so organizations
+              can make informed operational decisions.
+            </p>
+          </div>
+        </section>
+        <section className={sectionClass}>
+          <h3 className="text-3xl font-bold mb-4">
             The New Reality of AI Infrastructure
           </h3>
 
