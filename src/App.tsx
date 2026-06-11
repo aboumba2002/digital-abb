@@ -174,8 +174,9 @@ export default function App() {
               'Thermal Conditions',
               'Environmental Conditions',
               'Cabling Visibility',
-              'Documentation Visibility',
-              'Infrastructure Changes Over Time',
+              'Infrastructure Documentation',
+              'Historical Condition Tracking',
+              'Asset Condition Records',
             ].map((item) => (
               <div
                 key={item}
@@ -186,6 +187,11 @@ export default function App() {
               </div>
             ))}
           </div>
+
+          <p className="mt-5 text-gray-700 leading-7">
+            Assessment findings are documented through Infrastructure Condition Records,
+            Asset Inventories, Executive InfraSummary Reports, and Recommendations.
+          </p>
         </section>
         <section className={sectionClass}>
           <h3 className="text-3xl font-bold mb-4">
