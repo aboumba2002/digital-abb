@@ -832,8 +832,22 @@ export default function App() {
         <section id="msp" className={sectionClass}>
           <h3 className="text-3xl font-bold mb-4">MSP Infrastructure Partnership</h3>
 
-          <p className="text-gray-800 text-lg mb-6">
-            We reduce physical-layer risks your remote monitoring tools cannot see.
+          <p className="text-gray-800 text-lg mb-4">
+            Most MSP platforms provide visibility into software, networks, and device performance.
+          </p>
+
+          <p className="text-gray-800 mb-4">
+            Digital-ABB provides visibility into the infrastructure assets, operating environments,
+            documentation gaps, and physical conditions those systems depend on.
+          </p>
+
+          <p className="text-gray-800 mb-6">
+            Together, they create a more complete view of client infrastructure.
+          </p>
+
+          <p className="text-gray-800 mb-6">
+            We help MSPs identify infrastructure assets, environmental conditions, documentation gaps,
+            and historical changes that software monitoring platforms alone cannot verify.
           </p>
 
           <p className="text-gray-800 mb-6">
@@ -851,24 +865,26 @@ export default function App() {
             <div className="border rounded-xl p-6">
               <h4 className="text-xl font-bold mb-3">What Digital-ABB Provides</h4>
               <ul className="space-y-2 text-gray-800">
-                <li>✔ Thermal-risk assessments</li>
-                <li>✔ Airflow inspections</li>
-                <li>✔ Rack contamination reviews</li>
-                <li>✔ Cable airflow analysis</li>
-                <li>✔ Environmental risk awareness</li>
-                <li>✔ Visual audit documentation</li>
+                <li>✔ Infrastructure Alignment Assessments</li>
+                <li>✔ Infrastructure Asset Visibility</li>
+                <li>✔ Infrastructure Condition Records</li>
+                <li>✔ Environment Alignment Reviews</li>
+                <li>✔ Infrastructure Documentation Visibility</li>
+                <li>✔ Historical Condition Tracking</li>
+                <li>✔ Executive InfraSummary Reports</li>
               </ul>
             </div>
 
             <div className="border rounded-xl p-6 bg-blue-50">
               <h4 className="text-xl font-bold mb-3">MSP Partnership Benefits</h4>
               <ul className="space-y-2 text-gray-800">
-                <li>✔ Reduced emergency hardware events</li>
-                <li>✔ Improved client infrastructure reliability</li>
-                <li>✔ Increased service differentiation</li>
+                <li>✔ Improved infrastructure visibility</li>
+                <li>✔ Reduced troubleshooting uncertainty</li>
+                <li>✔ Identification of undocumented infrastructure</li>
                 <li>✔ Additional recurring service opportunities</li>
-                <li>✔ No added engineering workload</li>
+                <li>✔ Improved client documentation</li>
                 <li>✔ White-label partnership options</li>
+                <li>✔ No additional engineering workload</li>
               </ul>
             </div>
           </div>
@@ -1135,5 +1151,6 @@ export default function App() {
     </div>
   );
 }
+
 
 
