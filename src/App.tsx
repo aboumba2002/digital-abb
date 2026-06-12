@@ -943,7 +943,7 @@ export default function App() {
         <section className="bg-white rounded-3xl p-12 border border-gray-200">
           <div className="max-w-3xl mx-auto text-center">
             <h3 className="text-3xl font-black mb-4">
-              Infrastructure-Specific Estimations
+              Assessment Outcomes & Next Steps
             </h3>
             <p className="text-gray-600 mb-10">
               Every environment is unique. We provide tailored remediation plans based on your hardware density,
@@ -952,15 +952,15 @@ export default function App() {
 
             <div className="grid md:grid-cols-2 gap-4 text-left mb-10">
               <div className="p-4 bg-gray-50 rounded-xl border">
-                <span className="font-bold block">1. Site Assessment</span>
+                <span className="font-bold block">1. Infrastructure Alignment Assessment</span>
                 <span className="text-sm text-gray-500">
-                  Visual & Thermal baseline of existing racks.
+                  Infrastructure assets, operating environments, airflow pathways, thermal conditions, documentation records, and historical changes are reviewed and documented.
                 </span>
               </div>
               <div className="p-4 bg-gray-50 rounded-xl border">
-                <span className="font-bold block">2. High-value infrastructure visibility & operational documentation</span>
+                <span className="font-bold block">2. Executive InfraSummary & Recommendations</span>
                 <span className="text-sm text-gray-500">
-                  Classification of owned gear ($2,500+) vs. leased nodes.
+                  Assessment findings are documented through Infrastructure Condition Records, Asset Inventories, Executive InfraSummary Reports, and prioritized recommendations for future review or remediation.
                 </span>
               </div>
             </div>
@@ -969,7 +969,7 @@ export default function App() {
               onClick={() => setShowAuditForm(true)}
               className="bg-blue-600 text-white px-10 py-5 rounded-2xl font-bold text-xl hover:bg-blue-700 transition shadow-xl"
             >
-              Request a Technical Estimate
+              Request Infrastructure Assessment
             </button>
           </div>
         </section>
