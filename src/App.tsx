@@ -70,17 +70,17 @@ export default function App() {
 
           <div className="mt-8 flex flex-col sm:flex-row gap-4">
             <button
-              onClick={() => setShowPilotForm(true)}
+              onClick={() => window.open('/digital_abb_infrastructure_assessment.pdf', '_blank')}
               className="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold shadow hover:bg-blue-500 transition"
             >
-              Request Free Infrastructure Audit
+              Request Free Infrastructure Assessment
             </button>
 
             <button
               onClick={() => setShowAuditForm(true)}
               className="bg-gray-900 text-white px-6 py-3 rounded-lg font-semibold shadow hover:bg-gray-800 transition"
             >
-              Download Sample Audit Report
+              Download Sample InfraSummary
             </button>
           </div>
         </section>
@@ -1010,7 +1010,7 @@ export default function App() {
                   onClick={() => setShowAuditForm(true)}
                   className="bg-gray-900 text-white px-6 py-3 rounded-full font-semibold hover:bg-gray-800 transition"
                 >
-                  Download Sample Audit Report
+                  Download Sample InfraSummary
                 </button>
 
                 <button
@@ -1088,10 +1088,10 @@ export default function App() {
               ✕
             </button>
 
-            <h3 className="text-2xl font-bold mb-3">Download Sample Audit</h3>
+            <h3 className="text-2xl font-bold mb-3">Download Sample InfraSummary</h3>
 
             <p className="text-gray-700 mb-6">
-              Enter your details to receive the Digital-ABB sample audit report.
+              Enter your details to receive the Digital-ABB sample InfraSummary.
             </p>
 
             <form
@@ -1099,13 +1099,13 @@ export default function App() {
               method="POST"
               onSubmit={() => {
                 setTimeout(() => {
-                  window.open('/Digital-ABB-Sample-Audit.pdf', '_blank');
+                  window.open('/Digital-ABB_Sample_InfraSummary.pdf', '_blank');
                   setShowAuditForm(false);
                 }, 500);
               }}
               className="space-y-4"
             >
-              <input type="hidden" name="lead_type" value="Sample Audit Download" />
+              <input type="hidden" name="lead_type" value="Sample InfraSummary Download" />
 
               <input
                 type="text"
@@ -1143,7 +1143,7 @@ export default function App() {
               onClick={() => setShowAuditForm(false)}
               className="mt-4 text-sm text-gray-600 underline"
             >
-              q              Cancel
+              Cancel
             </button>
           </div>
         </div>
