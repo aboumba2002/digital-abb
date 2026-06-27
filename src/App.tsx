@@ -45,32 +45,32 @@ const remediationServices = [
   {
     title: 'Dust Remediation',
     copy:
-      'ESD-safe removal of dust and airborne contaminants from racks, servers, switches, and network equipment.',
+      'Remove accumulated dust and airborne contaminants from server racks, network equipment, storage systems, and supporting infrastructure using ESD-safe procedures designed specifically for technology environments.',
   },
   {
     title: 'Airflow Optimization',
     copy:
-      'Improve cooling efficiency by reducing airflow restrictions, organizing cable pathways, and improving equipment placement.',
+      'Improve cooling performance by reducing airflow restrictions, optimizing equipment placement, organizing cable pathways, and improving intake and exhaust airflow throughout the rack.',
   },
   {
     title: 'Sensor Installation',
     copy:
-      'Install intake, exhaust, humidity, airflow, and environmental sensors for continuous visibility.',
+      'Deploy environmental sensors that continuously monitor intake temperature, exhaust temperature, humidity, airflow conditions, and other critical operating metrics to provide greater infrastructure visibility.',
   },
   {
     title: 'Environmental Monitoring',
     copy:
-      'Provide trending, alerts, and recurring Infrastructure Health reviews.',
+      'Provide ongoing monitoring, trending, alerts, and recurring Infrastructure Health Reviews that help identify developing risks before they impact business operations.',
   },
   {
     title: 'Asset & Documentation Updates',
     copy:
-      'Verify assets, update inventories, rack layouts, cable paths, and operational records.',
+      'Verify physical assets, update inventories, improve rack documentation, document cable pathways, and maintain accurate infrastructure records that support operations, troubleshooting, and future planning.',
   },
   {
     title: 'Positive-Pressure Protection (AirCap™)',
     copy:
-      'Coming soon: retrofit protection designed to reduce airborne contamination in existing server racks.',
+      'Coming Soon: A future Digital-ABB engineered retrofit solution designed to help protect existing server racks by delivering filtered positive-pressure airflow, reducing airborne particulate exposure without requiring replacement of the existing cabinet.',
   },
 ];
 
@@ -350,10 +350,20 @@ export default function App() {
               <h2 className="mt-3 text-4xl font-black tracking-tight">
                 Remediation & Optimization
               </h2>
+              <h3 className="mt-4 text-2xl font-bold text-slate-800">
+                Turning Assessment Findings into Practical Solutions
+              </h3>
               <p className="mt-5 text-lg leading-8 text-slate-700">
-                After the Infrastructure Health Assessment, Digital-ABB provides
-                prioritized remediation and optimization services based on documented
-                findings and measured operational risks.
+                Every Infrastructure Health Assessment concludes with a prioritized
+                set of findings and recommendations. Digital-ABB helps organizations
+                move beyond identifying problems by delivering practical remediation
+                and optimization services that improve the health, reliability, and
+                resilience of the physical infrastructure supporting today's IT and
+                AI environments.
+              </p>
+              <p className="mt-4 text-lg leading-8 text-slate-700">
+                Our recommendations are based on measured conditions, documented
+                observations, and operational risk, not assumptions.
               </p>
             </div>
 
@@ -368,12 +378,21 @@ export default function App() {
 
             <div className="mt-10 rounded-lg border border-blue-200 bg-blue-50 p-6">
               <p className="text-xl font-bold text-slate-950">
-                From Assessment to Action:
+                From Assessment to Action
               </p>
               <p className="mt-3 leading-8 text-slate-700">
-                Every Infrastructure Health Assessment concludes with a prioritized
-                remediation roadmap. Digital-ABB turns findings into practical
-                actions that improve reliability, visibility, and long-term resilience.
+                The Infrastructure Health Assessment is the beginning of the customer
+                journey, not the end.
+              </p>
+              <p className="mt-3 leading-8 text-slate-700">
+                Assessment findings determine the recommended Infrastructure Health
+                Package and identify the remediation and optimization services that
+                provide the greatest operational value.
+              </p>
+              <p className="mt-3 leading-8 text-slate-700">
+                Digital-ABB transforms measured findings into actionable improvements
+                that enhance infrastructure reliability, operational visibility, and
+                long-term resilience.
               </p>
             </div>
           </div>
