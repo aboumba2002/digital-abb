@@ -1,1024 +1,451 @@
 import { useState } from 'react';
 import ContactForm from './ContactForm';
 import ThankYou from './ThankYou';
+import hero from './assets/infrastructure-health-hero.png';
+
+const services = [
+  {
+    title: 'Thermal Intelligence',
+    copy:
+      'Measure heat patterns, hotspots, and temperature delta conditions that may affect infrastructure reliability.',
+  },
+  {
+    title: 'Airflow Intelligence',
+    copy:
+      'Identify airflow restrictions, blocked exhaust paths, cable congestion, and equipment placement issues.',
+  },
+  {
+    title: 'Environmental Intelligence',
+    copy:
+      'Review humidity, airborne contamination, water exposure, room conditions, and other environmental risk indicators.',
+  },
+  {
+    title: 'Physical Infrastructure Intelligence',
+    copy:
+      'Assess racks, systems, power-adjacent conditions, cabling, placement, access, and physical risk factors.',
+  },
+  {
+    title: 'Continuous Intelligence',
+    copy:
+      'Support recurring visibility through monitoring recommendations, trending, alerts, and Infrastructure Health reviews.',
+  },
+  {
+    title: 'Asset Intelligence',
+    copy:
+      'Document critical infrastructure assets, observed condition, ownership context, and risk indicators that affect operational continuity.',
+  },
+  {
+    title: 'Documentation Intelligence',
+    copy:
+      'Turn assessment findings into clear records, executive summaries, remediation roadmaps, and recurring monitoring guidance.',
+  },
+];
+
+const remediationServices = [
+  {
+    title: 'Dust Remediation',
+    copy:
+      'ESD-safe removal of dust and airborne contaminants from racks, servers, switches, and network equipment.',
+  },
+  {
+    title: 'Airflow Optimization',
+    copy:
+      'Improve cooling efficiency by reducing airflow restrictions, organizing cable pathways, and improving equipment placement.',
+  },
+  {
+    title: 'Sensor Installation',
+    copy:
+      'Install intake, exhaust, humidity, airflow, and environmental sensors for continuous visibility.',
+  },
+  {
+    title: 'Environmental Monitoring',
+    copy:
+      'Provide trending, alerts, and recurring Infrastructure Health reviews.',
+  },
+  {
+    title: 'Asset & Documentation Updates',
+    copy:
+      'Verify assets, update inventories, rack layouts, cable paths, and operational records.',
+  },
+  {
+    title: 'Positive-Pressure Protection (AirCap™)',
+    copy:
+      'Coming soon: retrofit protection designed to reduce airborne contamination in existing server racks.',
+  },
+];
+
+const packages = [
+  {
+    name: 'Micro-Vault Package',
+    bestFor:
+      'Small offices, startups, departmental IT rooms, single racks, and low-volume environments.',
+    typicalFit:
+      '1-4 systems or small rack environments with light-to-moderate physical infrastructure risk.',
+    includes: [
+      'Infrastructure Health Assessment',
+      'Asset Intelligence snapshot',
+      'Environmental risk review',
+      'Basic documentation findings',
+      'Package recommendation',
+      'Optional sensor or filter upgrade review',
+    ],
+    frequency:
+      'Quarterly or bi-annual depending on assessment findings.',
+  },
+  {
+    name: 'Sovereign 9U Package',
+    bestFor:
+      'Growing MSP clients, small colo cages, edge environments, labs, and mid-size infrastructure rooms.',
+    typicalFit:
+      '5-20 systems, 9U-42U rack environments, moderate AI/GPU density, airflow concerns, or documentation gaps.',
+    includes: [
+      'Infrastructure Health Assessment',
+      'Thermal and airflow review',
+      'Environmental Intelligence findings',
+      'Asset and Documentation Intelligence review',
+      'Risk summary',
+      'Recommended remediation roadmap',
+      'Optional sensor installation and monitoring plan',
+    ],
+    frequency: 'Monthly or quarterly depending on risk level.',
+  },
+  {
+    name: 'Enterprise Zone Package',
+    bestFor:
+      'Multi-rack environments, AI/GPU clusters, warehouses, manufacturing sites, and higher-risk edge infrastructure.',
+    typicalFit:
+      'Multiple racks, high-density systems, high business impact, harsh environments, thermal stress, or significant documentation gaps.',
+    includes: [
+      'Full Infrastructure Health Intelligence Assessment',
+      'Thermal, airflow, environmental, physical infrastructure, asset, and documentation intelligence',
+      'Executive risk summary',
+      'Prioritized remediation roadmap',
+      'Monitoring recommendations',
+      'Sensor and positive-pressure protection review',
+      'Recurring Infrastructure Health reporting',
+    ],
+    frequency: 'Monthly for high-density or high-risk environments.',
+  },
+];
+
+const assessmentMetrics = [
+  'Number of racks and systems',
+  'Thermal hotspots and temperature delta',
+  'Airflow restriction indicators',
+  'Environmental exposure',
+  'AI/GPU density',
+  'Asset condition',
+  'Documentation completeness',
+  'Business impact level',
+];
+
+const recommendationExamples = [
+  ['Light risk', 'Micro-Vault Package'],
+  ['Moderate risk', 'Sovereign 9U Package'],
+  ['High risk', 'Enterprise Zone Package'],
+];
 
 export default function App() {
   const [showAuditForm, setShowAuditForm] = useState(false);
   const [showPilotForm, setShowPilotForm] = useState(false);
-
-  const sectionClass = 'bg-white rounded-2xl shadow p-8';
-  const imageClass =
-    'w-full max-w-4xl mx-auto rounded-2xl shadow-lg border mb-6 object-cover';
 
   if (typeof window !== 'undefined' && window.location.pathname === '/thank-you') {
     return <ThankYou />;
   }
 
   return (
-    <div className="bg-gray-50 min-h-screen text-gray-900 font-sans">
-      <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur border-b shadow-sm">
-        <div className="max-w-6xl mx-auto px-6 py-4 flex flex-wrap gap-5 justify-center text-sm font-bold text-gray-700">
-          <a href="#home" className="hover:text-blue-600 transition">Home</a>
-          <a href="#services" className="hover:text-blue-600 transition">Services</a>
-          <a href="#airflow" className="hover:text-blue-600 transition">Airflow & Thermal</a>
-          <a href="#environmental-monitoring" className="hover:text-blue-600 transition">Environmental Monitoring</a>
-          <a href="#msp" className="hover:text-blue-600 transition">MSP Partners</a>
-          <a href="#audit-report" className="hover:text-blue-600 transition">Audit Report</a>
-          <a href="#contact" className="hover:text-blue-600 transition">Contact</a>
+    <div className="min-h-screen bg-slate-50 text-slate-950 font-sans">
+      <nav className="sticky top-0 z-50 border-b border-slate-200 bg-white/95 backdrop-blur">
+        <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-4 px-5 py-4">
+          <a href="#home" className="flex items-center gap-3 font-bold text-slate-950">
+            <img src="/logo.png" alt="Digital-ABB logo" className="h-10 w-10 rounded-md" />
+            <span>Digital-ABB</span>
+          </a>
+
+          <div className="flex flex-wrap gap-x-5 gap-y-2 text-sm font-semibold text-slate-700">
+            <a href="#services" className="hover:text-blue-700">Services</a>
+            <a href="#assessment" className="hover:text-blue-700">Assessment</a>
+            <a href="#packages" className="hover:text-blue-700">Packages</a>
+            <a href="#remediation" className="hover:text-blue-700">Remediation & Optimization</a>
+            <a href="#methodology" className="hover:text-blue-700">Methodology</a>
+            <a href="#contact" className="hover:text-blue-700">Contact</a>
+          </div>
         </div>
       </nav>
 
-      <main className="max-w-6xl mx-auto px-6 py-12 space-y-12">
-        {/* Hero */}
-        <section id="home" className="bg-white rounded-3xl shadow-xl p-8 md:p-16 border border-gray-100">
-          <div className="flex flex-col md:flex-row items-start md:items-center gap-6 mb-6">
-            <img src="/logo.png" alt="Digital-ABB logo" className="w-24 h-24 rounded-xl shadow" />
+      <main>
+        <section id="home" className="relative isolate min-h-[78vh] overflow-hidden">
+          <img
+            src={hero}
+            alt="Infrastructure health monitoring dashboard"
+            className="absolute inset-0 h-full w-full object-cover"
+          />
+          <div className="absolute inset-0 bg-slate-950/70" />
 
-            <div>
-              <h1 className="text-5xl md:text-6xl font-extrabold text-blue-600 leading-tight">
-                Digital-ABB
+          <div className="relative mx-auto flex min-h-[78vh] max-w-7xl items-center px-5 py-20">
+            <div className="max-w-4xl text-white">
+              <h1 className="text-5xl font-black leading-tight md:text-7xl">
+                Infrastructure Health Intelligence Platform
               </h1>
-              <h2 className="text-2xl md:text-3xl font-semibold mt-3 max-w-4xl leading-relaxed">
-                Operational Reliability for the AI Infrastructure Era
-              </h2>
-            </div>
-          </div>
-
-          <p className="text-xl text-gray-700 mt-5 max-w-4xl leading-8">
-            Today's GPU platforms, accelerated computing systems, and hybrid infrastructure
-            environments require greater thermal stability, airflow consistency, and
-            environmental visibility than legacy IT environments. Digital-ABB helps
-            organizations identify physical-layer risks before they contribute to cooling
-            inefficiencies, hardware instability, or operational downtime.
-          </p>
-
-          <p className="text-gray-800 max-w-4xl mt-6 leading-8">
-            Modern AI infrastructure increasingly depends on stable physical operating environments.
-          </p>
-
-          <p className="text-gray-800 max-w-4xl mt-4 leading-8">
-            Helping organizations improve operational reliability through greater visibility into the physical operating conditions that modern infrastructure depends on.
-          </p>
-
-          <div className="mt-6 flex flex-wrap gap-4 font-semibold">
-            <span>✔ Operational Continuity</span>
-            <span>✔ Infrastructure Intelligence</span>
-            <span>✔ Predictive Risk Detection</span>
-            <span>✔ Thermal Stability Protection</span>
-            <span>✔ AI Physical Risk Intelligence</span>
-          </div>
-
-          <div className="mt-8 flex flex-col sm:flex-row gap-4">
-            <button
-              onClick={() => window.open('/digital_abb_infrastructure_assessment.pdf', '_blank')}
-              className="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold shadow hover:bg-blue-500 transition"
-            >
-              Request Free Infrastructure Assessment
-            </button>
-
-            <button
-              onClick={() => setShowAuditForm(true)}
-              className="bg-gray-900 text-white px-6 py-3 rounded-lg font-semibold shadow hover:bg-gray-800 transition"
-            >
-              Download Sample InfraSummary
-            </button>
-          </div>
-        </section>
-        <section className={sectionClass}>
-          <h3 className="text-3xl font-bold mb-4">
-            Infrastructure Alignment Assessment
-          </h3>
-
-          <p className="text-gray-800 leading-8 mb-8 max-w-4xl">
-            Digital-ABB helps organizations understand whether infrastructure assets are
-            operating within the environments those assets depend on.
-          </p>
-
-          <p className="text-xl font-semibold text-gray-900 mb-6">
-            The assessment provides visibility into:
-          </p>
-
-          <div className="grid md:grid-cols-2 gap-6 text-gray-800">
-            <div className="border rounded-xl p-5 bg-gray-50">
-              <h4 className="text-xl font-bold mb-3 text-blue-600">Infrastructure Assets</h4>
-              <ul className="space-y-2">
-                <li>Asset inventory</li>
-                <li>Asset condition observations</li>
-                <li>Infrastructure documentation</li>
-              </ul>
-            </div>
-
-            <div className="border rounded-xl p-5 bg-gray-50">
-              <h4 className="text-xl font-bold mb-3 text-blue-600">Operating Environment</h4>
-              <ul className="space-y-2">
-                <li>Airflow observations</li>
-                <li>Thermal observations</li>
-                <li>Environmental observations</li>
-              </ul>
-            </div>
-
-            <div className="border rounded-xl p-5 bg-gray-50">
-              <h4 className="text-xl font-bold mb-3 text-blue-600">Environment Alignment</h4>
-              <ul className="space-y-2">
-                <li>Review of observed conditions</li>
-                <li>Comparison against manufacturer-recommended operating practices</li>
-                <li>Documentation of findings</li>
-              </ul>
-            </div>
-
-            <div className="border rounded-xl p-5 bg-gray-50">
-              <h4 className="text-xl font-bold mb-3 text-blue-600">Deliverables</h4>
-              <ul className="space-y-2">
-                <li>Infrastructure Condition Record</li>
-                <li>Executive InfraSummary</li>
-                <li>Asset Inventory</li>
-                <li>Recommendations</li>
-                <li>Historical Assessment Records</li>
-              </ul>
-            </div>
-          </div>
-        </section>
-        <section className={sectionClass}>
-          <h3 className="text-3xl font-bold mb-4">
-            Why Organizations Use It
-          </h3>
-
-          <div className="space-y-5 text-gray-800 leading-8 max-w-5xl">
-            <p>
-              Many organizations maintain visibility into their networks, applications,
-              and cybersecurity systems.
-            </p>
-
-            <p>
-              Far fewer maintain visibility into the physical operating environments
-              those systems depend on.
-            </p>
-
-            <p>
-              Digital-ABB provides documented visibility into infrastructure assets,
-              operating conditions, and environmental observations so organizations
-              can make informed operational decisions.
-            </p>
-          </div>
-        </section>
-        <section className={sectionClass}>
-          <h3 className="text-3xl font-bold mb-6">
-            What We Assess
-          </h3>
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 text-gray-800">
-            {[
-              'Infrastructure Assets',
-              'Rack Conditions',
-              'Airflow Pathways',
-              'Thermal Conditions',
-              'Environmental Conditions',
-              'Cabling Visibility',
-              'Infrastructure Documentation',
-              'Historical Condition Tracking',
-              'Asset Condition Records',
-            ].map((item) => (
-              <div
-                key={item}
-                className="border rounded-xl p-4 bg-gray-50 font-semibold"
-              >
-                <span className="text-blue-600 mr-2">✓</span>
-                {item}
-              </div>
-            ))}
-          </div>
-
-          <p className="mt-5 text-gray-700 leading-7">
-            Assessment findings are documented through Infrastructure Condition Records,
-            Asset Inventories, Executive InfraSummary Reports, and Recommendations.
-          </p>
-        </section>
-        <section className={sectionClass}>
-          <h3 className="text-3xl font-bold mb-4">
-            The New Reality of AI Infrastructure
-          </h3>
-
-          <h4 className="text-2xl font-semibold text-blue-600 mb-6">
-            Yesterday's infrastructure assumptions no longer match today's computing environments.
-          </h4>
-
-          <div className="space-y-5 text-gray-800 leading-8">
-            <p>
-              Traditional enterprise systems were generally more tolerant of airflow disruption,
-              environmental inconsistency, and thermal fluctuation.
-            </p>
-
-            <p className="text-xl font-semibold text-gray-900">
-              Modern AI infrastructure is different.
-            </p>
-
-            <p>
-              Today's GPU platforms, accelerated compute systems, and high-density environments
-              operate under significantly higher thermal and electrical stress. Many modern AI
-              accelerators now consume over 1,000 watts per device, generating extreme thermal
-              loads that require stable airflow, cooling consistency, and environmental awareness
-              to maintain reliable operation.
-            </p>
-
-            <p>
-              As computing density increases, physical-layer conditions that once appeared minor
-              including airflow obstruction, cable congestion, particulate contamination, cooling
-              degradation, and environmental instability can now contribute to hardware stress,
-              operational inefficiencies, reduced performance, and unplanned downtime.
-            </p>
-
-            <p>
-              In large-scale AI environments, physical hardware failures are no longer rare
-              operational events. Thermal fatigue, cooling instability, interconnect degradation,
-              and environmental conditions are becoming increasingly important infrastructure
-              reliability concerns.
-            </p>
-          </div>
-
-          <div className="mt-8 border-l-4 border-blue-600 pl-6">
-            <p className="text-xl font-semibold italic text-gray-900 leading-8">
-              If modern infrastructure is maintained using outdated operational assumptions,
-              organizations may unknowingly increase thermal stress, cooling inefficiencies,
-              and long-term reliability risks.
-            </p>
-          </div>
-        </section>
-        <section className="bg-gradient-to-r from-blue-600 to-blue-800 text-white rounded-2xl shadow-xl p-8 md:p-12">
-          <h3 className="text-3xl font-bold mb-4">
-            Hyperscale-Inspired Infrastructure Logic
-          </h3>
-
-          <p className="text-xl leading-relaxed max-w-4xl">
-            Data is permanent. Compute is replaceable.
-          </p>
-
-          <p className="mt-6 text-lg leading-8 max-w-5xl text-blue-100">
-            Digital-ABB applies hyperscale-inspired thinking to physical-layer infrastructure reliability.
-            Modern environments depend on stable airflow, thermal consistency, environmental awareness,
-            and operational continuity to protect storage, compute, and network infrastructure from
-            preventable failure conditions.
-          </p>
-
-          <p className="mt-4 text-blue-200 italic">
-            Protecting stable physical operations within hybrid infrastructure environments.
-          </p>
-        </section>
-
-        <section className="bg-red-50 border border-red-200 rounded-3xl shadow-xl p-8 md:p-12">
-          <h3 className="text-4xl font-bold mb-6 text-red-700">
-            One Infrastructure Failure Can Erase Months of Revenue
-          </h3>
-
-          <p className="text-lg text-gray-800 leading-8 max-w-5xl mb-8">
-            Most business outages do not begin with cyberattacks or software bugs.
-            They begin with small physical failures:
-            heat buildup, airflow obstruction, cooling degradation, contamination,
-            water intrusion, or unnoticed hardware stress.
-          </p>
-
-          <div className="grid md:grid-cols-3 gap-6">
-            <div className="bg-white rounded-2xl p-6 shadow">
-              <h4 className="font-bold text-xl mb-3">Dental Clinic</h4>
-              <p className="text-4xl font-black text-red-600 mb-2">$8,000</p>
-              <p className="text-gray-700">
-                Estimated loss from a 4-hour infrastructure outage.
+              <p className="mt-5 text-2xl font-semibold text-blue-100 md:text-4xl">
+                Digital-ABB
               </p>
-            </div>
-
-            <div className="bg-white rounded-2xl p-6 shadow">
-              <h4 className="font-bold text-xl mb-3">Law Firm</h4>
-              <p className="text-4xl font-black text-red-600 mb-2">$15,000+</p>
-              <p className="text-gray-700">
-                Potential billable-hour impact from one morning offline.
-              </p>
-            </div>
-
-            <div className="bg-white rounded-2xl p-6 shadow">
-              <h4 className="font-bold text-xl mb-3">AI Infrastructure</h4>
-              <p className="text-4xl font-black text-red-600 mb-2">$50,000+</p>
-              <p className="text-gray-700">
-                GPU and AI hardware risk caused by thermal instability.
-              </p>
-            </div>
-          </div>
-
-          <div className="mt-10 border-l-4 border-red-600 pl-6">
-            <p className="text-2xl font-bold italic text-gray-900">
-              "We do not sell IT support. We sell operational continuity."
-            </p>
-          </div>
-        </section>
-
-        {/* Invisible Threat */}
-        <section className={sectionClass}>
-          <h3 className="text-3xl font-bold mb-4">
-            The Invisible Infrastructure Threat Most IT Rooms Ignore
-          </h3>
-
-          <h4 className="text-2xl font-semibold text-blue-600 mb-4">
-            Your Cooling System May Be Working Against You
-          </h4>
-
-          <p className="text-gray-800 mb-6">
-            Modern cooling systems continuously pull airborne particulate into racks, heatsinks,
-            fan assemblies, cable pathways, and exhaust channels. Over time, contamination accumulates
-            inside the exact airflow paths critical to maintaining thermal stability and hardware reliability.
-          </p>
-
-          <div className="grid md:grid-cols-2 gap-4 text-gray-800">
-            <div className="border rounded-xl p-4">✔ Restricted airflow paths</div>
-            <div className="border rounded-xl p-4">✔ Heatsink contamination buildup</div>
-            <div className="border rounded-xl p-4">✔ Increased fan RPM and power usage</div>
-            <div className="border rounded-xl p-4">✔ Thermal hotspots and heat retention</div>
-            <div className="border rounded-xl p-4">✔ Accelerated hardware wear</div>
-            <div className="border rounded-xl p-4">✔ Cooling inefficiency under AI workloads</div>
-          </div>
-
-          <div className="mt-8 border-l-4 border-blue-600 pl-6">
-            <p className="text-xl font-semibold italic text-gray-900">
-              “Dust becomes a thermal and operational problem long before it becomes visually obvious.”
-            </p>
-          </div>
-        </section>
-
-        {/* Services */}
-        <section id="services" className={sectionClass}>
-          <h3 className="text-3xl font-bold mb-6">
-            Infrastructure Thermal Baseline & Asset Reliability
-          </h3>
-
-          <div className="space-y-5 text-gray-800 leading-8">
-            <p>
-              Digital-ABB helps organizations establish operational visibility for high-value
-              infrastructure assets through airflow observations, thermal condition reviews,
-              environmental awareness, and physical-layer reliability assessments.
-            </p>
-
-            <p>
-              Rather than simply tracking inventory, our approach focuses on identifying
-              conditions that may contribute to thermal stress, cooling inefficiency,
-              accelerated hardware wear, and operational instability within modern AI and
-              hybrid infrastructure environments.
-            </p>
-
-            <p className="font-semibold text-gray-900">Services may include:</p>
-          </div>
-
-          <div className="mt-6 grid md:grid-cols-2 gap-4 text-gray-800">
-            <div className="border rounded-xl p-4">✔ Thermal baseline observations</div>
-            <div className="border rounded-xl p-4">✔ Cooling-system health assessments</div>
-            <div className="border rounded-xl p-4">✔ Airflow pathway verification</div>
-            <div className="border rounded-xl p-4">✔ Environmental operating condition reviews</div>
-            <div className="border rounded-xl p-4">✔ High-value asset visibility and documentation</div>
-            <div className="border rounded-xl p-4">✔ Infrastructure hygiene assessments</div>
-            <div className="border rounded-xl p-4">✔ Maintenance documentation and reporting</div>
-          </div>
-
-          <div className="mt-8 border-l-4 border-blue-600 pl-6">
-            <p className="text-xl font-semibold italic text-gray-900 leading-8">
-              Modern accelerated computing environments operate under significantly tighter
-              thermal and environmental tolerances than traditional enterprise systems. Stable
-              physical operating conditions are increasingly important for long-term
-              infrastructure reliability and operational continuity.
-            </p>
-          </div>
-        </section>
-
-        {/* Example Assessment Finding */}
-        <section className={sectionClass}>
-          <h3 className="text-3xl font-bold mb-6">Example Assessment Finding</h3>
-
-          <div className="space-y-5 text-gray-800">
-            <p className="text-xl font-semibold text-gray-900">
-              Finding: Restricted airflow behind network rack due to cable congestion.
-            </p>
-
-            <p>
-              <span className="font-bold">Risk Level:</span> Medium-High
-            </p>
-
-            <p>
-              <span className="font-bold">Observation:</span> Excess cable density is restricting hot-air exhaust and reducing cooling efficiency around critical infrastructure.
-            </p>
-
-            <p>
-              <span className="font-bold">Potential Impact:</span> Increased thermal exposure, higher cooling demand, accelerated equipment wear, and elevated operational risk during peak workloads.
-            </p>
-
-            <p>
-              <span className="font-bold">Recommendation:</span> Improve cable routing, remove airflow obstructions, and verify thermal performance following remediation.
-            </p>
-
-            <p>
-              <span className="font-bold">Status:</span> Remediation recommended within 30-90 days.
-            </p>
-          </div>
-        </section>
-
-        {/* Workflow */}
-        <section className={sectionClass}>
-          <h3 className="text-3xl font-bold mb-8 text-center">
-            Observe → Analyze → Assess → Optimize
-          </h3>
-
-          <div className="grid md:grid-cols-4 gap-6">
-            <div className="border rounded-xl p-5 bg-gray-50">
-              <h4 className="text-xl font-bold mb-2 text-blue-600">Observe</h4>
-              <p className="text-gray-700">
-                Inspect physical conditions, airflow paths, thermal behavior, contamination, and environmental exposure.
-              </p>
-            </div>
-
-            <div className="border rounded-xl p-5 bg-gray-50">
-              <h4 className="text-xl font-bold mb-2 text-blue-600">Analyze</h4>
-              <p className="text-gray-700">
-                Review patterns, obstructions, risk indicators, and operating conditions affecting infrastructure stability.
-              </p>
-            </div>
-
-            <div className="border rounded-xl p-5 bg-gray-50">
-              <h4 className="text-xl font-bold mb-2 text-blue-600">Assess</h4>
-              <p className="text-gray-700">
-                Document physical-layer risks and prioritize findings based on uptime, hardware, and continuity impact.
-              </p>
-            </div>
-
-            <div className="border rounded-xl p-5 bg-gray-50">
-              <h4 className="text-xl font-bold mb-2 text-blue-600">Optimize</h4>
-              <p className="text-gray-700">
-                Recommend practical improvements to reduce exposure, preserve airflow, and improve operational resilience.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* Scalable Solutions */}
-        <section id="solutions" className={sectionClass}>
-          <h3 className="text-3xl font-bold mb-10 text-center">
-            Scalable Physical-Layer Solutions
-          </h3>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="p-6 rounded-2xl border bg-gray-50">
-              <h4 className="text-xl font-bold mb-2">Micro-Vault</h4>
-              <p className="text-sm text-gray-600 mb-4 font-semibold uppercase">
-                Desktop & Small Office
-              </p>
-              <p className="text-gray-700">
-                Predictive hygiene and thermal protection for standalone servers, NAS units,
-                network closets, and small office infrastructure.
-              </p>
-            </div>
-
-            <div className="p-6 rounded-2xl border border-blue-200 bg-blue-50">
-              <h4 className="text-xl font-bold mb-2">Sovereign 9U</h4>
-              <p className="text-sm text-blue-600 mb-4 font-semibold uppercase">
-                Mid-Size Infrastructure
-              </p>
-              <p className="text-gray-700">
-                Airflow-aware infrastructure support for medical offices, logistics hubs,
-                MSP environments, and hybrid IT rooms.
-              </p>
-            </div>
-
-            <div className="p-6 rounded-2xl border bg-gray-50">
-              <h4 className="text-xl font-bold mb-2">Enterprise Zone</h4>
-              <p className="text-sm text-gray-600 mb-4 font-semibold uppercase">
-                42U Cabinets & Data Centers
-              </p>
-              <p className="text-gray-700">
-                Physical-layer reliability support for high-density racks, AI infrastructure,
-                telecom closets, and data center environments.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* Operational Infrastructure Work */}
-        <section className={sectionClass}>
-          <h3 className="text-3xl font-bold mb-4">Operational Infrastructure Work</h3>
-
-          <p className="text-gray-800 mb-6">
-            Digital-ABB works around live infrastructure with an ESD-aware, no-disconnect
-            approach focused on airflow preservation, thermal reliability, and physical-layer protection.
-          </p>
-
-          <img
-            src="/thermal-inspection-ai-server.png"
-            alt="Digital-ABB thermal inspection of enterprise infrastructure"
-            className="w-full max-w-5xl mx-auto rounded-2xl shadow-lg mb-6"
-          />
-
-          <div className="grid md:grid-cols-3 gap-6">
-            <div className="border rounded-xl p-5">
-              <h4 className="font-bold mb-2">Thermal Inspection</h4>
-              <p>Identify airflow restrictions and abnormal thermal buildup before degradation occurs.</p>
-            </div>
-
-            <div className="border rounded-xl p-5">
-              <h4 className="font-bold mb-2">Airflow Protection</h4>
-              <p>Preserve cold intake and warm exhaust pathways to maintain stable operating temperatures.</p>
-            </div>
-
-            <div className="border rounded-xl p-5">
-              <h4 className="font-bold mb-2">Predictive Infrastructure Maintenance</h4>
-              <p>Reduce particulate contamination affecting heatsinks, fans, cable paths, and cooling efficiency.</p>
-            </div>
-          </div>
-        </section>
-
-        {/* Airflow */}
-        <section id="airflow" className={sectionClass}>
-          <h3 className="text-3xl font-bold mb-4">
-            Airflow Preservation & Thermal Path Management
-          </h3>
-
-          <p className="text-gray-800 mb-6">
-            Dust contamination becomes a risk when it interferes with the airflow paths your infrastructure
-            was designed to rely on. Digital-ABB focuses on preserving cold intake, warm exhaust,
-            and cable-path airflow integrity.
-          </p>
-
-          <img
-            src="/server-rack-airflow-management.png"
-            alt="Digital-ABB airflow management diagram"
-            className={imageClass}
-          />
-
-          <div className="grid md:grid-cols-3 gap-4 text-gray-800">
-            <div className="border rounded-xl p-4">
-              <h4 className="font-bold mb-2">Cool Intake</h4>
-              <p>Maintain clear front-side airflow paths.</p>
-            </div>
-
-            <div className="border rounded-xl p-4">
-              <h4 className="font-bold mb-2">Thermal Transfer</h4>
-              <p>Reduce particulate buildup near heatsinks and fans.</p>
-            </div>
-
-            <div className="border rounded-xl p-4">
-              <h4 className="font-bold mb-2">Warm Exhaust</h4>
-              <p>Protect rear exhaust flow and prevent recirculation.</p>
-            </div>
-          </div>
-        </section>
-
-        {/* Environmental Risk Monitoring */}
-        <section
-          id="environmental-monitoring"
-          className="bg-gradient-to-br from-blue-50 via-white to-slate-50 py-24 px-6"
-        >
-          <h2 className="text-3xl font-bold mb-6">Environmental Risk Monitoring</h2>
-
-          <img
-            src="/environmental-risk-monitoring.png"
-            alt="Digital-ABB environmental risk monitoring and infrastructure protection"
-            className="w-full max-w-4xl h-[420px] mx-auto rounded-2xl shadow-lg border mb-8 object-cover"
-          />
-
-          <p className="text-gray-700 leading-8 mb-4">
-            Digital-ABB supports environmental risk awareness for hybrid infrastructure environments
-            through monitoring approaches focused on water intrusion, AC condensation and leakage risk,
-            airflow obstruction, thermal imbalance, humidity variation, particulate contamination,
-            and physical-layer operating conditions.
-          </p>
-
-          <p className="text-gray-700 leading-8 mb-4">
-            Cooling system leaks, unnoticed humidity fluctuations, and restricted airflow can silently
-            contribute to hardware degradation, instability, and unexpected downtime within server rooms
-            and critical IT spaces.
-          </p>
-
-          <p className="text-gray-700 leading-8">
-            Our objective is to help organizations identify environmental risks early — before they escalate
-            into equipment damage, cooling inefficiencies, service interruptions, or costly infrastructure failures.
-          </p>
-
-          <p className="text-sm text-gray-500 mt-4 italic">
-            Detecting environmental risk before downtime happens.
-          </p>
-        </section>
-
-        {/* Compliance & Monitoring */}
-        <section id="compliance" className={sectionClass}>
-          <h3 className="text-3xl font-bold mb-8">Physical Compliance & Monitoring</h3>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="border-l-4 border-blue-600 pl-6">
-              <h4 className="text-xl font-bold mb-2 text-gray-900 italic">Leak Protection</h4>
-              <p className="text-gray-600">
-                Environmental monitoring helps identify AC condensation leaks, humidity instability,
-                and water intrusion risks before hardware damage occurs.
-              </p>
-            </div>
-
-            <div className="border-l-4 border-blue-600 pl-6">
-              <h4 className="text-xl font-bold mb-2 text-gray-900 italic">Static Tolerance</h4>
-              <p className="text-gray-600">
-                Humidity awareness helps reduce conditions that may contribute to static risk and environmental instability.
-              </p>
-            </div>
-
-            <div className="border-l-4 border-blue-600 pl-6">
-              <h4 className="text-xl font-bold mb-2 text-gray-900 italic">Predictive Infrastructure Maintenance</h4>
-              <p className="text-gray-600">
-                Particulate management supports mission-critical reliability, airflow efficiency, and audit readiness.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* Maintenance */}
-        <section className={sectionClass}>
-          <h3 className="text-3xl font-bold mb-4">Recommended Maintenance Intervals</h3>
-
-          <p className="text-gray-800 mb-6">
-            Infrastructure hygiene should be scheduled based on risk level, equipment density,
-            airflow sensitivity, and environmental conditions — not treated as general cleaning.
-          </p>
-
-          <div className="grid md:grid-cols-2 gap-4">
-            <div className="border rounded-xl p-5">
-              <h4 className="font-bold text-lg mb-2">Small Server Rooms</h4>
-              <p>Quarterly inspection / semiannual hygiene service</p>
-            </div>
-
-            <div className="border rounded-xl p-5">
-              <h4 className="font-bold text-lg mb-2">MSP Client Environments</h4>
-              <p>Quarterly rack and airflow pathway review</p>
-            </div>
-
-            <div className="border rounded-xl p-5">
-              <h4 className="font-bold text-lg mb-2">AI / GPU Racks</h4>
-              <p>Monthly thermal review / quarterly airflow maintenance</p>
-            </div>
-
-            <div className="border rounded-xl p-5">
-              <h4 className="font-bold text-lg mb-2">Deep Fan & Heatsink Cleaning</h4>
-              <p>Annual or bi-annual service during approved shutdown windows</p>
-            </div>
-          </div>
-        </section>
-
-        {/* In-house cleaning */}
-        <section className={sectionClass}>
-          <h3 className="text-3xl font-bold mb-4">Why Traditional Facility Maintenance Cannot Protect Modern Infrastructure</h3>
-
-          <p className="text-gray-800 mb-6">
-            Most in-house or janitorial cleaning focuses on visible surfaces. Infrastructure hygiene
-            requires a different approach because contamination affects airflow paths, cooling efficiency,
-            cable areas, and equipment-adjacent components.
-          </p>
-
-          <div className="grid md:grid-cols-2 gap-6">
-            <div>
-              <h4 className="text-xl font-bold mb-3">General Cleaning Limitations</h4>
-              <ul className="space-y-2 text-gray-800">
-                <li>• No ESD-safe handling process</li>
-                <li>• No rack airflow assessment</li>
-                <li>• No fiber or cable-area contamination review</li>
-                <li>• No thermal-risk documentation</li>
-                <li>• No maintenance window planning</li>
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="text-xl font-bold mb-3">Digital-ABB Approach</h4>
-              <ul className="space-y-2 text-gray-800">
-                <li>✔ ESD-aware procedures</li>
-                <li>✔ No cable disconnect</li>
-                <li>✔ No system access</li>
-                <li>✔ Airflow and thermal-risk focus</li>
-                <li>✔ Visual reporting for IT managers</li>
-              </ul>
-            </div>
-          </div>
-        </section>
-
-        <section className={sectionClass}>
-          <h3 className="text-3xl font-bold mb-6">
-            Financial Protection Through Infrastructure Reliability
-          </h3>
-
-          <div className="space-y-5 text-gray-800 leading-8">
-            <p>
-              Modern AI and high-density infrastructure environments operate under significantly
-              higher thermal and environmental stress than traditional enterprise systems. As
-              organizations increase investment in GPU platforms, accelerated computing, and
-              hybrid infrastructure, physical operating conditions are becoming increasingly
-              important to reliability, energy efficiency, and operational continuity.
-            </p>
-
-            <p>
-              As computing density increases, modern AI infrastructure increasingly depends on
-              stable physical operating environments.
-            </p>
-
-            <p>
-              Industry research and infrastructure operators continue to highlight the growing
-              operational impact of physical-layer conditions:
-            </p>
-          </div>
-
-          <div className="mt-8 grid gap-5">
-            <div className="rounded-xl border border-gray-200 bg-gray-50 p-5">
-              <p className="font-semibold text-gray-900">
-                ✔ Modern AI accelerators can exceed 1,000 watts of power consumption per device,
-                generating significantly higher thermal density than traditional server infrastructure.
-              </p>
-              <p className="mt-2 text-sm font-semibold text-blue-600">
-                Reference: NVIDIA AI Infrastructure & GPU Platform Specifications
-              </p>
-            </div>
-
-            <div className="rounded-xl border border-gray-200 bg-gray-50 p-5">
-              <p className="font-semibold text-gray-900">
-                ✔ Industry analysts estimate that unplanned data center downtime can cost
-                thousands of dollars per hour depending on workload sensitivity and operational scale.
-              </p>
-              <p className="mt-2 text-sm font-semibold text-blue-600">
-                Reference: Uptime Institute Annual Outage Analysis
-              </p>
-            </div>
-
-            <div className="rounded-xl border border-gray-200 bg-gray-50 p-5">
-              <p className="font-semibold text-gray-900">
-                ✔ Cooling inefficiencies, airflow obstruction, and particulate accumulation can
-                increase fan utilization, thermal stress, and overall energy consumption within
-                high-density environments.
-              </p>
-              <p className="mt-2 text-sm font-semibold text-blue-600">
-                Reference: Cisco Environmental & Hardware Maintenance Guidance
-              </p>
-            </div>
-
-            <div className="rounded-xl border border-gray-200 bg-gray-50 p-5">
-              <p className="font-semibold text-gray-900">
-                ✔ Large-scale AI environments increasingly depend on stable thermal performance,
-                cable integrity, and environmental consistency to maintain synchronized compute operations.
-              </p>
-              <p className="mt-2 text-sm font-semibold text-blue-600">
-                Reference: NVIDIA DCGM & Enterprise AI Infrastructure Guidance
-              </p>
-            </div>
-          </div>
-
-          <p className="mt-8 text-gray-800 leading-8">
-            Digital-ABB helps organizations improve airflow integrity, environmental awareness,
-            infrastructure hygiene, thermal visibility, and operational continuity to support
-            stable physical operations within modern infrastructure environments.
-          </p>
-
-          <div className="mt-8 border-l-4 border-blue-600 pl-6">
-            <p className="text-xl font-semibold italic text-gray-900 leading-8">
-              Physical-layer operational reliability is no longer simply a maintenance concern —
-              it is increasingly tied to infrastructure performance, operational stability, and
-              long-term investment protection.
-            </p>
-          </div>
-        </section>
-
-        {/* Audit Report */}
-        <section id="audit-report" className="bg-gray-900 rounded-3xl shadow-2xl p-8 md:p-12 text-white">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-              <h3 className="text-4xl font-bold mb-6">Audit Documentation</h3>
-              <p className="text-xl opacity-90 mb-8 leading-relaxed">
-                Provide visual reporting for risk review and maintenance planning. Our audit report
-                documents physical-layer risks that remote monitoring tools cannot physically detect.
+              <p className="mt-7 max-w-3xl text-lg leading-8 text-slate-100 md:text-xl">
+                Helping organizations identify, assess, document, and monitor physical
+                infrastructure risks before they impact operations.
               </p>
 
-              <div className="space-y-4">
-                <div className="flex items-start gap-4">
-                  <div className="bg-blue-600 p-2 rounded-lg">✔</div>
-                  <div>
-                    <h5 className="font-bold">Thermal & Airflow Observations</h5>
-                    <p className="text-sm opacity-70">
-                      Visual evidence of airflow obstruction, thermal imbalance, and cooling inefficiency.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4">
-                  <div className="bg-blue-600 p-2 rounded-lg">✔</div>
-                  <div>
-                    <h5 className="font-bold">Environmental Risk Findings</h5>
-                    <p className="text-sm opacity-70">
-                      Water intrusion risk, humidity concerns, contamination exposure, and physical-layer operating issues.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-white/5 p-8 rounded-2xl backdrop-blur-md border border-white/10">
-              <h4 className="text-2xl font-bold mb-4 text-blue-400 italic">
-                Sample Physical Integrity Snapshot
-              </h4>
-              <div className="space-y-2 font-mono text-sm">
-                <p className="text-red-400">AIRFLOW: OBSTRUCTION RISK DETECTED</p>
-                <p className="text-orange-400">THERMAL: HOTSPOT POTENTIAL</p>
-                <p className="text-blue-400">ENVIRONMENT: HUMIDITY / LEAKAGE WATCH</p>
-                <div className="w-full bg-gray-800 h-2 mt-4 rounded-full">
-                  <div className="bg-red-500 h-2 w-[75%] rounded-full"></div>
-                </div>
-                <p className="text-right text-xs opacity-50">Physical Layer Risk Score: Elevated</p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* MSP */}
-        <section id="msp" className={sectionClass}>
-          <h3 className="text-3xl font-bold mb-4">MSP Infrastructure Partnership</h3>
-
-          <p className="text-gray-800 text-lg mb-4">
-            Most MSP platforms provide visibility into software, networks, and device performance.
-          </p>
-
-          <p className="text-gray-800 mb-4">
-            Digital-ABB provides visibility into the infrastructure assets, operating environments,
-            documentation gaps, and physical conditions those systems depend on.
-          </p>
-
-          <p className="text-gray-800 mb-6">
-            Together, they create a more complete view of client infrastructure.
-          </p>
-
-          <p className="text-gray-800 mb-6">
-            We help MSPs identify infrastructure assets, environmental conditions, documentation gaps,
-            and historical changes that software monitoring platforms alone cannot verify.
-          </p>
-
-          <p className="text-gray-800 mb-6">
-            Digital-ABB complements traditional MSP operations by focusing on the physical
-            operating environments modern infrastructure increasingly depends on.
-          </p>
-
-          <p className="text-gray-800 mb-6">
-            Most MSP platforms monitor CPU, memory, storage, and network performance —
-            but they cannot detect airflow obstruction, heatsink contamination, particulate accumulation,
-            thermal hotspots, water intrusion risks, or environmental degradation inside client infrastructure environments.
-          </p>
-
-          <div className="grid md:grid-cols-2 gap-6">
-            <div className="border rounded-xl p-6">
-              <h4 className="text-xl font-bold mb-3">What Digital-ABB Provides</h4>
-              <ul className="space-y-2 text-gray-800">
-                <li>✔ Infrastructure Alignment Assessments</li>
-                <li>✔ Infrastructure Asset Visibility</li>
-                <li>✔ Infrastructure Condition Records</li>
-                <li>✔ Environment Alignment Reviews</li>
-                <li>✔ Infrastructure Documentation Visibility</li>
-                <li>✔ Historical Condition Tracking</li>
-                <li>✔ Executive InfraSummary Reports</li>
-              </ul>
-            </div>
-
-            <div className="border rounded-xl p-6 bg-blue-50">
-              <h4 className="text-xl font-bold mb-3">MSP Partnership Benefits</h4>
-              <ul className="space-y-2 text-gray-800">
-                <li>✔ Improved infrastructure visibility</li>
-                <li>✔ Reduced troubleshooting uncertainty</li>
-                <li>✔ Identification of undocumented infrastructure</li>
-                <li>✔ Additional recurring service opportunities</li>
-                <li>✔ Improved client documentation</li>
-                <li>✔ White-label partnership options</li>
-                <li>✔ No additional engineering workload</li>
-              </ul>
-            </div>
-          </div>
-
-          <div className="mt-8 border-l-4 border-blue-600 pl-6">
-            <p className="text-xl font-semibold text-gray-900 italic">
-              “Digital-ABB helps MSPs deliver infrastructure reliability beyond software monitoring.”
-            </p>
-          </div>
-        </section>
-
-        {/* AI Infrastructure Visibility */}
-        <section className={sectionClass}>
-          <h3 className="text-3xl font-bold mb-6">
-            AI Infrastructure Requires Better Physical Visibility
-          </h3>
-
-          <p className="text-gray-800 leading-8 mb-4">
-            The rapid adoption of AI workloads is increasing rack density, power consumption, and heat generation across datacenters, server rooms, and edge facilities.
-          </p>
-
-          <p className="text-gray-800 leading-8 mb-6">
-            As GPU-based infrastructure becomes more common, traditional monitoring alone may not provide visibility into environmental conditions that influence cooling performance and operational stability.
-          </p>
-
-          <p className="text-gray-800 font-semibold mb-4">
-            Digital-ABB helps organizations identify:
-          </p>
-
-          <div className="grid md:grid-cols-3 gap-6 mt-10">
-            {[
-              "🔥 Thermal hotspots",
-              "🌬️ Airflow restrictions",
-              "❄️ Cooling inefficiencies",
-              "💧 Water leak exposure",
-              "⚠️ Dust contamination",
-              "🔌 Cable-related airflow risks",
-            ].map((item) => (
-              <div
-                key={item}
-                className="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
-              >
-                <p className="text-lg font-semibold text-gray-800">
-                  {item}
-                </p>
-              </div>
-            ))}
-          </div>
-
-          <div className="mt-12 border-l-4 border-blue-600 pl-6 py-2">
-            <p className="text-xl italic text-gray-700 leading-relaxed">
-              Traditional monitoring tells you when equipment is unhealthy.
-              Physical Risk Intelligence helps identify environmental
-              conditions before systems are affected.
-            </p>
-          </div>
-
-          <div className="mt-12 max-w-3xl bg-white/70 backdrop-blur-sm rounded-3xl p-8 border border-slate-100 shadow-sm">
-            <p className="text-sm uppercase tracking-[0.2em] text-slate-500 mb-4">
-              Physical Risk Intelligence
-            </p>
-
-            <div className="w-24 h-1 bg-blue-600 rounded-full mb-6"></div>
-
-            <h3 className="text-3xl md:text-4xl font-bold leading-tight tracking-tight text-slate-900">
-              Protecting the physical environments that modern AI infrastructure depends on.
-            </h3>
-          </div>
-        </section>
-
-        {/* Project Scope */}
-        <section className="bg-white rounded-3xl p-12 border border-gray-200">
-          <div className="max-w-3xl mx-auto text-center">
-            <h3 className="text-3xl font-black mb-4">
-              Assessment Outcomes & Next Steps
-            </h3>
-            <p className="text-gray-600 mb-10">
-              Every environment is unique. We provide tailored remediation plans based on your hardware density,
-              ownership model (Owned vs. Leased), and particulate exposure levels.
-            </p>
-
-            <div className="grid md:grid-cols-2 gap-4 text-left mb-10">
-              <div className="p-4 bg-gray-50 rounded-xl border">
-                <span className="font-bold block">1. Infrastructure Alignment Assessment</span>
-                <span className="text-sm text-gray-500">
-                  Infrastructure assets, operating environments, airflow pathways, thermal conditions, documentation records, and historical changes are reviewed and documented.
-                </span>
-              </div>
-              <div className="p-4 bg-gray-50 rounded-xl border">
-                <span className="font-bold block">2. Executive InfraSummary & Recommendations</span>
-                <span className="text-sm text-gray-500">
-                  Assessment findings are documented through Infrastructure Condition Records, Asset Inventories, Executive InfraSummary Reports, and prioritized recommendations for future review or remediation.
-                </span>
-              </div>
-            </div>
-
-            <button
-              onClick={() => setShowAuditForm(true)}
-              className="bg-blue-600 text-white px-10 py-5 rounded-2xl font-bold text-xl hover:bg-blue-700 transition shadow-xl"
-            >
-              Request Infrastructure Assessment
-            </button>
-          </div>
-        </section>
-        {/* Contact */}
-        <section id="contact" className={sectionClass}>
-          <div className="grid md:grid-cols-[1fr_420px] gap-8 items-start">
-            <div>
-              <h3 className="text-2xl font-bold text-blue-600">Digital-ABB</h3>
-              <p>Pflugerville, TX | Serving the Austin Tech Corridor</p>
-              <p>
-                Email:{' '}
-                <a href="mailto:info@digital-abb.com" className="text-blue-600">
-                  info@digital-abb.com
-                </a>
-              </p>
-              <p className="mt-3 text-gray-600">
-                Protecting stable physical operations within hybrid infrastructure environments.
-              </p>
-
-              <div className="mt-6 flex flex-col sm:flex-row gap-4">
+              <div className="mt-9 flex flex-col gap-3 sm:flex-row">
                 <button
-                  onClick={() => setShowAuditForm(true)}
-                  className="bg-gray-900 text-white px-6 py-3 rounded-full font-semibold hover:bg-gray-800 transition"
-                >
-                  Download Sample InfraSummary
-                </button>
-
-                <button
+                  type="button"
                   onClick={() => setShowPilotForm(true)}
-                  className="bg-blue-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-blue-500 transition"
+                  className="rounded-md bg-blue-600 px-6 py-3 font-bold text-white shadow-lg transition hover:bg-blue-500"
                 >
-                  Book Audit
+                  Request Assessment
                 </button>
+                <button
+                  type="button"
+                  onClick={() => setShowAuditForm(true)}
+                  className="rounded-md border border-white/70 bg-white/10 px-6 py-3 font-bold text-white backdrop-blur transition hover:bg-white/20"
+                >
+                  View Sample Report
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="services" className="bg-white py-16">
+          <div className="mx-auto max-w-7xl px-5">
+            <div className="max-w-3xl">
+              <p className="text-sm font-bold uppercase tracking-wider text-blue-700">
+                Intelligence Services
+              </p>
+              <h2 className="mt-3 text-4xl font-black tracking-tight">
+                Identify, assess, remediate, document, and monitor physical risk.
+              </h2>
+              <p className="mt-5 text-lg leading-8 text-slate-700">
+                Digital-ABB gives organizations a practical way to see the physical
+                infrastructure conditions that remote tools often miss.
+              </p>
+            </div>
+
+            <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+              {services.map((service) => (
+                <article key={service.title} className="rounded-lg border border-slate-200 bg-slate-50 p-6">
+                  <h3 className="text-xl font-bold text-slate-950">{service.title}</h3>
+                  <p className="mt-4 leading-7 text-slate-700">{service.copy}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section id="assessment" className="bg-slate-100 py-16">
+          <div className="mx-auto grid max-w-7xl gap-10 px-5 lg:grid-cols-[1fr_420px]">
+            <div>
+              <p className="text-sm font-bold uppercase tracking-wider text-blue-700">
+                Assessment-to-Package
+              </p>
+              <h2 className="mt-3 text-4xl font-black tracking-tight">
+                Every package starts with measured infrastructure findings.
+              </h2>
+              <p className="mt-5 text-lg leading-8 text-slate-700">
+                Digital-ABB begins with an Infrastructure Health Assessment that
+                collects data across racks, systems, operating conditions, asset
+                condition, and documentation quality. The assessment produces
+                documented findings that guide package recommendations,
+                remediation priorities, optimization work, and monitoring needs.
+              </p>
+            </div>
+
+            <div className="rounded-lg border border-slate-300 bg-white p-6">
+              <h3 className="text-xl font-bold">Assessment metrics used</h3>
+              <ul className="mt-5 space-y-3 text-slate-700">
+                {assessmentMetrics.map((metric) => (
+                  <li key={metric} className="flex gap-3">
+                    <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-blue-600" />
+                    <span>{metric}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section id="packages" className="bg-white py-16">
+          <div className="mx-auto max-w-7xl px-5">
+            <div className="max-w-4xl">
+              <p className="text-sm font-bold uppercase tracking-wider text-blue-700">
+                Packages
+              </p>
+              <h2 className="mt-3 text-4xl font-black tracking-tight">
+                Infrastructure Health Packages
+              </h2>
+              <p className="mt-5 text-lg leading-8 text-slate-700">
+                Digital-ABB begins with an Infrastructure Health Assessment. Assessment
+                findings determine the recommended package based on rack count,
+                environmental exposure, thermal risk, airflow restriction, AI/GPU density,
+                asset condition, and documentation gaps.
+              </p>
+            </div>
+
+            <div className="mt-10 grid gap-6 lg:grid-cols-3">
+              {packages.map((pkg) => (
+                <article key={pkg.name} className="flex flex-col rounded-lg border border-slate-200 bg-slate-50 p-6">
+                  <h3 className="text-2xl font-black text-slate-950">{pkg.name}</h3>
+
+                  <p className="mt-5 text-sm font-bold uppercase tracking-wide text-blue-700">
+                    Best for
+                  </p>
+                  <p className="mt-2 leading-7 text-slate-700">{pkg.bestFor}</p>
+
+                  <p className="mt-5 text-sm font-bold uppercase tracking-wide text-blue-700">
+                    Typical fit
+                  </p>
+                  <p className="mt-2 leading-7 text-slate-700">{pkg.typicalFit}</p>
+
+                  <p className="mt-5 text-sm font-bold uppercase tracking-wide text-blue-700">
+                    Includes
+                  </p>
+                  <ul className="mt-3 space-y-2 text-slate-700">
+                    {pkg.includes.map((item) => (
+                      <li key={item} className="flex gap-3">
+                        <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-blue-600" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  <div className="mt-6 border-t border-slate-200 pt-5">
+                    <p className="text-sm font-bold uppercase tracking-wide text-blue-700">
+                      Recommended frequency
+                    </p>
+                    <p className="mt-2 leading-7 text-slate-700">{pkg.frequency}</p>
+                  </div>
+                </article>
+              ))}
+            </div>
+
+            <div className="mt-10 rounded-lg border border-slate-300 bg-slate-950 p-6 text-white">
+              <h3 className="text-2xl font-bold">Package recommendation logic</h3>
+              <div className="mt-5 grid gap-4 md:grid-cols-3">
+                {recommendationExamples.map(([risk, pkg]) => (
+                  <div key={risk} className="rounded-lg border border-white/15 bg-white/10 p-5">
+                    <p className="text-sm font-bold uppercase tracking-wide text-blue-200">{risk}</p>
+                    <p className="mt-2 text-xl font-bold">{pkg}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="remediation" className="bg-slate-100 py-16">
+          <div className="mx-auto max-w-7xl px-5">
+            <div className="max-w-4xl">
+              <p className="text-sm font-bold uppercase tracking-wider text-blue-700">
+                Remediation
+              </p>
+              <h2 className="mt-3 text-4xl font-black tracking-tight">
+                Remediation & Optimization
+              </h2>
+              <p className="mt-5 text-lg leading-8 text-slate-700">
+                After the Infrastructure Health Assessment, Digital-ABB provides
+                prioritized remediation and optimization services based on documented
+                findings and measured operational risks.
+              </p>
+            </div>
+
+            <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+              {remediationServices.map((service) => (
+                <article key={service.title} className="rounded-lg border border-slate-300 bg-white p-6">
+                  <h3 className="text-xl font-bold text-slate-950">{service.title}</h3>
+                  <p className="mt-4 leading-7 text-slate-700">{service.copy}</p>
+                </article>
+              ))}
+            </div>
+
+            <div className="mt-10 rounded-lg border border-blue-200 bg-blue-50 p-6">
+              <p className="text-xl font-bold text-slate-950">
+                From Assessment to Action:
+              </p>
+              <p className="mt-3 leading-8 text-slate-700">
+                Every Infrastructure Health Assessment concludes with a prioritized
+                remediation roadmap. Digital-ABB turns findings into practical
+                actions that improve reliability, visibility, and long-term resilience.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section id="methodology" className="bg-slate-100 py-16">
+          <div className="mx-auto max-w-7xl px-5">
+            <p className="text-sm font-bold uppercase tracking-wider text-blue-700">
+              Methodology
+            </p>
+            <h2 className="mt-3 max-w-4xl text-4xl font-black tracking-tight">
+              A practical workflow for physical infrastructure risk intelligence.
+            </h2>
+
+            <div className="mt-10 grid gap-5 md:grid-cols-5">
+              {['Assessment', 'Analysis', 'Intelligence Report', 'Remediation', 'Monitoring'].map((step, index) => (
+                <div key={step} className="rounded-lg border border-slate-300 bg-white p-5">
+                  <p className="text-sm font-bold text-blue-700">0{index + 1}</p>
+                  <h3 className="mt-3 text-xl font-black">{step}</h3>
+                  <p className="mt-3 text-sm leading-6 text-slate-700">
+                    Build visibility into infrastructure health findings and convert
+                    them into operational next steps.
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section id="contact" className="bg-white py-16">
+          <div className="mx-auto grid max-w-7xl gap-10 px-5 lg:grid-cols-[1fr_420px]">
+            <div>
+              <p className="text-sm font-bold uppercase tracking-wider text-blue-700">
+                Sample Report / Contact
+              </p>
+              <h2 className="mt-3 text-4xl font-black tracking-tight">
+                See how Infrastructure Health Intelligence is documented.
+              </h2>
+              <p className="mt-5 max-w-3xl text-lg leading-8 text-slate-700">
+                Review a sample report or request an assessment to map environmental
+                risk, airflow risk, thermal risk, Asset Intelligence, Documentation
+                Intelligence, remediation roadmap, and monitoring options.
+              </p>
+
+              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+                <button
+                  type="button"
+                  onClick={() => setShowPilotForm(true)}
+                  className="rounded-md bg-blue-600 px-6 py-3 font-bold text-white shadow transition hover:bg-blue-500"
+                >
+                  Request Assessment
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setShowAuditForm(true)}
+                  className="rounded-md bg-slate-950 px-6 py-3 font-bold text-white shadow transition hover:bg-slate-800"
+                >
+                  View Sample Report
+                </button>
+              </div>
+
+              <div className="mt-8 leading-7 text-slate-700">
+                <p className="font-bold text-slate-950">Digital-ABB LLC</p>
+                <p>3801 N Capital of Texas Hwy</p>
+                <p>Ste E240-3962</p>
+                <p>Austin, TX 78746</p>
+                <p>
+                  Email:{' '}
+                  <a href="mailto:info@digital-abb.com" className="font-semibold text-blue-700">
+                    info@digital-abb.com
+                  </a>
+                </p>
               </div>
             </div>
 
@@ -1026,7 +453,7 @@ export default function App() {
               name="contact"
               method="POST"
               data-netlify="true"
-              className="w-full space-y-4 rounded-2xl border border-gray-200 bg-gray-50 p-6"
+              className="space-y-4 rounded-lg border border-slate-200 bg-slate-50 p-6"
             >
               <input type="hidden" name="form-name" value="contact" />
 
@@ -1035,63 +462,57 @@ export default function App() {
                 name="email"
                 placeholder="Your email"
                 required
-                className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-600"
+                className="w-full rounded-md border border-slate-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-600"
               />
 
               <textarea
                 name="message"
                 placeholder="Message"
                 rows={5}
-                className="w-full resize-none border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-600"
-              ></textarea>
+                className="w-full resize-none rounded-md border border-slate-300 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-600"
+              />
 
               <button
                 type="submit"
-                className="w-full bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold shadow hover:bg-blue-500 transition"
+                className="w-full rounded-md bg-blue-600 px-6 py-3 font-semibold text-white shadow transition hover:bg-blue-500"
               >
                 Send
               </button>
             </form>
           </div>
         </section>
-
-        <div className="text-sm text-gray-500 mt-6">
-          Stable Physical Operations™ for modern AI and hybrid infrastructure environments.
-        </div>
       </main>
 
-      {/* Pilot Form Modal */}
       {showPilotForm && (
-        <div className="fixed inset-0 bg-black/50 flex items-center justify-center p-4 z-50">
-          <div className="bg-white rounded-2xl shadow-xl p-8 max-w-md w-full relative">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4">
+          <div className="relative w-full max-w-md rounded-lg bg-white p-8 shadow-xl">
             <button
               type="button"
               onClick={() => setShowPilotForm(false)}
-              className="absolute top-4 right-4 text-gray-500 hover:text-gray-900"
+              className="absolute right-4 top-4 text-slate-500 hover:text-slate-900"
             >
-              ✕
+              X
             </button>
             <ContactForm onClose={() => setShowPilotForm(false)} />
           </div>
         </div>
       )}
 
-      {/* Audit Download Modal */}
       {showAuditForm && (
-        <div className="fixed inset-0 bg-black/50 flex items-center justify-center p-4 z-50">
-          <div className="bg-white rounded-2xl shadow-xl p-8 max-w-md w-full relative">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4">
+          <div className="relative w-full max-w-md rounded-lg bg-white p-8 shadow-xl">
             <button
               type="button"
               onClick={() => setShowAuditForm(false)}
-              className="absolute top-4 right-4 text-gray-500 hover:text-gray-900"
+              className="absolute right-4 top-4 text-slate-500 hover:text-slate-900"
             >
-              ✕
+              X
             </button>
 
-            <h3 className="text-2xl font-bold mb-3">Download Sample InfraSummary</h3>
+            <h3 className="mb-3 text-2xl font-bold">View Sample Report</h3>
 
-            <p className="text-gray-700 mb-6">
-              Enter your details to receive the Digital-ABB sample InfraSummary.
+            <p className="mb-6 text-slate-700">
+              Enter your details to receive the Digital-ABB sample report.
             </p>
 
             <form
@@ -1105,14 +526,14 @@ export default function App() {
               }}
               className="space-y-4"
             >
-              <input type="hidden" name="lead_type" value="Sample InfraSummary Download" />
+              <input type="hidden" name="lead_type" value="Sample Report Request" />
 
               <input
                 type="text"
                 name="name"
                 required
                 placeholder="Your name"
-                className="w-full border border-gray-300 rounded-lg px-4 py-3"
+                className="w-full rounded-md border border-slate-300 px-4 py-3"
               />
 
               <input
@@ -1120,28 +541,28 @@ export default function App() {
                 name="email"
                 required
                 placeholder="Work email"
-                className="w-full border border-gray-300 rounded-lg px-4 py-3"
+                className="w-full rounded-md border border-slate-300 px-4 py-3"
               />
 
               <input
                 type="text"
                 name="company"
                 placeholder="Company"
-                className="w-full border border-gray-300 rounded-lg px-4 py-3"
+                className="w-full rounded-md border border-slate-300 px-4 py-3"
               />
 
               <button
                 type="submit"
-                className="w-full bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-500"
+                className="w-full rounded-md bg-blue-600 px-6 py-3 font-semibold text-white hover:bg-blue-500"
               >
-                Submit & Download
+                Submit and View
               </button>
             </form>
 
             <button
               type="button"
               onClick={() => setShowAuditForm(false)}
-              className="mt-4 text-sm text-gray-600 underline"
+              className="mt-4 text-sm text-slate-600 underline"
             >
               Cancel
             </button>
@@ -1151,6 +572,3 @@ export default function App() {
     </div>
   );
 }
-
-
-
