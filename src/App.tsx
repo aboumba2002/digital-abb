@@ -191,8 +191,8 @@ export default function App() {
                 Digital-ABB
               </p>
               <p className="mt-7 max-w-3xl text-lg leading-8 text-slate-100 md:text-xl">
-                Helping organizations identify, assess, document, and monitor physical
-                infrastructure risks before they impact operations.
+                Helping organizations identify, assess, document, remediate, and monitor
+                physical infrastructure risks before they impact operations.
               </p>
 
               <div className="mt-9 flex flex-col gap-3 sm:flex-row">
@@ -456,7 +456,7 @@ export default function App() {
 
               <div className="mt-8 leading-7 text-slate-700">
                 <p className="font-bold text-slate-950">Digital-ABB LLC</p>
-                <p>3801 N Capital of Texas Hwy</p>
+                <p>3801 North Capital of Texas Hwy</p>
                 <p>Ste E240-3962</p>
                 <p>Austin, TX 78746</p>
                 <p>
@@ -465,6 +465,18 @@ export default function App() {
                     info@digital-abb.com
                   </a>
                 </p>
+                <p>Phone: (Your Business Phone)</p>
+                <p>
+                  Website:{' '}
+                  <a href="https://www.digital-abb.com" className="font-semibold text-blue-700">
+                    www.digital-abb.com
+                  </a>
+                </p>
+                <div className="mt-4">
+                  <p className="font-bold text-slate-950">Business Hours</p>
+                  <p>Monday-Friday</p>
+                  <p>8:00 AM - 6:00 PM CST</p>
+                </div>
               </div>
             </div>
 
@@ -501,6 +513,39 @@ export default function App() {
           </div>
         </section>
       </main>
+
+      <footer className="border-t border-slate-200 bg-slate-950 text-slate-200">
+        <div className="mx-auto grid max-w-7xl gap-8 px-5 py-10 md:grid-cols-[1.3fr_1fr_1fr]">
+          <div>
+            <p className="text-lg font-black text-white">Digital-ABB</p>
+            <p className="mt-2 max-w-xl leading-7 text-slate-300">
+              Infrastructure Health Intelligence Platform helping organizations
+              identify, assess, document, remediate, and monitor physical
+              infrastructure risks before they impact operations.
+            </p>
+          </div>
+
+          <div className="leading-7">
+            <p className="font-bold text-white">Contact</p>
+            <p>info@digital-abb.com</p>
+            <p>(Your Business Phone)</p>
+            <p>3801 North Capital of Texas Hwy</p>
+            <p>Ste E240-3962</p>
+            <p>Austin, TX 78746</p>
+            <p>www.digital-abb.com</p>
+          </div>
+
+          <div className="leading-7">
+            <p className="font-bold text-white">Business Hours</p>
+            <p>Monday-Friday</p>
+            <p>8:00 AM - 6:00 PM CST</p>
+          </div>
+        </div>
+
+        <div className="border-t border-white/10 px-5 py-5 text-center text-sm text-slate-400">
+          <p>&copy; 2026 Digital-ABB LLC. All Rights Reserved.</p>
+        </div>
+      </footer>
 
       {showPilotForm && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4">

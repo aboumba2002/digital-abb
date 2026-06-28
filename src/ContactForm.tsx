@@ -6,12 +6,13 @@ export default function ContactForm({ onClose }: ContactFormProps) {
   return (
     <div className="max-w-2xl mx-auto p-6 bg-white rounded-2xl shadow-lg relative">
       {/* Close Button (X) in top right corner */}
-      <button 
+      <button
         onClick={onClose}
         className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 font-bold text-xl"
         type="button"
+        aria-label="Close"
       >
-        ✕
+        X
       </button>
 
       <h2 className="text-3xl font-bold mb-2 text-gray-900">Request Your Free Pilot Audit</h2>
