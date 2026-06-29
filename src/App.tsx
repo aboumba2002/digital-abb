@@ -193,6 +193,20 @@ const assessmentPricing = {
     'This investment covers approximately 2.5 to 3 hours of expert on-site technical analysis, precision diagnostic tool utilization (thermal/particulate testing), travel, and the delivery of a comprehensive Executive Summary.',
 };
 
+function getInvestmentParts(price: string) {
+  if (price.startsWith('Starting at: ')) {
+    return {
+      label: 'Starting at:',
+      value: price.replace('Starting at: ', ''),
+    };
+  }
+
+  return {
+    label: '',
+    value: price,
+  };
+}
+
 const recommendationExamples = [
   ['Light risk', 'Micro-Vault Package'],
   ['Moderate risk', 'Sovereign 9U Package'],
@@ -202,6 +216,7 @@ const recommendationExamples = [
 export default function App() {
   const [showAuditForm, setShowAuditForm] = useState(false);
   const [showPilotForm, setShowPilotForm] = useState(false);
+  const assessmentInvestment = getInvestmentParts(assessmentPricing.price);
 
   if (typeof window !== 'undefined' && window.location.pathname === '/thank-you') {
     return <ThankYou />;
@@ -315,9 +330,17 @@ export default function App() {
                 <p className="text-sm font-bold uppercase tracking-wide text-blue-700">
                   {assessmentPricing.title}
                 </p>
-                <p className="mt-2 text-3xl font-black text-slate-950">
-                  {assessmentPricing.price}
-                </p>
+                <div className="mt-3">
+                  <p className="text-sm font-bold uppercase tracking-wide text-slate-600">
+                    Starting Investment
+                  </p>
+                  <p className="mt-2 text-sm font-bold text-blue-700">
+                    {assessmentInvestment.label}
+                  </p>
+                  <p className="text-3xl font-black text-slate-950">
+                    {assessmentInvestment.value}
+                  </p>
+                </div>
                 <p className="mt-4 leading-7 text-slate-700">
                   <span className="font-bold text-slate-950">What this covers: </span>
                   {assessmentPricing.copy}
@@ -357,49 +380,61 @@ export default function App() {
             </div>
 
             <div className="mt-10 grid gap-6 lg:grid-cols-3">
-              {packages.map((pkg) => (
-                <article key={pkg.name} className="flex flex-col rounded-lg border border-slate-200 bg-slate-50 p-6">
-                  <h3 className="text-2xl font-black text-slate-950">{pkg.name}</h3>
-                  <div className="mt-4 rounded-md border border-blue-100 bg-white p-4">
-                    <p className="text-2xl font-black text-blue-700">{pkg.price}</p>
-                    <p className="mt-3 leading-7 text-slate-700">
-                      {pkg.price !== 'Custom Proposal' && (
-                        <span className="font-bold text-slate-950">What this covers: </span>
+              {packages.map((pkg) => {
+                const investment = getInvestmentParts(pkg.price);
+
+                return (
+                  <article key={pkg.name} className="flex flex-col rounded-lg border border-slate-200 bg-slate-50 p-6">
+                    <h3 className="text-2xl font-black text-slate-950">{pkg.name}</h3>
+                    <div className="mt-4 rounded-md border border-blue-100 bg-white p-4">
+                      <p className="text-sm font-bold uppercase tracking-wide text-slate-600">
+                        Starting Investment
+                      </p>
+                      {investment.label && (
+                        <p className="mt-2 text-sm font-bold text-blue-700">
+                          {investment.label}
+                        </p>
                       )}
-                      {pkg.pricingCopy}
+                      <p className="text-2xl font-black text-blue-700">{investment.value}</p>
+                      <p className="mt-3 leading-7 text-slate-700">
+                        {pkg.price !== 'Custom Proposal' && (
+                          <span className="font-bold text-slate-950">What this covers: </span>
+                        )}
+                        {pkg.pricingCopy}
+                      </p>
+                    </div>
+
+                    <p className="mt-5 text-sm font-bold uppercase tracking-wide text-blue-700">
+                      Best for
                     </p>
-                  </div>
+                    <p className="mt-2 leading-7 text-slate-700">{pkg.bestFor}</p>
 
-                  <p className="mt-5 text-sm font-bold uppercase tracking-wide text-blue-700">
-                    Best for
-                  </p>
-                  <p className="mt-2 leading-7 text-slate-700">{pkg.bestFor}</p>
-
-                  <p className="mt-5 text-sm font-bold uppercase tracking-wide text-blue-700">
-                    Typical fit
-                  </p>
-                  <p className="mt-2 leading-7 text-slate-700">{pkg.typicalFit}</p>
-
-                  <p className="mt-5 text-sm font-bold uppercase tracking-wide text-blue-700">
-                    Includes
-                  </p>
-                  <ul className="mt-3 space-y-2 text-slate-700">
-                    {pkg.includes.map((item) => (
-                      <li key={item} className="flex gap-3">
-                        <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-blue-600" />
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-
-                  <div className="mt-6 border-t border-slate-200 pt-5">
-                    <p className="text-sm font-bold uppercase tracking-wide text-blue-700">
-                      Recommended frequency
+                    <p className="mt-5 text-sm font-bold uppercase tracking-wide text-blue-700">
+                      Typical fit
                     </p>
-                    <p className="mt-2 leading-7 text-slate-700">{pkg.frequency}</p>
-                  </div>
-                </article>
-              ))}
+                    <p className="mt-2 leading-7 text-slate-700">{pkg.typicalFit}</p>
+
+                    <p className="mt-5 text-sm font-bold uppercase tracking-wide text-blue-700">
+                      Includes
+                    </p>
+                    <ul className="mt-3 space-y-2 text-slate-700">
+                      {pkg.includes.map((item) => (
+                        <li key={item} className="flex gap-3">
+                          <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-blue-600" />
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+
+                    <div className="mt-6 border-t border-slate-200 pt-5">
+                      <p className="text-sm font-bold uppercase tracking-wide text-blue-700">
+                        Recommended frequency
+                      </p>
+                      <p className="mt-2 leading-7 text-slate-700">{pkg.frequency}</p>
+                    </div>
+                  </article>
+                );
+              })}
             </div>
 
             <div className="mt-10 rounded-lg border border-slate-300 bg-slate-950 p-6 text-white">
@@ -443,29 +478,41 @@ export default function App() {
             </div>
 
             <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-              {remediationServices.map((service) => (
-                <article key={service.title} className="rounded-lg border border-slate-300 bg-white p-6">
-                  <div className="flex items-start gap-4">
-                    <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-md bg-blue-50 text-blue-700">
-                      <service.Icon aria-hidden="true" className="h-6 w-6" strokeWidth={2.2} />
-                    </span>
-                    <h3 className="text-xl font-bold text-slate-950">{service.title}</h3>
-                  </div>
-                  <p className="mt-4 leading-7 text-slate-700">{service.copy}</p>
-                  <div className="mt-5 border-t border-slate-200 pt-5">
-                    <p className="text-2xl font-black text-blue-700">{service.price}</p>
-                    <p className="mt-3 leading-7 text-slate-700">
-                      {service.price !== 'Custom Proposal' && service.price !== 'Coming Soon' && (
-                        <span className="font-bold text-slate-950">What this covers: </span>
+              {remediationServices.map((service) => {
+                const investment = getInvestmentParts(service.price);
+
+                return (
+                  <article key={service.title} className="rounded-lg border border-slate-300 bg-white p-6">
+                    <div className="flex items-start gap-4">
+                      <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-md bg-blue-50 text-blue-700">
+                        <service.Icon aria-hidden="true" className="h-6 w-6" strokeWidth={2.2} />
+                      </span>
+                      <h3 className="text-xl font-bold text-slate-950">{service.title}</h3>
+                    </div>
+                    <p className="mt-4 leading-7 text-slate-700">{service.copy}</p>
+                    <div className="mt-5 border-t border-slate-200 pt-5">
+                      <p className="text-sm font-bold uppercase tracking-wide text-slate-600">
+                        Starting Investment
+                      </p>
+                      {investment.label && (
+                        <p className="mt-2 text-sm font-bold text-blue-700">
+                          {investment.label}
+                        </p>
                       )}
-                      {service.pricingCopy}
-                    </p>
-                    {service.pricingNote && (
-                      <p className="mt-3 leading-7 text-slate-700">{service.pricingNote}</p>
-                    )}
-                  </div>
-                </article>
-              ))}
+                      <p className="text-2xl font-black text-blue-700">{investment.value}</p>
+                      <p className="mt-3 leading-7 text-slate-700">
+                        {service.price !== 'Custom Proposal' && service.price !== 'Coming Soon' && (
+                          <span className="font-bold text-slate-950">What this covers: </span>
+                        )}
+                        {service.pricingCopy}
+                      </p>
+                      {service.pricingNote && (
+                        <p className="mt-3 leading-7 text-slate-700">{service.pricingNote}</p>
+                      )}
+                    </div>
+                  </article>
+                );
+              })}
             </div>
 
             <div className="mt-10 rounded-lg border border-blue-200 bg-blue-50 p-6">
