@@ -53,36 +53,60 @@ const remediationServices = [
   {
     title: 'Dust Remediation',
     Icon: Wind,
+    price: 'Starting at: $1,800',
+    pricingCopy:
+      'This investment covers specialized, non-conductive particulate removal using certified ESD-safe (electrostatic discharge) HEPA equipment to clean sub-floors, intake grilles, and internal server pathways under live operating conditions.',
+    pricingNote:
+      'Pricing varies by: Number of racks, equipment density, environmental conditions, and level of contamination.',
     copy:
       'Remove accumulated dust and airborne contaminants from server racks, network equipment, storage systems, and supporting infrastructure using ESD-safe procedures designed specifically for technology environments.',
   },
   {
     title: 'Airflow Optimization',
     Icon: Gauge,
+    price: 'Custom Proposal',
+    pricingCopy:
+      'Recommendations depend on infrastructure layout, cooling requirements, airflow restrictions, and remediation scope.',
     copy:
       'Improve cooling performance by reducing airflow restrictions, optimizing equipment placement, organizing cable pathways, and improving intake and exhaust airflow throughout the rack.',
   },
   {
     title: 'Sensor Installation',
     Icon: Thermometer,
+    price: 'Starting at: $850',
+    pricingCopy:
+      'This baseline covers the physical deployment, precision placement, and connectivity calibration of critical environmental telemetry hardware to track temperature, humidity, and airflow bottlenecks.',
+    pricingNote:
+      'Pricing depends on: Number of sensors, sensor types, and monitoring requirements.',
     copy:
       'Deploy environmental sensors that continuously monitor intake temperature, exhaust temperature, humidity, airflow conditions, and other critical operating metrics to provide greater infrastructure visibility.',
   },
   {
     title: 'Environmental Monitoring',
     Icon: BarChart3,
+    price: 'Starting at: $49/month',
+    pricingCopy:
+      'This provides continuous, proactive oversight of your environment, delivering real-time anomaly alerts and monthly structural health reports to catch thermal and particulate spikes before they cause downtime.',
+    pricingNote:
+      'Monitoring plans are customized according to infrastructure size and operational requirements.',
     copy:
       'Provide ongoing monitoring, trending, alerts, and recurring Infrastructure Health Reviews that help identify developing risks before they impact business operations.',
   },
   {
     title: 'Asset & Documentation Updates',
     Icon: ClipboardList,
+    price: 'Custom Proposal',
+    pricingCopy:
+      'Pricing is based on the number of assets, documentation scope, rack layouts, cable infrastructure, and inventory requirements.',
     copy:
       'Verify physical assets, update inventories, improve rack documentation, document cable pathways, and maintain accurate infrastructure records that support operations, troubleshooting, and future planning.',
   },
   {
     title: 'AirCap™ (Coming Soon)',
     Icon: ShieldCheck,
+    price: 'Coming Soon',
+    pricingCopy:
+      'Pricing will be announced following product launch.',
     copy:
       'Coming Soon: A future Digital-ABB engineered retrofit solution designed to help protect existing server racks by delivering filtered positive-pressure airflow, reducing airborne particulate exposure without requiring replacement of the existing cabinet.',
   },
@@ -91,6 +115,9 @@ const remediationServices = [
 const packages = [
   {
     name: 'Micro-Vault Package',
+    price: 'Starting at: $1,250',
+    pricingCopy:
+      'This baseline covers highly meticulous, static-safe physical decontamination, cable tracking, and thermal path optimization for a single standalone enclosure, ensuring a flawless foundation for localized operations.',
     bestFor:
       'Small offices, startups, departmental IT rooms, single racks, and low-volume environments.',
     typicalFit:
@@ -108,6 +135,9 @@ const packages = [
   },
   {
     name: 'Sovereign 9U Package',
+    price: 'Starting at: $3,450',
+    pricingCopy:
+      'This covers an intensive multi-rack or lab environment engagement. It includes advanced airflow mapping, structured cable re-routing, and deep physical hygiene remediation across complex, high-utilization edge deployments.',
     bestFor:
       'Growing MSP clients, small colo cages, edge environments, labs, and mid-size infrastructure rooms.',
     typicalFit:
@@ -125,6 +155,9 @@ const packages = [
   },
   {
     name: 'Enterprise Zone Package',
+    price: 'Custom Proposal',
+    pricingCopy:
+      'Every Enterprise Zone engagement is customized based on rack count, AI/GPU density, operational requirements, environmental conditions, and business impact.',
     bestFor:
       'Multi-rack environments, AI/GPU clusters, warehouses, manufacturing sites, and higher-risk edge infrastructure.',
     typicalFit:
@@ -152,6 +185,13 @@ const assessmentMetrics = [
   'Documentation completeness',
   'Business impact level',
 ];
+
+const assessmentPricing = {
+  title: 'Infrastructure Health Assessment',
+  price: 'Starting at: $495',
+  copy:
+    'This investment covers approximately 2.5 to 3 hours of expert on-site technical analysis, precision diagnostic tool utilization (thermal/particulate testing), travel, and the delivery of a comprehensive Executive Summary.',
+};
 
 const recommendationExamples = [
   ['Light risk', 'Micro-Vault Package'],
@@ -271,6 +311,18 @@ export default function App() {
                 documented findings that guide package recommendations,
                 remediation priorities, optimization work, and monitoring needs.
               </p>
+              <div className="mt-8 rounded-lg border border-blue-200 bg-blue-50 p-6">
+                <p className="text-sm font-bold uppercase tracking-wide text-blue-700">
+                  {assessmentPricing.title}
+                </p>
+                <p className="mt-2 text-3xl font-black text-slate-950">
+                  {assessmentPricing.price}
+                </p>
+                <p className="mt-4 leading-7 text-slate-700">
+                  <span className="font-bold text-slate-950">What this covers: </span>
+                  {assessmentPricing.copy}
+                </p>
+              </div>
             </div>
 
             <div className="rounded-lg border border-slate-300 bg-white p-6">
@@ -308,6 +360,15 @@ export default function App() {
               {packages.map((pkg) => (
                 <article key={pkg.name} className="flex flex-col rounded-lg border border-slate-200 bg-slate-50 p-6">
                   <h3 className="text-2xl font-black text-slate-950">{pkg.name}</h3>
+                  <div className="mt-4 rounded-md border border-blue-100 bg-white p-4">
+                    <p className="text-2xl font-black text-blue-700">{pkg.price}</p>
+                    <p className="mt-3 leading-7 text-slate-700">
+                      {pkg.price !== 'Custom Proposal' && (
+                        <span className="font-bold text-slate-950">What this covers: </span>
+                      )}
+                      {pkg.pricingCopy}
+                    </p>
+                  </div>
 
                   <p className="mt-5 text-sm font-bold uppercase tracking-wide text-blue-700">
                     Best for
@@ -391,6 +452,18 @@ export default function App() {
                     <h3 className="text-xl font-bold text-slate-950">{service.title}</h3>
                   </div>
                   <p className="mt-4 leading-7 text-slate-700">{service.copy}</p>
+                  <div className="mt-5 border-t border-slate-200 pt-5">
+                    <p className="text-2xl font-black text-blue-700">{service.price}</p>
+                    <p className="mt-3 leading-7 text-slate-700">
+                      {service.price !== 'Custom Proposal' && service.price !== 'Coming Soon' && (
+                        <span className="font-bold text-slate-950">What this covers: </span>
+                      )}
+                      {service.pricingCopy}
+                    </p>
+                    {service.pricingNote && (
+                      <p className="mt-3 leading-7 text-slate-700">{service.pricingNote}</p>
+                    )}
+                  </div>
                 </article>
               ))}
             </div>
