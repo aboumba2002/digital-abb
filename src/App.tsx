@@ -1,4 +1,12 @@
 import { useState } from 'react';
+import {
+  BarChart3,
+  ClipboardList,
+  Gauge,
+  ShieldCheck,
+  Thermometer,
+  Wind,
+} from 'lucide-react';
 import ContactForm from './ContactForm';
 import ThankYou from './ThankYou';
 import hero from './assets/infrastructure-health-hero.png';
@@ -44,31 +52,37 @@ const services = [
 const remediationServices = [
   {
     title: 'Dust Remediation',
+    Icon: Wind,
     copy:
       'Remove accumulated dust and airborne contaminants from server racks, network equipment, storage systems, and supporting infrastructure using ESD-safe procedures designed specifically for technology environments.',
   },
   {
     title: 'Airflow Optimization',
+    Icon: Gauge,
     copy:
       'Improve cooling performance by reducing airflow restrictions, optimizing equipment placement, organizing cable pathways, and improving intake and exhaust airflow throughout the rack.',
   },
   {
     title: 'Sensor Installation',
+    Icon: Thermometer,
     copy:
       'Deploy environmental sensors that continuously monitor intake temperature, exhaust temperature, humidity, airflow conditions, and other critical operating metrics to provide greater infrastructure visibility.',
   },
   {
     title: 'Environmental Monitoring',
+    Icon: BarChart3,
     copy:
       'Provide ongoing monitoring, trending, alerts, and recurring Infrastructure Health Reviews that help identify developing risks before they impact business operations.',
   },
   {
     title: 'Asset & Documentation Updates',
+    Icon: ClipboardList,
     copy:
       'Verify physical assets, update inventories, improve rack documentation, document cable pathways, and maintain accurate infrastructure records that support operations, troubleshooting, and future planning.',
   },
   {
-    title: 'Positive-Pressure Protection (AirCap™)',
+    title: 'AirCap™ (Coming Soon)',
+    Icon: ShieldCheck,
     copy:
       'Coming Soon: A future Digital-ABB engineered retrofit solution designed to help protect existing server racks by delivering filtered positive-pressure airflow, reducing airborne particulate exposure without requiring replacement of the existing cabinet.',
   },
@@ -370,7 +384,12 @@ export default function App() {
             <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
               {remediationServices.map((service) => (
                 <article key={service.title} className="rounded-lg border border-slate-300 bg-white p-6">
-                  <h3 className="text-xl font-bold text-slate-950">{service.title}</h3>
+                  <div className="flex items-start gap-4">
+                    <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-md bg-blue-50 text-blue-700">
+                      <service.Icon aria-hidden="true" className="h-6 w-6" strokeWidth={2.2} />
+                    </span>
+                    <h3 className="text-xl font-bold text-slate-950">{service.title}</h3>
+                  </div>
                   <p className="mt-4 leading-7 text-slate-700">{service.copy}</p>
                 </article>
               ))}
