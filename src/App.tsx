@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, type ChangeEvent, type FormEvent } from 'react';
 import {
   BarChart3,
   ClipboardList,
@@ -10,6 +10,14 @@ import {
 import ContactForm from './ContactForm';
 import ThankYou from './ThankYou';
 import hero from './assets/infrastructure-health-hero.png';
+import './App.css';
+
+type GuideFormData = {
+  firstName: string;
+  lastName: string;
+  company: string;
+  email: string;
+};
 
 const services = [
   {
@@ -216,7 +224,54 @@ const recommendationExamples = [
 export default function App() {
   const [showAuditForm, setShowAuditForm] = useState(false);
   const [showPilotForm, setShowPilotForm] = useState(false);
+  const [showGuideForm, setShowGuideForm] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+  const [formData, setFormData] = useState<GuideFormData>({
+    firstName: '',
+    lastName: '',
+    company: '',
+    email: '',
+  });
   const assessmentInvestment = getInvestmentParts(assessmentPricing.price);
+
+  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = event.target;
+
+    setFormData((current) => ({
+      ...current,
+      [name]: value,
+    }));
+  };
+
+  const handleGuideSubmit = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    try {
+      const response = await fetch('https://formspree.io/f/mzdozewz', {
+        method: 'POST',
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          firstName: formData.firstName,
+          lastName: formData.lastName,
+          company: formData.company,
+          email: formData.email,
+          formType: 'Infrastructure Health Guide Download',
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Form submission failed.');
+      }
+
+      setSubmitted(true);
+    } catch (error) {
+      console.error(error);
+      setSubmitted(true);
+    }
+  };
 
   if (typeof window !== 'undefined' && window.location.pathname === '/thank-you') {
     return <ThankYou />;
@@ -448,6 +503,101 @@ export default function App() {
                 ))}
               </div>
             </div>
+          </div>
+        </section>
+
+        <section className="guide-section" id="free-guide">
+          <div className="guide-content">
+            <h2>Free Infrastructure Health Guide</h2>
+
+            <p>
+              Learn how to identify common physical infrastructure risks affecting
+              server rooms, AI systems, and critical IT environments.
+            </p>
+
+            {!showGuideForm && !submitted && (
+              <button
+                type="button"
+                className="download-button"
+                onClick={() => setShowGuideForm(true)}
+              >
+                Get Your Free Guide
+              </button>
+            )}
+
+            {showGuideForm && !submitted && (
+              <form className="guide-form" onSubmit={handleGuideSubmit}>
+                <div className="guide-form-grid">
+                  <label>
+                    First Name
+                    <input
+                      type="text"
+                      name="firstName"
+                      value={formData.firstName}
+                      onChange={handleChange}
+                      required
+                    />
+                  </label>
+
+                  <label>
+                    Last Name
+                    <input
+                      type="text"
+                      name="lastName"
+                      value={formData.lastName}
+                      onChange={handleChange}
+                      required
+                    />
+                  </label>
+
+                  <label>
+                    Company
+                    <input
+                      type="text"
+                      name="company"
+                      value={formData.company}
+                      onChange={handleChange}
+                      required
+                    />
+                  </label>
+
+                  <label>
+                    Business Email
+                    <input
+                      type="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      required
+                    />
+                  </label>
+                </div>
+
+                <button type="submit" className="download-button">
+                  Submit and Access Guide
+                </button>
+              </form>
+            )}
+
+            {submitted && (
+              <div className="guide-success">
+                <h3>Thank you, {formData.firstName}.</h3>
+
+                <p>Your Infrastructure Health Guide is ready.</p>
+
+                <a
+                  href="/guides/Protect-Your-IT-Room-Guide.pdf"
+                  download
+                  className="download-button"
+                >
+                  Download Your Guide
+                </a>
+
+                <a href="#assessment" className="assessment-link">
+                  Request an Infrastructure Health Assessment
+                </a>
+              </div>
+            )}
           </div>
         </section>
 
