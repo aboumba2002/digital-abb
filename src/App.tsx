@@ -335,25 +335,20 @@ export default function App() {
         {/* THE 30-SECOND DIFFERENTIATOR */}
         <section className="py-12 bg-slate-950 border-y border-slate-800 text-white">
           <div className="container mx-auto px-4 max-w-4xl text-center">
-            <span className="text-blue-400 text-xs uppercase tracking-widest font-semibold">
-              The Digital-ABB Difference
-            </span>
+            <span className="text-blue-400 text-xs uppercase tracking-widest font-semibold">The Digital-ABB Difference</span>
 
             <h2 className="text-2xl md:text-3xl font-extrabold mt-2 mb-4">
               Why Digital-ABB is Different From Every IT Consultant & Facilities Vendor
             </h2>
 
             <p className="text-slate-300 text-lg md:text-xl font-medium leading-relaxed max-w-3xl mx-auto">
-              While others rely on generic check-ups or routine cleaning, Digital-ABB follows its
-              proprietary
-              <strong className="text-white">Engineering Assessment Framework™ (EAF™)</strong>
-              —converting physical site evidence into objective engineering intelligence and
-              OEM-aligned recommendations.
+              While others rely on generic check-ups or routine cleaning, Digital-ABB follows its proprietary 
+              <strong className="text-white">Engineering Assessment Framework™ (EAF™)</strong>—converting physical site evidence into objective engineering intelligence and OEM-aligned recommendations[cite: 1].
             </p>
 
             <div className="mt-6 inline-flex items-center gap-2 text-sm text-slate-400 bg-slate-900/80 px-4 py-2 rounded-full border border-slate-800">
               <span className="text-blue-400">⚡</span>
-              <span>No Guesswork. No Assumptions. Just Documented Engineering Evidence.</span>
+              <span>No Guesswork. No Assumptions. Just Documented Engineering Evidence[cite: 1].</span>
             </div>
           </div>
         </section>
