@@ -27,7 +27,11 @@ const services = [
   },
   {
     title: 'Physical Infrastructure Intelligence',
-    copy: 'Assess racks, systems, power-adjacent conditions, cabling, placement, access, and physical risk factors.',
+    copy: 'Assess racks, systems, cabling, equipment placement, contamination, access, airflow obstructions, and other physical conditions that may affect infrastructure reliability.',
+  },
+  {
+    title: 'Power Intelligence',
+    copy: 'Document rack-level electrical demand and operating load to provide power context for thermal, airflow, and physical infrastructure findings.',
   },
   {
     title: 'Continuous Intelligence',
@@ -164,6 +168,7 @@ const packages = [
 const assessmentMetrics = [
   'Number of racks and systems',
   'Thermal hotspots and temperature delta',
+  'Rack-level power demand and operating load',
   'Airflow restriction indicators',
   'Environmental exposure',
   'AI/GPU density',
@@ -258,7 +263,7 @@ export default function App() {
   }
 
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-950 font-sans">
+    <div className="min-h-screen bg-[#F3F7FA] text-slate-950 font-sans">
       <nav className="sticky top-0 z-50 border-b border-slate-200 bg-white/95 backdrop-blur">
         <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-4 px-5 py-4">
           <a href="#home" className="flex items-center gap-3 font-bold text-slate-950">
@@ -305,11 +310,13 @@ export default function App() {
               </h1>
               <p className="mt-5 text-2xl font-semibold text-blue-100 md:text-4xl">Digital-ABB</p>
               <p className="mt-7 max-w-3xl text-lg leading-8 text-slate-100 md:text-xl">
-                Digital-ABB bridges physical environment realities with{' '}
-                <strong>Dell, Nvidia, and Cisco engineering specifications</strong>. Our rule-driven
-                platform detects upstream thermal, airflow, and particulate risks that remote
-                software monitoring (DCIM/SNMP) cannot see—preventing silent hardware degradation
-                and thermal throttling before high-density AI and GPU workloads trigger downtime.
+                Digital-ABB makes physical operating conditions visible across thermal, airflow,
+                environmental, physical infrastructure, and power domains — helping organizations
+                identify, correlate, remediate, verify, and prevent infrastructure risk before it
+                affects operations.
+              </p>
+              <p className="mt-4 text-sm font-semibold text-slate-300">
+                Reliability. Performance. Longevity.
               </p>
 
               <div className="mt-9 flex flex-col gap-3 sm:flex-row">
@@ -515,7 +522,7 @@ export default function App() {
               <p className="text-sm font-bold uppercase tracking-wider text-blue-700">
                 Intelligence Services
               </p>
-              <h2 className="mt-3 text-4xl font-black tracking-tight">
+              <h2 className="mt-3 text-4xl font-black tracking-tight text-[#16324F]">
                 Identify, assess, remediate, document, and monitor physical risk.
               </h2>
               <p className="mt-5 text-lg leading-8 text-slate-700">
@@ -535,7 +542,7 @@ export default function App() {
               {services.map((service) => (
                 <article
                   key={service.title}
-                  className="rounded-lg border border-slate-200 bg-slate-50 p-6"
+                  className="rounded-lg border border-[#D7E2EA] bg-white p-6"
                 >
                   <h3 className="text-xl font-bold text-slate-950">{service.title}</h3>
                   <p className="mt-4 leading-7 text-slate-700">{service.copy}</p>
@@ -585,7 +592,7 @@ export default function App() {
               </div>
             </div>
 
-            <div className="rounded-lg border border-slate-300 bg-white p-6">
+            <div className="rounded-lg border border-[#D7E2EA] bg-white p-6">
               <h3 className="text-xl font-bold">Assessment metrics used</h3>
               <ul className="mt-5 space-y-3 text-slate-700">
                 {assessmentMetrics.map((metric) => (
@@ -595,6 +602,24 @@ export default function App() {
                   </li>
                 ))}
               </ul>
+            </div>
+          </div>
+        </section>
+
+        <section className="bg-slate-50 py-12">
+          <div className="mx-auto max-w-5xl px-5">
+            <div className="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm">
+              <h2 className="text-3xl font-bold tracking-tight text-slate-950">
+                Understand the operating environment before escalating the problem.
+              </h2>
+              <p className="mt-4 text-lg leading-8 text-slate-700">
+                Not every infrastructure problem is caused by physical or environmental conditions.
+                Digital-ABB helps determine whether those conditions may be contributing — or
+                provides evidence that allows troubleshooting to continue to the next layer.
+              </p>
+              <p className="mt-4 text-sm font-semibold text-slate-900">
+                We don't guess the cause. We help eliminate the possibilities.
+              </p>
             </div>
           </div>
         </section>
@@ -628,7 +653,7 @@ export default function App() {
                 return (
                   <article
                     key={pkg.name}
-                    className="flex flex-col rounded-lg border border-slate-200 bg-slate-50 p-6"
+                    className="flex flex-col rounded-lg border border-[#D7E2EA] bg-white p-6"
                   >
                     <h3 className="text-2xl font-black text-slate-950">{pkg.name}</h3>
                     <div className="mt-4 rounded-md border border-blue-100 bg-white p-4">
@@ -872,13 +897,20 @@ export default function App() {
                 the end.
               </p>
               <p className="mt-3 leading-8 text-slate-700">
-                Assessment findings determine the recommended Infrastructure Health Package and
-                identify the remediation and optimization services that provide the greatest
-                operational value.
+                Digital-ABB does not assess infrastructure simply to describe its condition. We
+                collect evidence to identify physical operating conditions that can be acted upon.
               </p>
               <p className="mt-3 leading-8 text-slate-700">
-                Digital-ABB transforms measured findings into actionable improvements that enhance
-                infrastructure reliability, operational visibility, and long-term resilience.
+                Assessment findings help determine whether thermal, airflow, environmental, physical
+                infrastructure, power, asset, or documentation conditions warrant remediation,
+                additional investigation, verification, or continued observation.
+              </p>
+              <p className="mt-3 leading-8 text-slate-700">
+                Where actionable physical conditions are identified, Digital-ABB can help remediate
+                those conditions and reassess the environment to verify what changed.
+              </p>
+              <p className="mt-4 text-sm font-semibold text-slate-900">
+                Assessment → Correlation → Remediation → Verification → Prevention
               </p>
             </div>
           </div>
@@ -888,30 +920,77 @@ export default function App() {
           id="methodology"
           className="py-12 bg-slate-950 text-white text-center border-b border-slate-800"
         >
-          <div className="container mx-auto px-4 max-w-4xl">
+          <div className="container mx-auto px-4 max-w-7xl">
             <p className="text-xs text-slate-500 uppercase tracking-widest mb-6">
               The Engineering Process
             </p>
-            <div className="flex flex-wrap justify-center items-center gap-3 text-base font-semibold">
-              <span className="px-5 py-2.5 bg-slate-900 rounded-md border border-slate-800 text-blue-400">
-                Observe
-              </span>
-              <span className="text-slate-600">↓</span>
-              <span className="px-5 py-2.5 bg-slate-900 rounded-md border border-slate-800 text-blue-400">
-                Measure
-              </span>
-              <span className="text-slate-600">↓</span>
-              <span className="px-5 py-2.5 bg-slate-900 rounded-md border border-slate-800 text-blue-400">
-                Analyze
-              </span>
-              <span className="text-slate-600">↓</span>
-              <span className="px-5 py-2.5 bg-slate-900 rounded-md border border-slate-800 text-blue-400">
-                Recommend
-              </span>
-              <span className="text-slate-600">↓</span>
-              <span className="px-5 py-2.5 bg-slate-900 rounded-md border border-slate-800 text-blue-400">
-                Verify
-              </span>
+            <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-5 text-left">
+              <div className="rounded-3xl border border-slate-800 bg-slate-900 p-6">
+                <p className="text-sm font-semibold uppercase tracking-[0.32em] text-slate-500">
+                  01
+                </p>
+                <h3 className="mt-4 text-2xl font-bold text-white">Assessment</h3>
+                <p className="mt-4 text-lg font-semibold text-white">Discover the condition.</p>
+                <p className="mt-3 text-slate-400">
+                  Collect measured and observed evidence across thermal, airflow, environmental,
+                  physical infrastructure, power, asset, and documentation conditions.
+                </p>
+              </div>
+
+              <div className="rounded-3xl border border-slate-800 bg-slate-900 p-6">
+                <p className="text-sm font-semibold uppercase tracking-[0.32em] text-slate-500">
+                  02
+                </p>
+                <h3 className="mt-4 text-2xl font-bold text-white">Correlation</h3>
+                <p className="mt-4 text-lg font-semibold text-white">
+                  Determine whether it may matter.
+                </p>
+                <p className="mt-3 text-slate-400">
+                  Evaluate relationships between measured physical conditions, infrastructure
+                  configuration, workload context, and observed operating concerns without assuming
+                  causation.
+                </p>
+              </div>
+
+              <div className="rounded-3xl border border-slate-800 bg-slate-900 p-6">
+                <p className="text-sm font-semibold uppercase tracking-[0.32em] text-slate-500">
+                  03
+                </p>
+                <h3 className="mt-4 text-2xl font-bold text-white">Remediation</h3>
+                <p className="mt-4 text-lg font-semibold text-white">
+                  Address the physical contributor.
+                </p>
+                <p className="mt-3 text-slate-400">
+                  Correct actionable physical conditions identified through the assessment using
+                  appropriate infrastructure remediation and optimization practices.
+                </p>
+              </div>
+
+              <div className="rounded-3xl border border-slate-800 bg-slate-900 p-6">
+                <p className="text-sm font-semibold uppercase tracking-[0.32em] text-slate-500">
+                  04
+                </p>
+                <h3 className="mt-4 text-2xl font-bold text-white">Verification</h3>
+                <p className="mt-4 text-lg font-semibold text-white">Prove what changed.</p>
+                <p className="mt-3 text-slate-400">
+                  Reassess relevant conditions after remediation and compare before-and-after
+                  evidence to verify the resulting physical operating environment.
+                </p>
+              </div>
+
+              <div className="rounded-3xl border border-slate-800 bg-slate-900 p-6">
+                <p className="text-sm font-semibold uppercase tracking-[0.32em] text-slate-500">
+                  05
+                </p>
+                <h3 className="mt-4 text-2xl font-bold text-white">Prevention</h3>
+                <p className="mt-4 text-lg font-semibold text-white">
+                  Help keep the condition from returning.
+                </p>
+                <p className="mt-3 text-slate-400">
+                  Establish baselines, recurring reviews, monitoring recommendations, and preventive
+                  practices appropriate to the infrastructure environment.
+                </p>
+              </div>
             </div>
           </div>
         </section>
@@ -959,7 +1038,6 @@ export default function App() {
                     info@digital-abb.com
                   </a>
                 </p>
-                <p>Phone: (Your Business Phone)</p>
                 <p>
                   Website:{' '}
                   <a href="https://www.digital-abb.com" className="font-semibold text-blue-700">
@@ -1032,7 +1110,6 @@ export default function App() {
           <div className="leading-7">
             <p className="font-bold text-white">Contact</p>
             <p>info@digital-abb.com</p>
-            <p>(Your Business Phone)</p>
             <p>3801 North Capital of Texas Hwy</p>
             <p>Ste E240-3962</p>
             <p>Austin, TX 78746</p>
