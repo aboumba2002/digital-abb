@@ -1,12 +1,5 @@
 import { useState, type ChangeEvent, type FormEvent } from 'react';
-import {
-  BarChart3,
-  ClipboardList,
-  Gauge,
-  ShieldCheck,
-  Thermometer,
-  Wind,
-} from 'lucide-react';
+import { BarChart3, ClipboardList, Gauge, ShieldCheck, Thermometer, Wind } from 'lucide-react';
 import ContactForm from './ContactForm';
 import ThankYou from './ThankYou';
 import hero from './assets/infrastructure-health-hero.png';
@@ -22,52 +15,44 @@ type GuideFormData = {
 const services = [
   {
     title: 'Thermal Intelligence',
-    copy:
-      'Measure heat patterns, hotspots, and temperature delta conditions that may affect infrastructure reliability.',
+    copy: 'Measure heat patterns, intake deltas (ΔT), and localized hotspots against OEM operating envelopes to prevent CPU/GPU thermal throttling and VRM degradation.',
   },
   {
     title: 'Airflow Intelligence',
-    copy:
-      'Identify airflow restrictions, blocked exhaust paths, cable congestion, and equipment placement issues.',
+    copy: 'Quantify CFM velocity, static pressure friction, and exhaust recirculation using high-precision anemometers to eliminate airflow bypass.',
   },
   {
-    title: 'Environmental Intelligence',
-    copy:
-      'Review humidity, airborne contamination, water exposure, room conditions, and other environmental risk indicators.',
+    title: 'Environmental & Particulate Intelligence',
+    copy: 'Audit micro-dust insulation layers and ambient thresholds to preserve heatsink conductivity and satisfy manufacturer warranty cleanliness standards.',
   },
   {
     title: 'Physical Infrastructure Intelligence',
-    copy:
-      'Assess racks, systems, power-adjacent conditions, cabling, placement, access, and physical risk factors.',
+    copy: 'Assess racks, systems, power-adjacent conditions, cabling, placement, access, and physical risk factors.',
   },
   {
     title: 'Continuous Intelligence',
-    copy:
-      'Support recurring visibility through monitoring recommendations, trending, alerts, and Infrastructure Health reviews.',
+    copy: 'Support recurring visibility through monitoring recommendations, trending, alerts, and Infrastructure Health reviews.',
   },
   {
     title: 'Asset Intelligence',
-    copy:
-      'Document critical infrastructure assets, observed condition, ownership context, and risk indicators that affect operational continuity.',
+    copy: 'Document critical infrastructure assets, observed condition, ownership context, and risk indicators that affect operational continuity.',
   },
   {
     title: 'Documentation Intelligence',
-    copy:
-      'Turn assessment findings into clear records, executive summaries, remediation roadmaps, and recurring monitoring guidance.',
+    copy: 'Turn assessment findings into clear records, executive summaries, remediation roadmaps, and recurring monitoring guidance.',
   },
 ];
 
 const remediationServices = [
   {
-    title: 'Dust Remediation',
+    title: 'ESD-Safe Particulate Decontamination & Spec Restoration',
     Icon: Wind,
     price: 'Starting at: $1,800',
     pricingCopy:
       'This investment covers specialized, non-conductive particulate removal using certified ESD-safe (electrostatic discharge) HEPA equipment to clean sub-floors, intake grilles, and internal server pathways under live operating conditions.',
     pricingNote:
       'Pricing varies by: Number of racks, equipment density, environmental conditions, and level of contamination.',
-    copy:
-      'Remove accumulated dust and airborne contaminants from server racks, network equipment, storage systems, and supporting infrastructure using ESD-safe procedures designed specifically for technology environments.',
+    copy: 'Remove accumulated dust and airborne contaminants from server racks, network equipment, storage systems, and supporting infrastructure using ESD-safe procedures designed specifically for technology environments.',
   },
   {
     title: 'Airflow Optimization',
@@ -75,8 +60,7 @@ const remediationServices = [
     price: 'Custom Proposal',
     pricingCopy:
       'Recommendations depend on infrastructure layout, cooling requirements, airflow restrictions, and remediation scope.',
-    copy:
-      'Improve cooling performance by reducing airflow restrictions, optimizing equipment placement, organizing cable pathways, and improving intake and exhaust airflow throughout the rack.',
+    copy: 'Improve cooling performance by reducing airflow restrictions, optimizing equipment placement, organizing cable pathways, and improving intake and exhaust airflow throughout the rack.',
   },
   {
     title: 'Sensor Installation',
@@ -86,8 +70,7 @@ const remediationServices = [
       'This baseline covers the physical deployment, precision placement, and connectivity calibration of critical environmental telemetry hardware to track temperature, humidity, and airflow bottlenecks.',
     pricingNote:
       'Pricing depends on: Number of sensors, sensor types, and monitoring requirements.',
-    copy:
-      'Deploy environmental sensors that continuously monitor intake temperature, exhaust temperature, humidity, airflow conditions, and other critical operating metrics to provide greater infrastructure visibility.',
+    copy: 'Deploy environmental sensors that continuously monitor intake temperature, exhaust temperature, humidity, airflow conditions, and other critical operating metrics to provide greater infrastructure visibility.',
   },
   {
     title: 'Environmental Monitoring',
@@ -97,8 +80,7 @@ const remediationServices = [
       'This provides continuous, proactive oversight of your environment, delivering real-time anomaly alerts and monthly structural health reports to catch thermal and particulate spikes before they cause downtime.',
     pricingNote:
       'Monitoring plans are customized according to infrastructure size and operational requirements.',
-    copy:
-      'Provide ongoing monitoring, trending, alerts, and recurring Infrastructure Health Reviews that help identify developing risks before they impact business operations.',
+    copy: 'Provide ongoing monitoring, trending, alerts, and recurring Infrastructure Health Reviews that help identify developing risks before they impact business operations.',
   },
   {
     title: 'Asset & Documentation Updates',
@@ -106,17 +88,14 @@ const remediationServices = [
     price: 'Custom Proposal',
     pricingCopy:
       'Pricing is based on the number of assets, documentation scope, rack layouts, cable infrastructure, and inventory requirements.',
-    copy:
-      'Verify physical assets, update inventories, improve rack documentation, document cable pathways, and maintain accurate infrastructure records that support operations, troubleshooting, and future planning.',
+    copy: 'Verify physical assets, update inventories, improve rack documentation, document cable pathways, and maintain accurate infrastructure records that support operations, troubleshooting, and future planning.',
   },
   {
     title: 'AirCap™ (Coming Soon)',
     Icon: ShieldCheck,
     price: 'Coming Soon',
-    pricingCopy:
-      'Pricing will be announced following product launch.',
-    copy:
-      'Coming Soon: A future Digital-ABB engineered retrofit solution designed to help protect existing server racks by delivering filtered positive-pressure airflow, reducing airborne particulate exposure without requiring replacement of the existing cabinet.',
+    pricingCopy: 'Pricing will be announced following product launch.',
+    copy: 'Coming Soon: A future Digital-ABB engineered retrofit solution designed to help protect existing server racks by delivering filtered positive-pressure airflow, reducing airborne particulate exposure without requiring replacement of the existing cabinet.',
   },
 ];
 
@@ -138,8 +117,7 @@ const packages = [
       'Package recommendation',
       'Optional sensor or filter upgrade review',
     ],
-    frequency:
-      'Quarterly or bi-annual depending on assessment findings.',
+    frequency: 'Quarterly or bi-annual depending on assessment findings.',
   },
   {
     name: 'Sovereign 9U Package',
@@ -192,13 +170,15 @@ const assessmentMetrics = [
   'Asset condition',
   'Documentation completeness',
   'Business impact level',
+  'OEM Spec Threshold Validation (Dell / Nvidia / Cisco)',
+  'Chip-Level Silicon Impact & VRM Degradation Analysis',
+  'Hashed Evidence Bundle & Certified Manager Sign-Off',
 ];
 
 const assessmentPricing = {
   title: 'Infrastructure Health Assessment',
   price: 'Starting at: $495',
-  copy:
-    'This investment covers approximately 2.5 to 3 hours of expert on-site technical analysis, precision diagnostic tool utilization (thermal/particulate testing), travel, and the delivery of a comprehensive Executive Summary.',
+  copy: 'This investment covers an OEM compliance audit workflow, including approximately 2.5 to 3 hours of expert on-site technical analysis, precision diagnostic tool utilization (thermal/particulate testing), travel, and the delivery of a comprehensive Executive Summary.',
 };
 
 function getInvestmentParts(price: string) {
@@ -287,12 +267,24 @@ export default function App() {
           </a>
 
           <div className="flex flex-wrap gap-x-5 gap-y-2 text-sm font-semibold text-slate-700">
-            <a href="#services" className="hover:text-blue-700">Services</a>
-            <a href="#assessment" className="hover:text-blue-700">Assessment</a>
-            <a href="#packages" className="hover:text-blue-700">Packages</a>
-            <a href="#remediation" className="hover:text-blue-700">Remediation & Optimization</a>
-            <a href="#methodology" className="hover:text-blue-700">Methodology</a>
-            <a href="#contact" className="hover:text-blue-700">Contact</a>
+            <a href="#services" className="hover:text-blue-700">
+              Services
+            </a>
+            <a href="#assessment" className="hover:text-blue-700">
+              Assessment
+            </a>
+            <a href="#packages" className="hover:text-blue-700">
+              Packages
+            </a>
+            <a href="#remediation" className="hover:text-blue-700">
+              Remediation & Optimization
+            </a>
+            <a href="#methodology" className="hover:text-blue-700">
+              Methodology
+            </a>
+            <a href="#contact" className="hover:text-blue-700">
+              Contact
+            </a>
           </div>
         </div>
       </nav>
@@ -309,14 +301,15 @@ export default function App() {
           <div className="relative mx-auto flex min-h-[78vh] max-w-7xl items-center px-5 py-20">
             <div className="max-w-4xl text-white">
               <h1 className="text-5xl font-black leading-tight md:text-7xl">
-                Infrastructure Health Intelligence Platform
+                Understand the Physical Conditions Affecting Your Infrastructure.
               </h1>
-              <p className="mt-5 text-2xl font-semibold text-blue-100 md:text-4xl">
-                Digital-ABB
-              </p>
+              <p className="mt-5 text-2xl font-semibold text-blue-100 md:text-4xl">Digital-ABB</p>
               <p className="mt-7 max-w-3xl text-lg leading-8 text-slate-100 md:text-xl">
-                Helping organizations identify, assess, document, remediate, and monitor
-                physical infrastructure risks before they impact operations.
+                Digital-ABB bridges physical environment realities with{' '}
+                <strong>Dell, Nvidia, and Cisco engineering specifications</strong>. Our rule-driven
+                platform detects upstream thermal, airflow, and particulate risks that remote
+                software monitoring (DCIM/SNMP) cannot see—preventing silent hardware degradation
+                and thermal throttling before high-density AI and GPU workloads trigger downtime.
               </p>
 
               <div className="mt-9 flex flex-col gap-3 sm:flex-row">
@@ -325,14 +318,14 @@ export default function App() {
                   onClick={() => setShowPilotForm(true)}
                   className="rounded-md bg-blue-600 px-6 py-3 font-bold text-white shadow-lg transition hover:bg-blue-500"
                 >
-                  Request Assessment
+                  Request OEM-Aligned Assessment
                 </button>
                 <button
                   type="button"
                   onClick={() => setShowAuditForm(true)}
                   className="rounded-md border border-white/70 bg-white/10 px-6 py-3 font-bold text-white backdrop-blur transition hover:bg-white/20"
                 >
-                  View Sample Report
+                  View Certified EAF™ Sample Report
                 </button>
               </div>
             </div>
@@ -349,14 +342,17 @@ export default function App() {
                 Identify, assess, remediate, document, and monitor physical risk.
               </h2>
               <p className="mt-5 text-lg leading-8 text-slate-700">
-                Digital-ABB gives organizations a practical way to see the physical
-                infrastructure conditions that remote tools often miss.
+                Digital-ABB gives organizations a practical way to see the physical infrastructure
+                conditions that remote tools often miss.
               </p>
             </div>
 
             <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
               {services.map((service) => (
-                <article key={service.title} className="rounded-lg border border-slate-200 bg-slate-50 p-6">
+                <article
+                  key={service.title}
+                  className="rounded-lg border border-slate-200 bg-slate-50 p-6"
+                >
                   <h3 className="text-xl font-bold text-slate-950">{service.title}</h3>
                   <p className="mt-4 leading-7 text-slate-700">{service.copy}</p>
                 </article>
@@ -375,15 +371,19 @@ export default function App() {
                 Every package starts with measured infrastructure findings.
               </h2>
               <p className="mt-5 text-lg leading-8 text-slate-700">
-                Digital-ABB begins with an Infrastructure Health Assessment that
-                collects data across racks, systems, operating conditions, asset
-                condition, and documentation quality. The assessment produces
-                documented findings that guide package recommendations,
-                remediation priorities, optimization work, and monitoring needs.
+                Digital-ABB begins with an Infrastructure Health Assessment that collects data
+                across racks, systems, operating conditions, asset condition, and documentation
+                quality. The assessment produces documented findings that guide package
+                recommendations, remediation priorities, optimization work, and monitoring needs.
               </p>
               <div className="mt-8 rounded-lg border border-blue-200 bg-blue-50 p-6">
                 <p className="text-sm font-bold uppercase tracking-wide text-blue-700">
                   {assessmentPricing.title}
+                </p>
+                <p className="mt-3 text-sm italic leading-7 text-slate-700">
+                  Every assessment executes vendor-specific rule sets (Dell Fresh Air Envelopes,
+                  Nvidia DGX Thermal Envelope, Cisco Infrastructure Pathing) to deliver an
+                  executive-grade Physical Spec Risk Profile.
                 </p>
                 <div className="mt-3">
                   <p className="text-sm font-bold uppercase tracking-wide text-slate-600">
@@ -392,9 +392,7 @@ export default function App() {
                   <p className="mt-2 text-sm font-bold text-blue-700">
                     {assessmentInvestment.label}
                   </p>
-                  <p className="text-3xl font-black text-slate-950">
-                    {assessmentInvestment.value}
-                  </p>
+                  <p className="text-3xl font-black text-slate-950">{assessmentInvestment.value}</p>
                 </div>
                 <p className="mt-4 leading-7 text-slate-700">
                   <span className="font-bold text-slate-950">What this covers: </span>
@@ -420,17 +418,15 @@ export default function App() {
         <section id="packages" className="bg-white py-16">
           <div className="mx-auto max-w-7xl px-5">
             <div className="max-w-4xl">
-              <p className="text-sm font-bold uppercase tracking-wider text-blue-700">
-                Packages
-              </p>
+              <p className="text-sm font-bold uppercase tracking-wider text-blue-700">Packages</p>
               <h2 className="mt-3 text-4xl font-black tracking-tight">
                 Infrastructure Health Packages
               </h2>
               <p className="mt-5 text-lg leading-8 text-slate-700">
-                Digital-ABB begins with an Infrastructure Health Assessment. Assessment
-                findings determine the recommended package based on rack count,
-                environmental exposure, thermal risk, airflow restriction, AI/GPU density,
-                asset condition, and documentation gaps.
+                Digital-ABB begins with an Infrastructure Health Assessment. Assessment findings
+                determine the recommended package based on rack count, environmental exposure,
+                thermal risk, airflow restriction, AI/GPU density, asset condition, and
+                documentation gaps.
               </p>
             </div>
 
@@ -439,16 +435,17 @@ export default function App() {
                 const investment = getInvestmentParts(pkg.price);
 
                 return (
-                  <article key={pkg.name} className="flex flex-col rounded-lg border border-slate-200 bg-slate-50 p-6">
+                  <article
+                    key={pkg.name}
+                    className="flex flex-col rounded-lg border border-slate-200 bg-slate-50 p-6"
+                  >
                     <h3 className="text-2xl font-black text-slate-950">{pkg.name}</h3>
                     <div className="mt-4 rounded-md border border-blue-100 bg-white p-4">
                       <p className="text-sm font-bold uppercase tracking-wide text-slate-600">
                         Starting Investment
                       </p>
                       {investment.label && (
-                        <p className="mt-2 text-sm font-bold text-blue-700">
-                          {investment.label}
-                        </p>
+                        <p className="mt-2 text-sm font-bold text-blue-700">{investment.label}</p>
                       )}
                       <p className="text-2xl font-black text-blue-700">{investment.value}</p>
                       <p className="mt-3 leading-7 text-slate-700">
@@ -497,7 +494,9 @@ export default function App() {
               <div className="mt-5 grid gap-4 md:grid-cols-3">
                 {recommendationExamples.map(([risk, pkg]) => (
                   <div key={risk} className="rounded-lg border border-white/15 bg-white/10 p-5">
-                    <p className="text-sm font-bold uppercase tracking-wide text-blue-200">{risk}</p>
+                    <p className="text-sm font-bold uppercase tracking-wide text-blue-200">
+                      {risk}
+                    </p>
                     <p className="mt-2 text-xl font-bold">{pkg}</p>
                   </div>
                 ))}
@@ -511,8 +510,8 @@ export default function App() {
             <h2>Free Infrastructure Health Guide</h2>
 
             <p>
-              Learn how to identify common physical infrastructure risks affecting
-              server rooms, AI systems, and critical IT environments.
+              Learn how to identify common physical infrastructure risks affecting server rooms, AI
+              systems, and critical IT environments.
             </p>
 
             {!showGuideForm && !submitted && (
@@ -614,16 +613,19 @@ export default function App() {
                 Turning Assessment Findings into Practical Solutions
               </h3>
               <p className="mt-5 text-lg leading-8 text-slate-700">
-                Every Infrastructure Health Assessment concludes with a prioritized
-                set of findings and recommendations. Digital-ABB helps organizations
-                move beyond identifying problems by delivering practical remediation
-                and optimization services that improve the health, reliability, and
-                resilience of the physical infrastructure supporting today's IT and
+                Every assessment concludes with a prioritized, OEM-cited Remediation Spec detailing
+                exact technician hours and physical corrective actions required to restore full
+                hardware compliance.
+              </p>
+              <p className="mt-4 text-lg leading-8 text-slate-700">
+                Digital-ABB helps organizations move beyond identifying problems by delivering
+                practical remediation and optimization services that improve the health,
+                reliability, and resilience of the physical infrastructure supporting today's IT and
                 AI environments.
               </p>
               <p className="mt-4 text-lg leading-8 text-slate-700">
-                Our recommendations are based on measured conditions, documented
-                observations, and operational risk, not assumptions.
+                Our recommendations are based on measured conditions, documented observations, and
+                operational risk, not assumptions.
               </p>
             </div>
 
@@ -632,7 +634,10 @@ export default function App() {
                 const investment = getInvestmentParts(service.price);
 
                 return (
-                  <article key={service.title} className="rounded-lg border border-slate-300 bg-white p-6">
+                  <article
+                    key={service.title}
+                    className="rounded-lg border border-slate-300 bg-white p-6"
+                  >
                     <div className="flex items-start gap-4">
                       <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-md bg-blue-50 text-blue-700">
                         <service.Icon aria-hidden="true" className="h-6 w-6" strokeWidth={2.2} />
@@ -645,9 +650,7 @@ export default function App() {
                         Starting Investment
                       </p>
                       {investment.label && (
-                        <p className="mt-2 text-sm font-bold text-blue-700">
-                          {investment.label}
-                        </p>
+                        <p className="mt-2 text-sm font-bold text-blue-700">{investment.label}</p>
                       )}
                       <p className="text-2xl font-black text-blue-700">{investment.value}</p>
                       <p className="mt-3 leading-7 text-slate-700">
@@ -666,22 +669,19 @@ export default function App() {
             </div>
 
             <div className="mt-10 rounded-lg border border-blue-200 bg-blue-50 p-6">
-              <p className="text-xl font-bold text-slate-950">
-                From Assessment to Action
+              <p className="text-xl font-bold text-slate-950">From Assessment to Action</p>
+              <p className="mt-3 leading-8 text-slate-700">
+                The Infrastructure Health Assessment is the beginning of the customer journey, not
+                the end.
               </p>
               <p className="mt-3 leading-8 text-slate-700">
-                The Infrastructure Health Assessment is the beginning of the customer
-                journey, not the end.
+                Assessment findings determine the recommended Infrastructure Health Package and
+                identify the remediation and optimization services that provide the greatest
+                operational value.
               </p>
               <p className="mt-3 leading-8 text-slate-700">
-                Assessment findings determine the recommended Infrastructure Health
-                Package and identify the remediation and optimization services that
-                provide the greatest operational value.
-              </p>
-              <p className="mt-3 leading-8 text-slate-700">
-                Digital-ABB transforms measured findings into actionable improvements
-                that enhance infrastructure reliability, operational visibility, and
-                long-term resilience.
+                Digital-ABB transforms measured findings into actionable improvements that enhance
+                infrastructure reliability, operational visibility, and long-term resilience.
               </p>
             </div>
           </div>
@@ -689,22 +689,38 @@ export default function App() {
 
         <section id="methodology" className="bg-slate-100 py-16">
           <div className="mx-auto max-w-7xl px-5">
-            <p className="text-sm font-bold uppercase tracking-wider text-blue-700">
-              Methodology
-            </p>
+            <p className="text-sm font-bold uppercase tracking-wider text-blue-700">Methodology</p>
             <h2 className="mt-3 max-w-4xl text-4xl font-black tracking-tight">
               A practical workflow for physical infrastructure risk intelligence.
             </h2>
 
             <div className="mt-10 grid gap-5 md:grid-cols-5">
-              {['Assessment', 'Analysis', 'Intelligence Report', 'Remediation', 'Monitoring'].map((step, index) => (
-                <div key={step} className="rounded-lg border border-slate-300 bg-white p-5">
+              {[
+                {
+                  title: 'Pre-Assessment Intake & Baseline',
+                  copy: 'Establish room ambient baseline, CRAC supply air delta, and select target OEM hardware profile.',
+                },
+                {
+                  title: 'Multi-Modal Evidence Capture',
+                  copy: 'Log 6-point rack airflow velocity (CFM), infrared thermal profiles, localized heat sensor readings, and visual evidence.',
+                },
+                {
+                  title: 'Rule-Driven EAF™ Analysis',
+                  copy: 'Cross-reference physical findings against manufacturer thresholds to calculate domain health scores and silicon risk.',
+                },
+                {
+                  title: 'Certified OEM Audit Report',
+                  copy: 'Generate an executive-facing PDF with automated chip-level impact analysis and a prioritized remediation spec.',
+                },
+                {
+                  title: 'Prescriptive Remediation & Monitoring',
+                  copy: 'Execute ESD-safe physical restoration and set up continuous thermal/airflow SLA tracking.',
+                },
+              ].map((step, index) => (
+                <div key={step.title} className="rounded-lg border border-slate-300 bg-white p-5">
                   <p className="text-sm font-bold text-blue-700">0{index + 1}</p>
-                  <h3 className="mt-3 text-xl font-black">{step}</h3>
-                  <p className="mt-3 text-sm leading-6 text-slate-700">
-                    Build visibility into infrastructure health findings and convert
-                    them into operational next steps.
-                  </p>
+                  <h3 className="mt-3 text-xl font-black">{step.title}</h3>
+                  <p className="mt-3 text-sm leading-6 text-slate-700">{step.copy}</p>
                 </div>
               ))}
             </div>
@@ -721,9 +737,9 @@ export default function App() {
                 See how Infrastructure Health Intelligence is documented.
               </h2>
               <p className="mt-5 max-w-3xl text-lg leading-8 text-slate-700">
-                Review a sample report or request an assessment to map environmental
-                risk, airflow risk, thermal risk, Asset Intelligence, Documentation
-                Intelligence, remediation roadmap, and monitoring options.
+                Review a sample report or request an assessment to map environmental risk, airflow
+                risk, thermal risk, Asset Intelligence, Documentation Intelligence, remediation
+                roadmap, and monitoring options.
               </p>
 
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -808,9 +824,9 @@ export default function App() {
           <div>
             <p className="text-lg font-black text-white">Digital-ABB</p>
             <p className="mt-2 max-w-xl leading-7 text-slate-300">
-              Infrastructure Health Intelligence Platform helping organizations
-              identify, assess, document, remediate, and monitor physical
-              infrastructure risks before they impact operations.
+              Infrastructure Health Intelligence Platform helping organizations identify, assess,
+              document, remediate, and monitor physical infrastructure risks before they impact
+              operations.
             </p>
           </div>
 
