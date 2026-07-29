@@ -332,6 +332,145 @@ export default function App() {
           </div>
         </section>
 
+        <section className="bg-slate-900 py-16 text-white">
+          <div className="mx-auto max-w-7xl px-5 text-center">
+            <p className="text-sm font-semibold uppercase tracking-wider text-blue-400">
+              Engineering Before Remediation
+            </p>
+            <h2 className="mt-2 text-3xl font-bold">Engineering Assessment Framework™ (EAF™)</h2>
+            <p className="mx-auto mt-4 max-w-3xl text-lg text-slate-300">
+              Digital-ABB does not begin with assumptions. Every recommendation starts with a
+              structured, rule-driven engineering assessment designed to evaluate the physical
+              operating conditions of your infrastructure directly against manufacturer engineering
+              tolerances.
+            </p>
+
+            <div className="my-8 flex flex-wrap items-center justify-center gap-4 text-sm font-semibold">
+              <span className="rounded-lg border border-slate-700 bg-slate-800 px-4 py-2">
+                1. Assess
+              </span>
+              <span className="text-blue-400">→</span>
+              <span className="rounded-lg border border-slate-700 bg-slate-800 px-4 py-2">
+                2. Analyze
+              </span>
+              <span className="text-blue-400">→</span>
+              <span className="rounded-lg border border-slate-700 bg-slate-800 px-4 py-2">
+                3. Score (IHI™)
+              </span>
+              <span className="text-blue-400">→</span>
+              <span className="rounded-lg border border-slate-700 bg-slate-800 px-4 py-2">
+                4. Recommend
+              </span>
+              <span className="text-blue-400">→</span>
+              <span className="rounded-lg border border-slate-700 bg-slate-800 px-4 py-2">
+                5. Remediate
+              </span>
+              <span className="text-blue-400">→</span>
+              <span className="rounded-lg border border-slate-700 bg-slate-800 px-4 py-2">
+                6. Verify
+              </span>
+            </div>
+
+            <div className="mx-auto mt-10 grid max-w-4xl gap-4 text-left md:grid-cols-2 lg:grid-cols-4">
+              <div className="rounded border border-slate-700 bg-slate-800/50 p-3">
+                ✓ Thermal Envelopes
+              </div>
+              <div className="rounded border border-slate-700 bg-slate-800/50 p-3">
+                ✓ Airflow CFM Velocity
+              </div>
+              <div className="rounded border border-slate-700 bg-slate-800/50 p-3">
+                ✓ Environmental Contamination
+              </div>
+              <div className="rounded border border-slate-700 bg-slate-800/50 p-3">
+                ✓ Physical Infrastructure
+              </div>
+              <div className="rounded border border-slate-700 bg-slate-800/50 p-3">
+                ✓ Operational Readiness
+              </div>
+              <div className="rounded border border-slate-700 bg-slate-800/50 p-3">
+                ✓ Asset Intelligence
+              </div>
+              <div className="rounded border border-slate-700 bg-slate-800/50 p-3">
+                ✓ Documentation Quality
+              </div>
+              <div className="rounded border border-slate-700 bg-slate-800/50 p-3">
+                ✓ OEM Spec Compliance
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="border-t border-slate-800 bg-slate-950 py-16 text-white">
+          <div className="mx-auto max-w-7xl px-5">
+            <div className="mb-12 text-center">
+              <h2 className="text-3xl font-bold">Infrastructure Health Index™ (IHI™)</h2>
+              <p className="mx-auto mt-2 max-w-2xl text-slate-400">
+                Instead of generic checklist notes, every assessment transforms multi-modal physical
+                findings into a certified, objective operational score.
+              </p>
+            </div>
+
+            <div className="mx-auto grid max-w-5xl gap-6 md:grid-cols-2 lg:grid-cols-4">
+              <div className="rounded-xl border border-emerald-500/30 bg-slate-900 p-6 text-center">
+                <div className="mb-1 text-2xl font-bold text-emerald-400">🟢 90 – 100</div>
+                <div className="mb-2 text-lg font-semibold">Optimal / Certified</div>
+                <p className="text-xs text-slate-400">
+                  Environment meets or exceeds all OEM physical operating specifications.
+                </p>
+              </div>
+
+              <div className="rounded-xl border border-yellow-500/30 bg-slate-900 p-6 text-center">
+                <div className="mb-1 text-2xl font-bold text-yellow-400">🟡 75 – 89</div>
+                <div className="mb-2 text-lg font-semibold">Good / Minor Drift</div>
+                <p className="text-xs text-slate-400">
+                  Low-level airflow or particulate risk present; routine optimization recommended.
+                </p>
+              </div>
+
+              <div className="rounded-xl border border-orange-500/30 bg-slate-900 p-6 text-center">
+                <div className="mb-1 text-2xl font-bold text-orange-400">🟠 60 – 74</div>
+                <div className="mb-2 text-lg font-semibold">Needs Attention</div>
+                <p className="text-xs text-slate-400">
+                  Elevated thermal delta or intake restriction detected. Remediation required prior
+                  to scaling.
+                </p>
+              </div>
+
+              <div className="rounded-xl border border-red-500/30 bg-slate-900 p-6 text-center">
+                <div className="mb-1 text-2xl font-bold text-red-400">🔴 Below 60</div>
+                <div className="mb-2 text-lg font-semibold">Critical Action Required</div>
+                <p className="text-xs text-slate-400">
+                  Active OEM spec violation. Accelerated hardware degradation and throttling risk.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="border-t border-slate-800 bg-slate-900 py-16 text-white">
+          <div className="mx-auto max-w-4xl px-5 text-center">
+            <h2 className="mb-4 text-3xl font-bold">Why Assessment Comes First</h2>
+            <p className="mb-6 text-lg text-slate-300">
+              Most infrastructure failures begin long before software alarms trigger. Hidden intake
+              turbulence, micro-dust insulation, static pressure loss, and hot-air recirculation
+              develop silently under normal operation.
+            </p>
+            <div className="space-y-3 rounded-xl border border-blue-500/30 bg-slate-800/70 p-6 text-left text-slate-300">
+              <p>
+                <strong className="text-white">The Engineering Advantage:</strong> By auditing your
+                environment with our EAF™ before taking physical action, we ensure that every hour
+                of remediation is targeted directly at the physical failure vectors that threaten
+                your silicon longevity.
+              </p>
+              <p className="text-sm text-slate-400">
+                Our remediation packages (Micro-Vault, Sovereign 9U, Enterprise Zone) are not
+                arbitrary services—they are the direct, prescribed engineering solutions derived
+                from your Infrastructure Health Index™ findings.
+              </p>
+            </div>
+          </div>
+        </section>
+
         <section id="services" className="bg-white py-16">
           <div className="mx-auto max-w-7xl px-5">
             <div className="max-w-3xl">
