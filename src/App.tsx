@@ -332,6 +332,32 @@ export default function App() {
           </div>
         </section>
 
+        {/* THE 30-SECOND DIFFERENTIATOR */}
+        <section className="py-12 bg-slate-950 border-y border-slate-800 text-white">
+          <div className="container mx-auto px-4 max-w-4xl text-center">
+            <span className="text-blue-400 text-xs uppercase tracking-widest font-semibold">
+              The Digital-ABB Difference
+            </span>
+
+            <h2 className="text-2xl md:text-3xl font-extrabold mt-2 mb-4">
+              Why Digital-ABB is Different From Every IT Consultant & Facilities Vendor
+            </h2>
+
+            <p className="text-slate-300 text-lg md:text-xl font-medium leading-relaxed max-w-3xl mx-auto">
+              While others rely on generic check-ups or routine cleaning, Digital-ABB follows its
+              proprietary
+              <strong className="text-white">Engineering Assessment Framework™ (EAF™)</strong>
+              —converting physical site evidence into objective engineering intelligence and
+              OEM-aligned recommendations.
+            </p>
+
+            <div className="mt-6 inline-flex items-center gap-2 text-sm text-slate-400 bg-slate-900/80 px-4 py-2 rounded-full border border-slate-800">
+              <span className="text-blue-400">⚡</span>
+              <span>No Guesswork. No Assumptions. Just Documented Engineering Evidence.</span>
+            </div>
+          </div>
+        </section>
+
         {/* SECTION: ENGINEERING EVIDENCE FIRST */}
         <section className="engineering-evidence-section py-16 bg-slate-900 text-white border-b border-slate-800">
           <div className="container mx-auto px-4 max-w-4xl text-center">
@@ -494,6 +520,13 @@ export default function App() {
                 Digital-ABB gives organizations a practical way to see the physical infrastructure
                 conditions that remote tools often miss.
               </p>
+
+              <p className="mt-6 text-lg font-semibold text-slate-700">
+                <strong>
+                  Based on engineering findings, Digital-ABB may recommend one or more of the
+                  following corrective actions:
+                </strong>
+              </p>
             </div>
 
             <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
@@ -576,6 +609,13 @@ export default function App() {
                 determine the recommended package based on rack count, environmental exposure,
                 thermal risk, airflow restriction, AI/GPU density, asset condition, and
                 documentation gaps.
+              </p>
+
+              <p className="mt-6 text-lg font-semibold text-slate-700">
+                <strong>
+                  Based on engineering findings, Digital-ABB may recommend one or more of the
+                  following corrective actions:
+                </strong>
               </p>
             </div>
 
@@ -842,42 +882,34 @@ export default function App() {
           </div>
         </section>
 
-        <section id="methodology" className="bg-slate-100 py-16">
-          <div className="mx-auto max-w-7xl px-5">
-            <p className="text-sm font-bold uppercase tracking-wider text-blue-700">Methodology</p>
-            <h2 className="mt-3 max-w-4xl text-4xl font-black tracking-tight">
-              A practical workflow for physical infrastructure risk intelligence.
-            </h2>
-
-            <div className="mt-10 grid gap-5 md:grid-cols-5">
-              {[
-                {
-                  title: 'Pre-Assessment Intake & Baseline',
-                  copy: 'Establish room ambient baseline, CRAC supply air delta, and select target OEM hardware profile.',
-                },
-                {
-                  title: 'Multi-Modal Evidence Capture',
-                  copy: 'Log 6-point rack airflow velocity (CFM), infrared thermal profiles, localized heat sensor readings, and visual evidence.',
-                },
-                {
-                  title: 'Rule-Driven EAF™ Analysis',
-                  copy: 'Cross-reference physical findings against manufacturer thresholds to calculate domain health scores and silicon risk.',
-                },
-                {
-                  title: 'Certified OEM Audit Report',
-                  copy: 'Generate an executive-facing PDF with automated chip-level impact analysis and a prioritized remediation spec.',
-                },
-                {
-                  title: 'Prescriptive Remediation & Monitoring',
-                  copy: 'Execute ESD-safe physical restoration and set up continuous thermal/airflow SLA tracking.',
-                },
-              ].map((step, index) => (
-                <div key={step.title} className="rounded-lg border border-slate-300 bg-white p-5">
-                  <p className="text-sm font-bold text-blue-700">0{index + 1}</p>
-                  <h3 className="mt-3 text-xl font-black">{step.title}</h3>
-                  <p className="mt-3 text-sm leading-6 text-slate-700">{step.copy}</p>
-                </div>
-              ))}
+        <section
+          id="methodology"
+          className="py-12 bg-slate-950 text-white text-center border-b border-slate-800"
+        >
+          <div className="container mx-auto px-4 max-w-4xl">
+            <p className="text-xs text-slate-500 uppercase tracking-widest mb-6">
+              The Engineering Process
+            </p>
+            <div className="flex flex-wrap justify-center items-center gap-3 text-base font-semibold">
+              <span className="px-5 py-2.5 bg-slate-900 rounded-md border border-slate-800 text-blue-400">
+                Observe
+              </span>
+              <span className="text-slate-600">↓</span>
+              <span className="px-5 py-2.5 bg-slate-900 rounded-md border border-slate-800 text-blue-400">
+                Measure
+              </span>
+              <span className="text-slate-600">↓</span>
+              <span className="px-5 py-2.5 bg-slate-900 rounded-md border border-slate-800 text-blue-400">
+                Analyze
+              </span>
+              <span className="text-slate-600">↓</span>
+              <span className="px-5 py-2.5 bg-slate-900 rounded-md border border-slate-800 text-blue-400">
+                Recommend
+              </span>
+              <span className="text-slate-600">↓</span>
+              <span className="px-5 py-2.5 bg-slate-900 rounded-md border border-slate-800 text-blue-400">
+                Verify
+              </span>
             </div>
           </div>
         </section>
@@ -975,7 +1007,7 @@ export default function App() {
       </main>
 
       {/* BRAND IDENTITY ANCHOR */}
-      <div className="py-12 bg-blue-950/40 border-t border-slate-800 text-center">
+      <div className="py-14 bg-blue-950/40 border-t border-slate-800 text-center">
         <h3 className="text-2xl md:text-3xl font-extrabold tracking-tight text-white">
           No Evidence. No Assumptions. Just Engineering.
         </h3>
