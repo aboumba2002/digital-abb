@@ -332,73 +332,83 @@ export default function App() {
           </div>
         </section>
 
-        <section className="bg-slate-900 py-16 text-white">
-          <div className="mx-auto max-w-7xl px-5 text-center">
-            <p className="text-sm font-semibold uppercase tracking-wider text-blue-400">
-              Engineering Before Remediation
-            </p>
-            <h2 className="mt-2 text-3xl font-bold">Engineering Assessment Framework™ (EAF™)</h2>
-            <p className="mx-auto mt-4 max-w-3xl text-lg text-slate-300">
-              Digital-ABB does not begin with assumptions. Every recommendation starts with a
-              structured, rule-driven engineering assessment designed to evaluate the physical
-              operating conditions of your infrastructure directly against manufacturer engineering
-              tolerances.
+        {/* SECTION: ENGINEERING EVIDENCE FIRST */}
+        <section className="engineering-evidence-section py-16 bg-slate-900 text-white border-b border-slate-800">
+          <div className="container mx-auto px-4 max-w-4xl text-center">
+            <span className="text-blue-400 text-sm font-semibold tracking-wider uppercase">
+              Methodology Over Assumptions
+            </span>
+
+            <h2 className="text-3xl md:text-4xl font-bold mt-2 mb-6">
+              Every Recommendation Begins with Engineering Evidence
+            </h2>
+
+            <p className="text-slate-300 text-lg leading-relaxed mb-8">
+              At Digital-ABB, we don't guess. Every recommendation begins with our
+              <strong className="text-white">Engineering Assessment Framework™ (EAF™)</strong>, a
+              structured process that evaluates the physical operating condition of your IT
+              environment before any corrective action is recommended.
             </p>
 
-            <div className="my-8 flex flex-wrap items-center justify-center gap-4 text-sm font-semibold">
-              <span className="rounded-lg border border-slate-700 bg-slate-800 px-4 py-2">
-                1. Assess
-              </span>
-              <span className="text-blue-400">→</span>
-              <span className="rounded-lg border border-slate-700 bg-slate-800 px-4 py-2">
-                2. Analyze
-              </span>
-              <span className="text-blue-400">→</span>
-              <span className="rounded-lg border border-slate-700 bg-slate-800 px-4 py-2">
-                3. Score (IHI™)
-              </span>
-              <span className="text-blue-400">→</span>
-              <span className="rounded-lg border border-slate-700 bg-slate-800 px-4 py-2">
-                4. Recommend
-              </span>
-              <span className="text-blue-400">→</span>
-              <span className="rounded-lg border border-slate-700 bg-slate-800 px-4 py-2">
-                5. Remediate
-              </span>
-              <span className="text-blue-400">→</span>
-              <span className="rounded-lg border border-slate-700 bg-slate-800 px-4 py-2">
-                6. Verify
-              </span>
+            <div className="grid grid-cols-2 md:grid-cols-5 gap-3 my-8 text-sm font-medium">
+              <div className="p-3 bg-slate-800/60 rounded border border-slate-700/80">
+                Thermal Conditions
+              </div>
+              <div className="p-3 bg-slate-800/60 rounded border border-slate-700/80">
+                Airflow Performance
+              </div>
+              <div className="p-3 bg-slate-800/60 rounded border border-slate-700/80">
+                Environmental Conditions
+              </div>
+              <div className="p-3 bg-slate-800/60 rounded border border-slate-700/80">
+                Physical Infrastructure
+              </div>
+              <div className="p-3 bg-slate-800/60 rounded border border-slate-700/80">
+                Operational Readiness
+              </div>
             </div>
 
-            <div className="mx-auto mt-10 grid max-w-4xl gap-4 text-left md:grid-cols-2 lg:grid-cols-4">
-              <div className="rounded border border-slate-700 bg-slate-800/50 p-3">
-                ✓ Thermal Envelopes
-              </div>
-              <div className="rounded border border-slate-700 bg-slate-800/50 p-3">
-                ✓ Airflow CFM Velocity
-              </div>
-              <div className="rounded border border-slate-700 bg-slate-800/50 p-3">
-                ✓ Environmental Contamination
-              </div>
-              <div className="rounded border border-slate-700 bg-slate-800/50 p-3">
-                ✓ Physical Infrastructure
-              </div>
-              <div className="rounded border border-slate-700 bg-slate-800/50 p-3">
-                ✓ Operational Readiness
-              </div>
-              <div className="rounded border border-slate-700 bg-slate-800/50 p-3">
-                ✓ Asset Intelligence
-              </div>
-              <div className="rounded border border-slate-700 bg-slate-800/50 p-3">
-                ✓ Documentation Quality
-              </div>
-              <div className="rounded border border-slate-700 bg-slate-800/50 p-3">
-                ✓ OEM Spec Compliance
-              </div>
-            </div>
+            <p className="text-slate-400 text-sm mb-8">
+              This ensures that every recommendation is based on documented engineering evidence
+              rather than assumptions.
+            </p>
+
+            <a
+              href="#eaf-framework"
+              className="inline-block bg-blue-600 hover:bg-blue-500 text-white font-semibold px-6 py-3 rounded-lg transition"
+            >
+              Learn About Our Engineering Framework
+            </a>
           </div>
         </section>
+
+        {/* VISUAL PROCESS FLOW */}
+        <div className="py-10 bg-slate-950 text-white text-center">
+          <p className="text-xs text-slate-500 uppercase tracking-widest mb-4">
+            The Engineering Process
+          </p>
+          <div className="flex flex-wrap justify-center items-center gap-3 text-base font-semibold">
+            <span className="px-4 py-2 bg-slate-900 rounded-md border border-slate-800 text-blue-400">
+              Observe
+            </span>
+            <span className="text-slate-600">↓</span>
+            <span className="px-4 py-2 bg-slate-900 rounded-md border border-slate-800 text-blue-400">
+              Measure
+            </span>
+            <span className="text-slate-600">↓</span>
+            <span className="px-4 py-2 bg-slate-900 rounded-md border border-slate-800 text-blue-400">
+              Analyze
+            </span>
+            <span className="text-slate-600">↓</span>
+            <span className="px-4 py-2 bg-slate-900 rounded-md border border-slate-800 text-blue-400">
+              Recommend
+            </span>
+            <span className="text-slate-600">↓</span>
+            <span className="px-4 py-2 bg-slate-900 rounded-md border border-slate-800 text-blue-400">
+              Verify
+            </span>
+          </div>
+        </div>
 
         <section className="border-t border-slate-800 bg-slate-950 py-16 text-white">
           <div className="mx-auto max-w-7xl px-5">
@@ -766,6 +776,12 @@ export default function App() {
                 Our recommendations are based on measured conditions, documented observations, and
                 operational risk, not assumptions.
               </p>
+              <p className="mt-6 text-lg font-semibold text-slate-700">
+                <strong>
+                  Based on engineering findings, Digital-ABB may recommend one or more of the
+                  following corrective actions:
+                </strong>
+              </p>
             </div>
 
             <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
@@ -957,6 +973,16 @@ export default function App() {
           </div>
         </section>
       </main>
+
+      {/* BRAND IDENTITY ANCHOR */}
+      <div className="py-12 bg-blue-950/40 border-t border-slate-800 text-center">
+        <h3 className="text-2xl md:text-3xl font-extrabold tracking-tight text-white">
+          No Evidence. No Assumptions. Just Engineering.
+        </h3>
+        <p className="text-slate-400 text-sm mt-2">
+          Every recommendation is supported by documented engineering evidence.
+        </p>
+      </div>
 
       <footer className="border-t border-slate-200 bg-slate-950 text-slate-200">
         <div className="mx-auto grid max-w-7xl gap-8 px-5 py-10 md:grid-cols-[1.3fr_1fr_1fr]">
