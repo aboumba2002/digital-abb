@@ -14,36 +14,20 @@ type GuideFormData = {
 
 const services = [
   {
-    title: 'Thermal Intelligence',
-    copy: 'Measure heat patterns, intake deltas (ΔT), and localized hotspots against OEM operating envelopes to prevent CPU/GPU thermal throttling and VRM degradation.',
+    title: 'Thermal Environment Assessment',
+    copy: 'Capture the conditions surrounding IT equipment — including temperature, air velocity, thermal patterns, intake/exhaust conditions, and localized environmental evidence.',
   },
   {
-    title: 'Airflow Intelligence',
-    copy: 'Quantify CFM velocity, static pressure friction, and exhaust recirculation using high-precision anemometers to eliminate airflow bypass.',
+    title: 'Device Assessment',
+    copy: 'Capture supported device-reported physical operating information from switches, routers, access points, and other infrastructure devices — including device identity, internal thermal condition, cooling/fans, power condition, and physical port information for fiber and copper.',
   },
   {
-    title: 'Environmental & Particulate Intelligence',
-    copy: 'Audit micro-dust insulation layers and ambient thresholds to preserve heatsink conductivity and satisfy manufacturer warranty cleanliness standards.',
+    title: 'Physical Infrastructure Documentation',
+    copy: 'Document what is physically present across rooms, racks, equipment, connections, ports, cabling, labels, locations, and supporting evidence to establish a verified infrastructure baseline.',
   },
   {
-    title: 'Physical Infrastructure Intelligence',
-    copy: 'Assess racks, systems, cabling, equipment placement, contamination, access, airflow obstructions, and other physical conditions that may affect infrastructure reliability.',
-  },
-  {
-    title: 'Power Intelligence',
-    copy: 'Document rack-level electrical demand and operating load to provide power context for thermal, airflow, and physical infrastructure findings.',
-  },
-  {
-    title: 'Continuous Intelligence',
-    copy: 'Support recurring visibility through monitoring recommendations, trending, alerts, and Infrastructure Health reviews.',
-  },
-  {
-    title: 'Asset Intelligence',
-    copy: 'Document critical infrastructure assets, observed condition, ownership context, and risk indicators that affect operational continuity.',
-  },
-  {
-    title: 'Documentation Intelligence',
-    copy: 'Turn assessment findings into clear records, executive summaries, remediation roadmaps, and recurring monitoring guidance.',
+    title: 'Periodic Verification',
+    copy: 'Revalidate physical infrastructure after additions, moves, replacements, cabling changes, upgrades, or other physical changes so teams can identify drift and maintain current evidence over time.',
   },
 ];
 
@@ -166,24 +150,23 @@ const packages = [
 ];
 
 const assessmentMetrics = [
-  'Number of racks and systems',
-  'Thermal hotspots and temperature delta',
-  'Rack-level power demand and operating load',
-  'Airflow restriction indicators',
-  'Environmental exposure',
-  'AI/GPU density',
-  'Asset condition',
-  'Documentation completeness',
-  'Business impact level',
-  'OEM Spec Threshold Validation (Dell / Nvidia / Cisco)',
-  'Chip-Level Silicon Impact & VRM Degradation Analysis',
-  'Hashed Evidence Bundle & Certified Manager Sign-Off',
+  'Room, rack, and equipment context',
+  'Temperature and localized thermal patterns',
+  'Air velocity and airflow conditions',
+  'Intake and exhaust conditions',
+  'Device identity and hardware information',
+  'Internal device thermal condition where supported',
+  'Cooling and fan condition where supported',
+  'Power and PSU condition where supported',
+  'Physical port information for fiber and copper where supported',
+  'Asset, connection, and documentation evidence',
+  'Baseline and change-verification findings',
 ];
 
 const assessmentPricing = {
   title: 'Infrastructure Health Assessment',
   price: 'Starting at: $495',
-  copy: 'This investment covers an OEM compliance audit workflow, including approximately 2.5 to 3 hours of expert on-site technical analysis, precision diagnostic tool utilization (thermal/particulate testing), travel, and the delivery of a comprehensive Executive Summary.',
+  copy: 'This starting investment covers an on-site, evidence-based assessment using Digital-ABB field tools to capture relevant physical infrastructure and operating-condition evidence, followed by documented findings and an executive summary. Final scope and pricing depend on site size, equipment count, and selected assessment products.',
 };
 
 function getInvestmentParts(price: string) {
@@ -306,14 +289,19 @@ export default function App() {
           <div className="relative mx-auto flex min-h-[78vh] max-w-7xl items-center px-5 py-20">
             <div className="max-w-4xl text-white">
               <h1 className="text-5xl font-black leading-tight md:text-7xl">
-                Understand the Physical Conditions Affecting Your Infrastructure.
+                Make Your Physical Infrastructure Visible.
               </h1>
               <p className="mt-5 text-2xl font-semibold text-blue-100 md:text-4xl">Digital-ABB</p>
               <p className="mt-7 max-w-3xl text-lg leading-8 text-slate-100 md:text-xl">
-                Digital-ABB makes physical operating conditions visible across thermal, airflow,
-                environmental, physical infrastructure, and power domains — helping organizations
-                identify, correlate, remediate, verify, and prevent infrastructure risk before it
-                affects operations.
+                From CPU-based networks to GPU-powered infrastructure, increasing density and
+                complexity make periodic physical verification essential to proactive operations.
+              </p>
+              <p className="mt-4 max-w-3xl text-lg leading-8 text-slate-200 md:text-xl">
+                Digital-ABB uses purpose-built field assessment tools to capture and document the
+                physical environment, device-reported operating conditions, and infrastructure
+                evidence — helping organizations understand what is physically present, the
+                conditions surrounding it, and how supported devices are operating within that
+                environment.
               </p>
               <p className="mt-4 text-sm font-semibold text-slate-300">
                 Reliability. Performance. Longevity.
@@ -325,14 +313,14 @@ export default function App() {
                   onClick={() => setShowPilotForm(true)}
                   className="rounded-md bg-blue-600 px-6 py-3 font-bold text-white shadow-lg transition hover:bg-blue-500"
                 >
-                  Request OEM-Aligned Assessment
+                  Request an Infrastructure Assessment
                 </button>
                 <button
                   type="button"
                   onClick={() => setShowAuditForm(true)}
                   className="rounded-md border border-white/70 bg-white/10 px-6 py-3 font-bold text-white backdrop-blur transition hover:bg-white/20"
                 >
-                  View Certified EAF™ Sample Report
+                  View Sample Assessment Report
                 </button>
               </div>
             </div>
@@ -347,21 +335,21 @@ export default function App() {
             </span>
 
             <h2 className="text-2xl md:text-3xl font-extrabold mt-2 mb-4">
-              Why Digital-ABB is Different From Every IT Consultant & Facilities Vendor
+              Purpose-Built Tools for Physical Infrastructure Verification
             </h2>
 
             <p className="text-slate-300 text-lg md:text-xl font-medium leading-relaxed max-w-3xl mx-auto">
-              While others rely on generic check-ups or routine cleaning, Digital-ABB follows its
-              proprietary
-              <strong className="text-white">Engineering Assessment Framework™ (EAF™)</strong>
-              —converting physical site evidence into objective engineering intelligence and
-              OEM-aligned recommendations[cite: 1].
+              Digital-ABB doesn't just recommend physical verification. We use purpose-built field
+              tools and our
+              <strong className="text-white"> Engineering Assessment Framework™ (EAF™)</strong>
+              to capture, organize, and verify evidence from the environment, the equipment, and the
+              physical infrastructure itself.
             </p>
 
             <div className="mt-6 inline-flex items-center gap-2 text-sm text-slate-400 bg-slate-900/80 px-4 py-2 rounded-full border border-slate-800">
               <span className="text-blue-400">⚡</span>
               <span>
-                No Guesswork. No Assumptions. Just Documented Engineering Evidence[cite: 1].
+                No Guesswork. No Assumptions. Documented Physical Evidence.
               </span>
             </div>
           </div>
@@ -399,7 +387,7 @@ export default function App() {
                 Physical Infrastructure
               </div>
               <div className="p-3 bg-slate-800/60 rounded border border-slate-700/80">
-                Operational Readiness
+                Device Condition
               </div>
             </div>
 
@@ -450,25 +438,26 @@ export default function App() {
             <div className="mb-12 text-center">
               <h2 className="text-3xl font-bold">Infrastructure Health Index™ (IHI™)</h2>
               <p className="mx-auto mt-2 max-w-2xl text-slate-400">
-                Instead of generic checklist notes, every assessment transforms multi-modal physical
-                findings into a certified, objective operational score.
+                IHI™ organizes measured and observed physical findings into a consistent
+                infrastructure-condition score that supports prioritization, comparison, and
+                revalidation over time.
               </p>
             </div>
 
             <div className="mx-auto grid max-w-5xl gap-6 md:grid-cols-2 lg:grid-cols-4">
               <div className="rounded-xl border border-emerald-500/30 bg-slate-900 p-6 text-center">
                 <div className="mb-1 text-2xl font-bold text-emerald-400">🟢 90 – 100</div>
-                <div className="mb-2 text-lg font-semibold">Optimal / Certified</div>
+                <div className="mb-2 text-lg font-semibold">Strong Baseline</div>
                 <p className="text-xs text-slate-400">
-                  Environment meets or exceeds all OEM physical operating specifications.
+                  Measured and observed conditions show a strong physical operating baseline.
                 </p>
               </div>
 
               <div className="rounded-xl border border-yellow-500/30 bg-slate-900 p-6 text-center">
                 <div className="mb-1 text-2xl font-bold text-yellow-400">🟡 75 – 89</div>
-                <div className="mb-2 text-lg font-semibold">Good / Minor Drift</div>
+                <div className="mb-2 text-lg font-semibold">Stable / Minor Drift</div>
                 <p className="text-xs text-slate-400">
-                  Low-level airflow or particulate risk present; routine optimization recommended.
+                  Minor physical-condition drift is present; review and routine verification are recommended.
                 </p>
               </div>
 
@@ -476,16 +465,15 @@ export default function App() {
                 <div className="mb-1 text-2xl font-bold text-orange-400">🟠 60 – 74</div>
                 <div className="mb-2 text-lg font-semibold">Needs Attention</div>
                 <p className="text-xs text-slate-400">
-                  Elevated thermal delta or intake restriction detected. Remediation required prior
-                  to scaling.
+                  One or more physical conditions warrant attention, additional investigation, or corrective action.
                 </p>
               </div>
 
               <div className="rounded-xl border border-red-500/30 bg-slate-900 p-6 text-center">
                 <div className="mb-1 text-2xl font-bold text-red-400">🔴 Below 60</div>
-                <div className="mb-2 text-lg font-semibold">Critical Action Required</div>
+                <div className="mb-2 text-lg font-semibold">Priority Review</div>
                 <p className="text-xs text-slate-400">
-                  Active OEM spec violation. Accelerated hardware degradation and throttling risk.
+                  Significant physical-condition findings warrant prompt review and appropriate follow-up.
                 </p>
               </div>
             </div>
@@ -496,21 +484,21 @@ export default function App() {
           <div className="mx-auto max-w-4xl px-5 text-center">
             <h2 className="mb-4 text-3xl font-bold">Why Assessment Comes First</h2>
             <p className="mb-6 text-lg text-slate-300">
-              Most infrastructure failures begin long before software alarms trigger. Hidden intake
-              turbulence, micro-dust insulation, static pressure loss, and hot-air recirculation
-              develop silently under normal operation.
+              Remote monitoring can show that a device or service has a problem, but it may not
+              reveal the physical conditions surrounding the equipment. Localized heat, airflow
+              restriction, contamination, cabling conditions, and device-reported physical health
+              can provide additional evidence for better decisions.
             </p>
             <div className="space-y-3 rounded-xl border border-blue-500/30 bg-slate-800/70 p-6 text-left text-slate-300">
               <p>
-                <strong className="text-white">The Engineering Advantage:</strong> By auditing your
-                environment with our EAF™ before taking physical action, we ensure that every hour
-                of remediation is targeted directly at the physical failure vectors that threaten
-                your silicon longevity.
+                <strong className="text-white">The Engineering Advantage:</strong> Digital-ABB
+                captures evidence before recommending action. That helps teams distinguish observed
+                physical conditions from assumptions and focus follow-up work where the evidence
+                indicates it may be needed.
               </p>
               <p className="text-sm text-slate-400">
-                Our remediation packages (Micro-Vault, Sovereign 9U, Enterprise Zone) are not
-                arbitrary services—they are the direct, prescribed engineering solutions derived
-                from your Infrastructure Health Index™ findings.
+                Assessment findings can support remediation, additional investigation, periodic
+                verification, or continued observation depending on what is actually documented.
               </p>
             </div>
           </div>
@@ -520,20 +508,21 @@ export default function App() {
           <div className="mx-auto max-w-7xl px-5">
             <div className="max-w-3xl">
               <p className="text-sm font-bold uppercase tracking-wider text-blue-700">
-                Intelligence Services
+                What We Assess
               </p>
               <h2 className="mt-3 text-4xl font-black tracking-tight text-[#16324F]">
-                Identify, assess, remediate, document, and monitor physical risk.
+                Environment. Device. Documentation. Verification.
               </h2>
               <p className="mt-5 text-lg leading-8 text-slate-700">
-                Digital-ABB gives organizations a practical way to see the physical infrastructure
-                conditions that remote tools often miss.
+                Digital-ABB gives organizations practical visibility into where equipment is,
+                the conditions surrounding it, and the physical operating condition reported by
+                supported devices.
               </p>
 
               <p className="mt-6 text-lg font-semibold text-slate-700">
                 <strong>
-                  Based on engineering findings, Digital-ABB may recommend one or more of the
-                  following corrective actions:
+                  Know what you have. Know the environment it operates in. Know the physical
+                  condition of the equipment. Verify it again when conditions change.
                 </strong>
               </p>
             </div>
@@ -556,25 +545,27 @@ export default function App() {
           <div className="mx-auto grid max-w-7xl gap-10 px-5 lg:grid-cols-[1fr_420px]">
             <div>
               <p className="text-sm font-bold uppercase tracking-wider text-blue-700">
-                Assessment-to-Package
+                Assessment Products
               </p>
               <h2 className="mt-3 text-4xl font-black tracking-tight">
-                Every package starts with measured infrastructure findings.
+                Capture the environment and the equipment — then bring the evidence together.
               </h2>
               <p className="mt-5 text-lg leading-8 text-slate-700">
-                Digital-ABB begins with an Infrastructure Health Assessment that collects data
-                across racks, systems, operating conditions, asset condition, and documentation
-                quality. The assessment produces documented findings that guide package
-                recommendations, remediation priorities, optimization work, and monitoring needs.
+                Digital-ABB combines Thermal Environment Assessment, Device Assessment, and
+                Physical Infrastructure Documentation as appropriate to the assignment. The
+                environment shows what equipment is exposed to. Supported devices provide
+                device-reported physical operating condition. Documentation establishes what is
+                physically present and where. Together, these evidence sources create a clearer
+                infrastructure baseline for verification and decision-making.
               </p>
               <div className="mt-8 rounded-lg border border-blue-200 bg-blue-50 p-6">
                 <p className="text-sm font-bold uppercase tracking-wide text-blue-700">
                   {assessmentPricing.title}
                 </p>
                 <p className="mt-3 text-sm italic leading-7 text-slate-700">
-                  Every assessment executes vendor-specific rule sets (Dell Fresh Air Envelopes,
-                  Nvidia DGX Thermal Envelope, Cisco Infrastructure Pathing) to deliver an
-                  executive-grade Physical Spec Risk Profile.
+                  Assessment scope is selected for the customer environment. Digital-ABB records
+                  measured, observed, and supported device-reported evidence without treating
+                  assumptions as documented fact.
                 </p>
                 <div className="mt-3">
                   <p className="text-sm font-bold uppercase tracking-wide text-slate-600">
@@ -640,8 +631,8 @@ export default function App() {
 
               <p className="mt-6 text-lg font-semibold text-slate-700">
                 <strong>
-                  Based on engineering findings, Digital-ABB may recommend one or more of the
-                  following corrective actions:
+                  Know what you have. Know the environment it operates in. Know the physical
+                  condition of the equipment. Verify it again when conditions change.
                 </strong>
               </p>
             </div>
@@ -829,9 +820,9 @@ export default function App() {
                 Turning Assessment Findings into Practical Solutions
               </h3>
               <p className="mt-5 text-lg leading-8 text-slate-700">
-                Every assessment concludes with a prioritized, OEM-cited Remediation Spec detailing
-                exact technician hours and physical corrective actions required to restore full
-                hardware compliance.
+                When an assessment identifies actionable physical conditions, Digital-ABB can
+                provide a prioritized remediation roadmap describing the observed condition,
+                recommended corrective action, and verification steps.
               </p>
               <p className="mt-4 text-lg leading-8 text-slate-700">
                 Digital-ABB helps organizations move beyond identifying problems by delivering
@@ -845,8 +836,8 @@ export default function App() {
               </p>
               <p className="mt-6 text-lg font-semibold text-slate-700">
                 <strong>
-                  Based on engineering findings, Digital-ABB may recommend one or more of the
-                  following corrective actions:
+                  Know what you have. Know the environment it operates in. Know the physical
+                  condition of the equipment. Verify it again when conditions change.
                 </strong>
               </p>
             </div>
@@ -1005,9 +996,9 @@ export default function App() {
                 See how Infrastructure Health Intelligence is documented.
               </h2>
               <p className="mt-5 max-w-3xl text-lg leading-8 text-slate-700">
-                Review a sample report or request an assessment to map environmental risk, airflow
-                risk, thermal risk, Asset Intelligence, Documentation Intelligence, remediation
-                roadmap, and monitoring options.
+                Review a sample report or request an assessment to see how Digital-ABB documents
+                thermal environment, device condition, physical infrastructure, evidence,
+                recommendations, and verification needs.
               </p>
 
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -1089,10 +1080,10 @@ export default function App() {
       {/* BRAND IDENTITY ANCHOR */}
       <div className="py-14 bg-blue-950/40 border-t border-slate-800 text-center">
         <h3 className="text-2xl md:text-3xl font-extrabold tracking-tight text-white">
-          No Evidence. No Assumptions. Just Engineering.
+          We Don't Assume. We Verify.
         </h3>
         <p className="text-slate-400 text-sm mt-2">
-          Every recommendation is supported by documented engineering evidence.
+          Evidence first. Technician verified. Built for physical infrastructure.
         </p>
       </div>
 
@@ -1101,9 +1092,9 @@ export default function App() {
           <div>
             <p className="text-lg font-black text-white">Digital-ABB</p>
             <p className="mt-2 max-w-xl leading-7 text-slate-300">
-              Infrastructure Health Intelligence Platform helping organizations identify, assess,
-              document, remediate, and monitor physical infrastructure risks before they impact
-              operations.
+              Physical infrastructure visibility products that help organizations assess the
+              environment, document what is physically present, evaluate supported device-reported
+              physical condition, and verify change over time.
             </p>
           </div>
 
@@ -1217,3 +1208,4 @@ export default function App() {
     </div>
   );
 }
+
